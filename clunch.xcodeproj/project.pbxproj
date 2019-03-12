@@ -35,6 +35,7 @@
 		2EE8709B2201F99A006F0BA3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE8709A2201F99A006F0BA3 /* Event.swift */; };
 		E28BC1D62237C6CC00C47937 /* CreatedEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1D52237C6CC00C47937 /* CreatedEventCell.swift */; };
 		E28BC1D82237C6DB00C47937 /* ParticipatedEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1D72237C6DB00C47937 /* ParticipatedEventCell.swift */; };
+		E28BC1DA2237E8AC00C47937 /* ComingEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1D92237E8AC00C47937 /* ComingEventsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		9E0659C9FAA84CD2B09E05A5 /* Pods_clunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E28BC1D52237C6CC00C47937 /* CreatedEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedEventCell.swift; sourceTree = "<group>"; };
 		E28BC1D72237C6DB00C47937 /* ParticipatedEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatedEventCell.swift; sourceTree = "<group>"; };
+		E28BC1D92237E8AC00C47937 /* ComingEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingEventsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +210,7 @@
 				2EDC38F621FE52A6009227DB /* HomeViewController.swift */,
 				E28BC1D52237C6CC00C47937 /* CreatedEventCell.swift */,
 				E28BC1D72237C6DB00C47937 /* ParticipatedEventCell.swift */,
+				E28BC1D92237E8AC00C47937 /* ComingEventsTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				2E71B11122036E96000BD472 /* CalendarEventItemViewController.swift in Sources */,
 				2EE293F321ECD00F00EAE0A3 /* AppDelegate.swift in Sources */,
 				2E71B10C22033DDA000BD472 /* View.swift in Sources */,
+				E28BC1DA2237E8AC00C47937 /* ComingEventsTableViewCell.swift in Sources */,
 				2EDC38F921FE52B6009227DB /* CategoryViewController.swift in Sources */,
 				2E32D98F2200D13D00985453 /* TableVIew.swift in Sources */,
 				2E71B10A22031769000BD472 /* CalendarEventViewController.swift in Sources */,

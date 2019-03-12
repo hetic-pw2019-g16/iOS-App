@@ -21,9 +21,37 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonSeeMoreParticpatedEvent: UIButton!
     @IBOutlet weak var createdEventCollectionView: UICollectionView!
     @IBOutlet weak var participatedEventCollectionView: UICollectionView!
-    //MARK:-  Block 2
-    //MARK:-  Block 3
-
+    //MARK:-  comingEventsView
+    @IBOutlet weak var comingEventsView: UIView!
+    @IBOutlet weak var comingEventsLabel: UILabel!
+    @IBOutlet weak var comingEventsTableView: UITableView!
+    @IBOutlet weak var buttonSeeAllComingEvents: UIButton!
+    //MARK:-  newRecipes
+    @IBOutlet weak var newRecipesView: UIView!
+    @IBOutlet weak var newRecipesLabel: UIView!
+    
+    @IBOutlet weak var newRecipe1: UIView!
+    @IBOutlet weak var imageRecipe1: UIImageView!
+    @IBOutlet weak var recipeTitleLabel1: UILabel!
+    @IBOutlet weak var recipeTimeLabel1: UILabel!
+    
+    @IBOutlet weak var newRecipe2: UIView!
+    @IBOutlet weak var imageRecipe2: UIImageView!
+    @IBOutlet weak var recipeTitleLabel2: UILabel!
+    @IBOutlet weak var recipeTimeLabel2: UILabel!
+    
+    @IBOutlet weak var newRecipe3: UIView!
+    @IBOutlet weak var imageRecipe3: UIImageView!
+    @IBOutlet weak var recipeTitleLabel3: UILabel!
+    @IBOutlet weak var recipeTimeLabel3: UILabel!
+    
+    @IBOutlet weak var newRecipe4: UIView!
+    @IBOutlet weak var imageRecipe4: UIImageView!
+    @IBOutlet weak var recipeTitleLabel4: UILabel!
+    @IBOutlet weak var recipeTimeLabel4: UILabel!
+    
+   
+    
     var createdEvents:[Event] = [Event(title: "Event 1",
                                        commentaries: ["Commentaire 1", "Commentaire 2"])]
     
@@ -42,6 +70,9 @@ class HomeViewController: UIViewController {
 
         self.createdEventCollectionView.dataSource = self
         self.participatedEventCollectionView.dataSource = self
+        
+        self.comingEventsTableView.delegate = self
+        self.comingEventsTableView.dataSource = self
 
     }
     
@@ -49,6 +80,9 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func buttonSeeMoreParticipatedEvent(_ sender: Any) {
+    }
+    
+    @IBAction func buttonSeeAllComingEvents(_ sender: Any) {
     }
 }
 
@@ -84,4 +118,20 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             return cell
         }
     }
+}
+
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ComingEventsTableViewCell", for: indexPath) as! ComingEventsTableViewCell
+        cell.eventCreator.text = "Eléa la plus forte en dev IOS"
+        return cell
+        
+    }
+    
+    
 }
