@@ -16,8 +16,8 @@ class EventViewController: UIViewController {
     @IBOutlet weak var eventLabel: UILabel!
     @IBOutlet weak var buttonCreateNewEvent: UIButton!
     @IBOutlet weak var createNewEventLabel: UILabel!
-    
-    var eventStore:EKEventStore!
+    /*
+//    var eventStore:EKEventStore!
     var calendarArray:[EKCalendar]!
     var allEvents:[EKEvent] = []
 
@@ -137,7 +137,19 @@ class EventViewController: UIViewController {
         cal?.source = localSource!;
         
         try! eventStore.saveCalendar(cal!, commit: true)
+    } */
+    
+    // Réaliser un changement de page, bouton qui va vers un autre écran
+    @IBAction func buttonCreateEvent(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "CreateEventStep1ViewController") as! CreateEventStep1ViewController
+        
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    /*
+ 
+    
 }
 
 extension EventViewController: EKEventViewDelegate {
@@ -150,4 +162,8 @@ extension EventViewController: EKEventEditViewDelegate, UINavigationControllerDe
     func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
         controller.dismiss(animated: true, completion: nil)
     }
+    
+     */
+
 }
+ 

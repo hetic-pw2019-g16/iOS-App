@@ -66,9 +66,6 @@ class HomeViewController: UIViewController {
                                       Event(title: "eheheh 3",
                                             commentaries: ["Commentaire 1", "Commentaire 2", "Commentaire 3"])]
     
-    func color(red: Int, green: Int, blue: Int) -> UIColor {
-        return UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,12 +73,12 @@ class HomeViewController: UIViewController {
         self.buttonFindAnEvent.backgroundColor = .white
         self.buttonFindAnEvent.layer.cornerRadius = 5
         self.buttonFindAnEvent.layer.borderWidth = 2
-        self.buttonFindAnEvent.layer.borderColor = (color(red: 89, green: 190, blue: 176) as! CGColor)
+        self.buttonFindAnEvent.layer.borderColor = UIColor(red: 89/255, green: 190/255, blue: 176/255, alpha: 1).cgColor
         
         self.buttonCreateAnEvent.backgroundColor = .white
         self.buttonCreateAnEvent.layer.cornerRadius = 5
         self.buttonCreateAnEvent.layer.borderWidth = 2
-        self.buttonCreateAnEvent.layer.borderColor = (color(red: 89, green: 190, blue: 176) as! CGColor)
+        self.buttonCreateAnEvent.layer.borderColor = UIColor(red: 89/255, green: 190/255, blue: 176/255, alpha: 1).cgColor
         
         self.newRecipe1.addShadow(withRadius: true, radius: 5)
         self.newRecipe2.addShadow(withRadius: true, radius: 5)

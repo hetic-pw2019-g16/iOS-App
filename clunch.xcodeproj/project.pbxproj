@@ -36,6 +36,7 @@
 		E28BC1D62237C6CC00C47937 /* CreatedEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1D52237C6CC00C47937 /* CreatedEventCell.swift */; };
 		E28BC1D82237C6DB00C47937 /* ParticipatedEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1D72237C6DB00C47937 /* ParticipatedEventCell.swift */; };
 		E28BC1DA2237E8AC00C47937 /* ComingEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1D92237E8AC00C47937 /* ComingEventsTableViewCell.swift */; };
+		E28BC1DE223A801000C47937 /* CreateEventStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1DD223A801000C47937 /* CreateEventStep1ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		E28BC1D52237C6CC00C47937 /* CreatedEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedEventCell.swift; sourceTree = "<group>"; };
 		E28BC1D72237C6DB00C47937 /* ParticipatedEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatedEventCell.swift; sourceTree = "<group>"; };
 		E28BC1D92237E8AC00C47937 /* ComingEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingEventsTableViewCell.swift; sourceTree = "<group>"; };
+		E28BC1DD223A801000C47937 /* CreateEventStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventStep1ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				2EDC38F421FE529B009227DB /* EventViewController.swift */,
+				E28BC1DD223A801000C47937 /* CreateEventStep1ViewController.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E32D98521FF527200985453 /* DetailRecipeViewController.swift in Sources */,
+				E28BC1DE223A801000C47937 /* CreateEventStep1ViewController.swift in Sources */,
 				2E32D98A2200430800985453 /* RecipeItem.swift in Sources */,
 				2E32D98D2200468200985453 /* RecipeItemTableViewCell.swift in Sources */,
 				2EDC38F321FE528B009227DB /* CalendarViewController.swift in Sources */,
