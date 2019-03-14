@@ -50,7 +50,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var recipeTitleLabel4: UILabel!
     @IBOutlet weak var recipeTimeLabel4: UILabel!
     
-   
+    //MARK:-  KnowMore
+    @IBOutlet weak var knowMoreLabel: UILabel!
+    @IBOutlet weak var buttonFindAnEvent: UIButton!
+    @IBOutlet weak var buttonCreateAnEvent: UIButton!
+    
     
     var createdEvents:[Event] = [Event(title: "Event 1",
                                        commentaries: ["Commentaire 1", "Commentaire 2"])]
@@ -62,8 +66,30 @@ class HomeViewController: UIViewController {
                                       Event(title: "eheheh 3",
                                             commentaries: ["Commentaire 1", "Commentaire 2", "Commentaire 3"])]
     
+    func color(red: Int, green: Int, blue: Int) -> UIColor {
+        return UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.buttonFindAnEvent.backgroundColor = .white
+        self.buttonFindAnEvent.layer.cornerRadius = 5
+        self.buttonFindAnEvent.layer.borderWidth = 2
+        self.buttonFindAnEvent.layer.borderColor = (color(red: 89, green: 190, blue: 176) as! CGColor)
+        
+        self.buttonCreateAnEvent.backgroundColor = .white
+        self.buttonCreateAnEvent.layer.cornerRadius = 5
+        self.buttonCreateAnEvent.layer.borderWidth = 2
+        self.buttonCreateAnEvent.layer.borderColor = (color(red: 89, green: 190, blue: 176) as! CGColor)
+        
+        self.newRecipe1.addShadow(withRadius: true, radius: 5)
+        self.newRecipe2.addShadow(withRadius: true, radius: 5)
+        self.newRecipe3.addShadow(withRadius: true, radius: 5)
+        self.newRecipe4.addShadow(withRadius: true, radius: 5)
+        
+    
+        
         
         self.createdEventCollectionView.delegate = self
         self.participatedEventCollectionView.delegate = self
@@ -84,6 +110,14 @@ class HomeViewController: UIViewController {
     
     @IBAction func buttonSeeAllComingEvents(_ sender: Any) {
     }
+    
+    @IBAction func buttonFindAnEvent(_ sender: Any) {
+    }
+    
+    @IBAction func buttonCreateAnEvent(_ sender: Any) {
+    
+    }
+    
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -106,6 +140,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.dateTitle.text = self.createdEvents[indexPath.row].title
             let commentaryNumber = self.createdEvents[indexPath.row].commentaries.count
             cell.commentaries.text = String(format: "%d commentaires", commentaryNumber)
+            cell.eventCreatedViewCell.addShadow()
             return cell
         }
         else {
@@ -115,6 +150,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.dateTitle.text = self.participatedEvents[indexPath.row].title
             let commentaryNumber = self.participatedEvents[indexPath.row].commentaries.count
             cell.commentaries.text = String(format: "%d commentaires", commentaryNumber)
+            cell.eventParticipatedView.addShadow()
             return cell
         }
     }
@@ -128,7 +164,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ComingEventsTableViewCell", for: indexPath) as! ComingEventsTableViewCell
-        cell.eventCreator.text = "Eléa la plus forte en dev IOS"
+        cell.eventCreator.text = "FELIX"
         return cell
         
     }

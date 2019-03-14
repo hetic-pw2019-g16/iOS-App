@@ -28,16 +28,16 @@ extension UILabel {
     
     
     func setClunchTitleColor() {
-        self.textColor = UIColor(red: 77, green: 77, blue: 77, alpha: 1)
+        self.textColor = UIColor(red: 77/255, green: 77/255, blue: 77/255, alpha: 1)
     }
     func setSize(size:CGFloat) {
         self.font = self.font.withSize(size)
     }
     func setClunchSubTitleTextColor() {
-        self.textColor = UIColor(red: 128, green: 128, blue: 128, alpha: 1)
+        self.textColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
     }
     func setClunchButtonColor() {
-        self.textColor = UIColor(red: 89, green: 190, blue: 176, alpha: 1)
+        self.textColor = UIColor(red: 89/255, green: 190/255, blue: 176/255, alpha: 1)
     }
 
     

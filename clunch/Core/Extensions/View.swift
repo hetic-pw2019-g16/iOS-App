@@ -30,4 +30,14 @@ extension UIView {
         self.layer.shouldRasterize = true
         self.layer.rasterizationScale = UIScreen.main.scale
     }
+    
+    func addShadow(withRadius:Bool = true, radius:CGFloat = 5)  {
+        if (withRadius){
+            self.layer.cornerRadius = radius
+        }
+        self.layer.shadowColor = UIColor.init(red: 218/255, green: 218/255, blue: 176/255, alpha: 0.5).cgColor
+        self.layer.shadowOpacity = 0.6
+        self.layer.shadowOffset = CGSize.zero
+        self.layer.shadowRadius = 10
+    }
 }

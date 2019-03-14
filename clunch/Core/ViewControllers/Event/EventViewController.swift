@@ -11,12 +11,21 @@ import EventKit
 import EventKitUI
 
 class EventViewController: UIViewController {
+    
+    @IBOutlet weak var eventView: UIView!
+    @IBOutlet weak var eventLabel: UILabel!
+    @IBOutlet weak var buttonCreateNewEvent: UIButton!
+    @IBOutlet weak var createNewEventLabel: UILabel!
+    
     var eventStore:EKEventStore!
     var calendarArray:[EKCalendar]!
     var allEvents:[EKEvent] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
         eventStore = EKEventStore.init()
 
         eventStore.requestAccess(to: .event, completion: {

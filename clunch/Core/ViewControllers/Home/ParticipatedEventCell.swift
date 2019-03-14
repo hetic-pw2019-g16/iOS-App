@@ -9,6 +9,8 @@
 import UIKit
 
 class ParticipatedEventCell: UICollectionViewCell {
+   
+    @IBOutlet weak var eventParticipatedView: UIView!
     @IBOutlet weak var dateTitle: UILabel!
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var eventCreator: UILabel!
