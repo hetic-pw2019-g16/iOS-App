@@ -37,6 +37,7 @@
 		E28BC1D82237C6DB00C47937 /* ParticipatedEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1D72237C6DB00C47937 /* ParticipatedEventCell.swift */; };
 		E28BC1DA2237E8AC00C47937 /* ComingEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1D92237E8AC00C47937 /* ComingEventsTableViewCell.swift */; };
 		E28BC1DE223A801000C47937 /* CreateEventStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1DD223A801000C47937 /* CreateEventStep1ViewController.swift */; };
+		E28BC1E0223A928800C47937 /* CreateEventStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1DF223A928800C47937 /* CreateEventStep2ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		E28BC1D72237C6DB00C47937 /* ParticipatedEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatedEventCell.swift; sourceTree = "<group>"; };
 		E28BC1D92237E8AC00C47937 /* ComingEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingEventsTableViewCell.swift; sourceTree = "<group>"; };
 		E28BC1DD223A801000C47937 /* CreateEventStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventStep1ViewController.swift; sourceTree = "<group>"; };
+		E28BC1DF223A928800C47937 /* CreateEventStep2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventStep2ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 			children = (
 				2EDC38F421FE529B009227DB /* EventViewController.swift */,
 				E28BC1DD223A801000C47937 /* CreateEventStep1ViewController.swift */,
+				E28BC1DF223A928800C47937 /* CreateEventStep2ViewController.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -547,6 +550,7 @@
 				2E71B10F22035C26000BD472 /* EventItemTableViewCell.swift in Sources */,
 				2EDC38F721FE52A6009227DB /* HomeViewController.swift in Sources */,
 				2EDC38ED21FE447C009227DB /* Text.swift in Sources */,
+				E28BC1E0223A928800C47937 /* CreateEventStep2ViewController.swift in Sources */,
 				2EDC38FD21FEF660009227DB /* CategoryItem.swift in Sources */,
 				2E71B11122036E96000BD472 /* CalendarEventItemViewController.swift in Sources */,
 				2EE293F321ECD00F00EAE0A3 /* AppDelegate.swift in Sources */,

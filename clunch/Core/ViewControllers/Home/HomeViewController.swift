@@ -70,6 +70,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        buttonSeeMoreCreatedEvent.buttonStyle(color: UIButton.green)
+        buttonSeeMoreParticpatedEvent.buttonStyle(color: UIButton.green)
+        buttonSeeAllComingEvents.buttonStyle(color: UIButton.green)
+
+        
         self.buttonFindAnEvent.backgroundColor = .white
         self.buttonFindAnEvent.layer.cornerRadius = 5
         self.buttonFindAnEvent.layer.borderWidth = 2

@@ -8,15 +8,41 @@
 
 import UIKit
 
-extension UITextField {
-    func loginTextStyle() {
-        let yellow = UIColor(red:1.00, green:0.76, blue:0.33, alpha:1.0)
+extension UIButton {
+    
+        
+        static let yellow = UIColor(red:1.00, green:0.76, blue:0.33, alpha:1.0)
+        static let green = UIColor(red: 89/255, green: 190/255, blue: 176/255, alpha: 1)
+        static let greyblack = UIColor(red: 77/255, green: 77/255, blue: 77/255, alpha: 1)
+        static let greyclear = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
+        
+       func buttonStyle(color:UIColor) {
+        
         let bottomLine = CALayer()
         bottomLine.frame = CGRect.init(x: 0, y: self.frame.size.height, width: self.frame.size.width, height: 1)
-        bottomLine.backgroundColor = yellow.cgColor
+        bottomLine.backgroundColor = color.cgColor
+        self.layer.addSublayer(bottomLine)
+    }
+    
+}
+
+extension UITextField {
+    
+    static let yellow = UIColor(red:1.00, green:0.76, blue:0.33, alpha:1.0)
+    static let green = UIColor(red: 89/255, green: 190/255, blue: 176/255, alpha: 1)
+    static let greyblack = UIColor(red: 77/255, green: 77/255, blue: 77/255, alpha: 1)
+    static let greyclear = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
+    
+    func loginTextStyle(color:UIColor) {
+        
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect.init(x: 0, y: self.frame.size.height, width: self.frame.size.width, height: 1)
+        bottomLine.backgroundColor = color.cgColor
         self.borderStyle = UITextField.BorderStyle.none
         self.layer.addSublayer(bottomLine)
     }
+    
+    
 }
 
 extension UILabel {

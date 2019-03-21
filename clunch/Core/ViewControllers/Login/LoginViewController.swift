@@ -20,8 +20,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        usernameTextField.loginTextStyle()
-        passwordTextField.loginTextStyle()
+        usernameTextField.loginTextStyle(color: UITextField.yellow)
+        passwordTextField.loginTextStyle(color: UITextField.yellow)
     }
     
 

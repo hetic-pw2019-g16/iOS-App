@@ -1,5 +1,5 @@
 //
-//  CreateEventStep1ViewController.swift
+//  CreateEventStep2ViewController.swift
 //  clunch
 //
 //  Created by Macintosh on 14/03/2019.
@@ -8,23 +8,11 @@
 
 import UIKit
 
-class CreateEventStep1ViewController: UIViewController {
+class CreateEventStep2ViewController: UIViewController {
 
-    @IBOutlet var createEventStep1View: UIView!
-    @IBOutlet weak var buttonBack: UIButton!
-    @IBOutlet weak var RecipeNameTextField: UITextField!
-    @IBOutlet weak var buttonFindRecipe: UIButton!
-    @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var imageCreateEventStep1: UIImageView!
-    @IBOutlet weak var buttonNextStep: UIButton!
-    
-   
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        buttonFindRecipe.buttonStyle(color: UIButton.green)
-        self.buttonNextStep.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
     }
     
