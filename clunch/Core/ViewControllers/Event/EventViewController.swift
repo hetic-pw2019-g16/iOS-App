@@ -16,14 +16,19 @@ class EventViewController: UIViewController {
     @IBOutlet weak var eventLabel: UILabel!
     @IBOutlet weak var buttonCreateNewEvent: UIButton!
     @IBOutlet weak var createNewEventLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     /*
 //    var eventStore:EKEventStore!
     var calendarArray:[EKCalendar]!
     var allEvents:[EKEvent] = []
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+
+     override func viewDidLoad() {
+     super.viewDidLoad()
         
         
         eventStore = EKEventStore.init()

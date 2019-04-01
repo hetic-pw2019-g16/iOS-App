@@ -38,6 +38,7 @@
 		E28BC1DA2237E8AC00C47937 /* ComingEventsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1D92237E8AC00C47937 /* ComingEventsTableViewCell.swift */; };
 		E28BC1DE223A801000C47937 /* CreateEventStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1DD223A801000C47937 /* CreateEventStep1ViewController.swift */; };
 		E28BC1E0223A928800C47937 /* CreateEventStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1DF223A928800C47937 /* CreateEventStep2ViewController.swift */; };
+		E2DB3EE32251FD9C002443F1 /* CreateEventStep3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EE22251FD9C002443F1 /* CreateEventStep3ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		E28BC1D92237E8AC00C47937 /* ComingEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingEventsTableViewCell.swift; sourceTree = "<group>"; };
 		E28BC1DD223A801000C47937 /* CreateEventStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventStep1ViewController.swift; sourceTree = "<group>"; };
 		E28BC1DF223A928800C47937 /* CreateEventStep2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventStep2ViewController.swift; sourceTree = "<group>"; };
+		E2DB3EE22251FD9C002443F1 /* CreateEventStep3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventStep3ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				2EDC38F421FE529B009227DB /* EventViewController.swift */,
 				E28BC1DD223A801000C47937 /* CreateEventStep1ViewController.swift */,
 				E28BC1DF223A928800C47937 /* CreateEventStep2ViewController.swift */,
+				E2DB3EE22251FD9C002443F1 /* CreateEventStep3ViewController.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				2E32D987220041D500985453 /* RecipeViewController.swift in Sources */,
 				2E71B10F22035C26000BD472 /* EventItemTableViewCell.swift in Sources */,
 				2EDC38F721FE52A6009227DB /* HomeViewController.swift in Sources */,
+				E2DB3EE32251FD9C002443F1 /* CreateEventStep3ViewController.swift in Sources */,
 				2EDC38ED21FE447C009227DB /* Text.swift in Sources */,
 				E28BC1E0223A928800C47937 /* CreateEventStep2ViewController.swift in Sources */,
 				2EDC38FD21FEF660009227DB /* CategoryItem.swift in Sources */,

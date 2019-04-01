@@ -11,7 +11,6 @@ import UIKit
 class CreateEventStep1ViewController: UIViewController {
 
     @IBOutlet var createEventStep1View: UIView!
-    @IBOutlet weak var buttonBack: UIButton!
     @IBOutlet weak var RecipeNameTextField: UITextField!
     @IBOutlet weak var buttonFindRecipe: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -28,7 +27,11 @@ class CreateEventStep1ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func nextStepToStep2Button(_ sender: Any) {
+        let nextStepViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateEventStep2ViewController") as! CreateEventStep2ViewController
+        self.navigationController?.pushViewController(nextStepViewController, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -36,7 +39,5 @@ class CreateEventStep1ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
     */
-
 }
