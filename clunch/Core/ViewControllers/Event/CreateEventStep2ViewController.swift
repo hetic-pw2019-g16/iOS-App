@@ -24,7 +24,6 @@ class CreateEventStep2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
    
-        self.nextStepToStep3Button.buttonStyle(color: UIButton.green)
         self.nextStepToStep3Button.layer.cornerRadius = 5
     }
 

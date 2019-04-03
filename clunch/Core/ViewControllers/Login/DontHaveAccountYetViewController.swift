@@ -1,34 +1,28 @@
 //
-//  CreateEventStep3ViewController.swift
+//  DontHaveAccountYetViewController.swift
 //  clunch
 //
-//  Created by Macintosh on 01/04/2019.
+//  Created by Macintosh on 02/04/2019.
 //  Copyright © 2019 Clunch. All rights reserved.
 //
 
 import UIKit
 
-class CreateEventStep3ViewController: UIViewController {
+class DontHaveAccountYetViewController: UIViewController {
 
+    @IBOutlet weak var clunchLabel: UILabel!
+    @IBOutlet weak var backToConnexionScreenButton: UIButton!
+    @IBOutlet weak var instructionNAYLabel: UILabel!
+    @IBOutlet weak var notAccountYetLabel: UILabel!
     
-    @IBOutlet weak var nextStepToRecapScreenButton: UIButton!
-    @IBOutlet weak var nomberOfParticipantsLabel: UILabel!
-    @IBOutlet weak var addColleagueButton: UIButton!
-    @IBOutlet weak var invitColleagueLabel: UILabel!
-   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        self.nextStepToRecapScreenButton.layer.cornerRadius = 5
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func addColleagueButton(_ sender: Any) {
-    }
-    @IBAction func nextStepToRecapScreenButton(_ sender: Any) {
-        
+    @IBAction func backToConnexionScreenAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     /*

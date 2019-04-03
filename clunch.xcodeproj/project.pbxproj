@@ -39,6 +39,14 @@
 		E28BC1DE223A801000C47937 /* CreateEventStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1DD223A801000C47937 /* CreateEventStep1ViewController.swift */; };
 		E28BC1E0223A928800C47937 /* CreateEventStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E28BC1DF223A928800C47937 /* CreateEventStep2ViewController.swift */; };
 		E2DB3EE32251FD9C002443F1 /* CreateEventStep3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EE22251FD9C002443F1 /* CreateEventStep3ViewController.swift */; };
+		E2DB3EE5225362E9002443F1 /* PreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EE4225362E8002443F1 /* PreLoginViewController.swift */; };
+		E2DB3EE722536655002443F1 /* DontHaveAccountYetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EE622536655002443F1 /* DontHaveAccountYetViewController.swift */; };
+		E2DB3EE922539C84002443F1 /* ForgottenPasswordConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EE822539C84002443F1 /* ForgottenPasswordConfirmationViewController.swift */; };
+		E2DB3EEB225497C4002443F1 /* ForgottenPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EEA225497C4002443F1 /* ForgottenPasswordViewController.swift */; };
+		E2DB3EEE2254D5E7002443F1 /* BriefcaseMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EED2254D5E7002443F1 /* BriefcaseMenuViewController.swift */; };
+		E2DB3EF02254DA9B002443F1 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EEF2254DA9B002443F1 /* MyProfileViewController.swift */; };
+		E2DB3EF22254DAAF002443F1 /* MyRulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EF12254DAAF002443F1 /* MyRulesViewController.swift */; };
+		E2DB3EF42254DABE002443F1 /* MySettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EF32254DABE002443F1 /* MySettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +107,14 @@
 		E28BC1DD223A801000C47937 /* CreateEventStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventStep1ViewController.swift; sourceTree = "<group>"; };
 		E28BC1DF223A928800C47937 /* CreateEventStep2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventStep2ViewController.swift; sourceTree = "<group>"; };
 		E2DB3EE22251FD9C002443F1 /* CreateEventStep3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventStep3ViewController.swift; sourceTree = "<group>"; };
+		E2DB3EE4225362E8002443F1 /* PreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoginViewController.swift; sourceTree = "<group>"; };
+		E2DB3EE622536655002443F1 /* DontHaveAccountYetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DontHaveAccountYetViewController.swift; sourceTree = "<group>"; };
+		E2DB3EE822539C84002443F1 /* ForgottenPasswordConfirmationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordConfirmationViewController.swift; sourceTree = "<group>"; };
+		E2DB3EEA225497C4002443F1 /* ForgottenPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenPasswordViewController.swift; sourceTree = "<group>"; };
+		E2DB3EED2254D5E7002443F1 /* BriefcaseMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BriefcaseMenuViewController.swift; sourceTree = "<group>"; };
+		E2DB3EEF2254DA9B002443F1 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
+		E2DB3EF12254DAAF002443F1 /* MyRulesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRulesViewController.swift; sourceTree = "<group>"; };
+		E2DB3EF32254DABE002443F1 /* MySettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +189,7 @@
 		2EDC38E221FE433C009227DB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E2DB3EEC2254D59F002443F1 /* Briefcase */,
 				2EDC38F121FE5271009227DB /* Calendar */,
 				2EDC38F021FE5248009227DB /* Event */,
 				2EDC38EF21FE5240009227DB /* Home */,
@@ -185,7 +202,11 @@
 		2EDC38E321FE4355009227DB /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				E2DB3EE4225362E8002443F1 /* PreLoginViewController.swift */,
+				E2DB3EE622536655002443F1 /* DontHaveAccountYetViewController.swift */,
 				2EDC38E421FE437B009227DB /* LoginViewController.swift */,
+				E2DB3EEA225497C4002443F1 /* ForgottenPasswordViewController.swift */,
+				E2DB3EE822539C84002443F1 /* ForgottenPasswordConfirmationViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -346,6 +367,17 @@
 				9E0659C9FAA84CD2B09E05A5 /* Pods_clunch.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2DB3EEC2254D59F002443F1 /* Briefcase */ = {
+			isa = PBXGroup;
+			children = (
+				E2DB3EED2254D5E7002443F1 /* BriefcaseMenuViewController.swift */,
+				E2DB3EEF2254DA9B002443F1 /* MyProfileViewController.swift */,
+				E2DB3EF12254DAAF002443F1 /* MyRulesViewController.swift */,
+				E2DB3EF32254DABE002443F1 /* MySettingsViewController.swift */,
+			);
+			path = Briefcase;
 			sourceTree = "<group>";
 		};
 		E6D329EDE7A182C9D082A535 /* Pods */ = {
@@ -540,15 +572,21 @@
 				2E32D98521FF527200985453 /* DetailRecipeViewController.swift in Sources */,
 				E28BC1DE223A801000C47937 /* CreateEventStep1ViewController.swift in Sources */,
 				2E32D98A2200430800985453 /* RecipeItem.swift in Sources */,
+				E2DB3EEE2254D5E7002443F1 /* BriefcaseMenuViewController.swift in Sources */,
+				E2DB3EF22254DAAF002443F1 /* MyRulesViewController.swift in Sources */,
 				2E32D98D2200468200985453 /* RecipeItemTableViewCell.swift in Sources */,
 				2EDC38F321FE528B009227DB /* CalendarViewController.swift in Sources */,
 				E28BC1D82237C6DB00C47937 /* ParticipatedEventCell.swift in Sources */,
 				2E8AE3E52201E24700C58E57 /* CalendarItemCell.swift in Sources */,
+				E2DB3EF42254DABE002443F1 /* MySettingsViewController.swift in Sources */,
 				E28BC1D62237C6CC00C47937 /* CreatedEventCell.swift in Sources */,
 				2EDC390121FEF82E009227DB /* CategoryItemTableViewCell.swift in Sources */,
 				2EDC38E521FE437B009227DB /* LoginViewController.swift in Sources */,
 				2EDC38F521FE529B009227DB /* EventViewController.swift in Sources */,
 				2EE8709B2201F99A006F0BA3 /* Event.swift in Sources */,
+				E2DB3EE722536655002443F1 /* DontHaveAccountYetViewController.swift in Sources */,
+				E2DB3EF02254DA9B002443F1 /* MyProfileViewController.swift in Sources */,
+				E2DB3EE5225362E9002443F1 /* PreLoginViewController.swift in Sources */,
 				2E32D987220041D500985453 /* RecipeViewController.swift in Sources */,
 				2E71B10F22035C26000BD472 /* EventItemTableViewCell.swift in Sources */,
 				2EDC38F721FE52A6009227DB /* HomeViewController.swift in Sources */,
@@ -559,10 +597,12 @@
 				2E71B11122036E96000BD472 /* CalendarEventItemViewController.swift in Sources */,
 				2EE293F321ECD00F00EAE0A3 /* AppDelegate.swift in Sources */,
 				2E71B10C22033DDA000BD472 /* View.swift in Sources */,
+				E2DB3EEB225497C4002443F1 /* ForgottenPasswordViewController.swift in Sources */,
 				E28BC1DA2237E8AC00C47937 /* ComingEventsTableViewCell.swift in Sources */,
 				2EDC38F921FE52B6009227DB /* CategoryViewController.swift in Sources */,
 				2E32D98F2200D13D00985453 /* TableVIew.swift in Sources */,
 				2E71B10A22031769000BD472 /* CalendarEventViewController.swift in Sources */,
+				E2DB3EE922539C84002443F1 /* ForgottenPasswordConfirmationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

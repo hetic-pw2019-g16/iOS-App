@@ -10,7 +10,10 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var forgottenPasswordButton: UIButton!
+    @IBOutlet weak var connectToAnotherAccountButton: UIButton!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var clunchLabel: UILabel!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     
@@ -20,11 +23,21 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.loginButton.layer.cornerRadius = 5
+        //passwordTextField.loginTextStyleNear(color: UITextField.greyclear)
         
-        passwordTextField.loginTextStyle(color: UITextField.yellow)
     }
     
+    
 
+    
+    @IBAction func connectToAnotherAccountAction(_ sender: Any) {
+             self.navigationController?.popViewController(animated: true)
+    }
+    @IBAction func forgottenPasswordAction(_ sender: Any) {
+        let forgottenPasswordViewController = self.storyboard?.instantiateViewController(withIdentifier: "ForgottenPasswordViewController") as! ForgottenPasswordViewController
+        self.navigationController?.pushViewController(forgottenPasswordViewController, animated: true)
+    }
     @IBAction func loginAction(_ sender: Any) {
         
         // TODO: Verifier les values des champs

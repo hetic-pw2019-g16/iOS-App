@@ -139,6 +139,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreatedEventCell",
                                                           for: indexPath) as! CreatedEventCell
             
+           // cell.event = self.createdEvents[indexPath.row] // regarder EventItemTableViewCell.item
             cell.dateTitle.text = self.createdEvents[indexPath.row].title
             let commentaryNumber = self.createdEvents[indexPath.row].commentaries.count
             cell.commentaries.text = String(format: "%d commentaires", commentaryNumber)

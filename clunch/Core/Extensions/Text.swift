@@ -42,6 +42,15 @@ extension UITextField {
         self.layer.addSublayer(bottomLine)
     }
     
+    func loginTextStyleNear(color:UIColor) {
+        
+        let bottomLine = CALayer()
+        bottomLine.frame = CGRect.init(x: 0, y: self.frame.size.height-12, width: self.frame.size.width, height: 1)
+        bottomLine.backgroundColor = color.cgColor
+        self.borderStyle = UITextField.BorderStyle.none
+        self.layer.addSublayer(bottomLine)
+    }
+    
     
 }
 
