@@ -1,5 +1,5 @@
 //
-//  MyProfileViewController.swift
+//  ProfileCompletedViewController.swift
 //  clunch
 //
 //  Created by Macintosh on 03/04/2019.
@@ -8,18 +8,23 @@
 
 import UIKit
 
-class MyProfileViewController: UIViewController {
+class ProfileCompletedViewController: UIViewController {
 
-    @IBOutlet weak var chooseImageButton: UIButton!
     
+    @IBOutlet weak var findEventButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+         self.findEventButton.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func findEventAction(_ sender: Any) {
+        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -18,6 +18,7 @@ class ForgottenPasswordConfirmationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+         self.loginButton.layer.cornerRadius = 5
         // Do any additional setup after loading the view.
     }
     @IBAction func loginAction(_ sender: Any) {
