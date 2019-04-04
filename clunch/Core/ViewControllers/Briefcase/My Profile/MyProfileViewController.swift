@@ -16,6 +16,7 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var userNameTextField: UITextField!
     @IBOutlet weak var validateProfileButton: UIButton!
     @IBOutlet weak var miniBioLabel: UILabel!
+    @IBOutlet weak var addPhotoLabel: UILabel!
     @IBOutlet weak var miniBioTextView: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()

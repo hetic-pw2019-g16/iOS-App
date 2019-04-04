@@ -106,6 +106,8 @@ class HomeViewController: UIViewController {
     
     @IBAction func buttonSeeMoreCreatedEvent(_ sender: Any) {
     }
+
+
     
     @IBAction func buttonSeeMoreParticipatedEvent(_ sender: Any) {
     }
@@ -121,6 +123,8 @@ class HomeViewController: UIViewController {
     }
     
 }
+
+
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -171,6 +175,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
         
     }
+    
     
     
 }

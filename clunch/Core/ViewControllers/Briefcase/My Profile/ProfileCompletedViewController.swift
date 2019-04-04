@@ -21,8 +21,8 @@ class ProfileCompletedViewController: UIViewController {
     }
     
     @IBAction func findEventAction(_ sender: Any) {
-        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
-        self.navigationController?.pushViewController(nextViewController, animated: true)
+//        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
+//        self.navigationController?.pushViewController(nextViewController, animated: true)
     }
     
     /*
