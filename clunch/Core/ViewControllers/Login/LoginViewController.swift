@@ -50,9 +50,8 @@ class LoginViewController: UIViewController {
         //      Case 2: False
         //          Throw Error Empty Fields
         
-        if let navigationController = self.storyboard?.instantiateViewController(withIdentifier: navigationHomeIdentifier) {
-            
-            UIApplication.shared.keyWindow?.rootViewController = navigationController
-        }
+        let navigationController = UIStoryboard(name: "Content", bundle: nil).instantiateViewController(withIdentifier: navigationHomeIdentifier) as! UITabBarController
+        
+        self.navigationController?.pushViewController(navigationController, animated: true)
     }
 }

@@ -18,7 +18,9 @@
 		2E71B10F22035C26000BD472 /* EventItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E71B10E22035C26000BD472 /* EventItemTableViewCell.swift */; };
 		2E71B11122036E96000BD472 /* CalendarEventItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E71B11022036E96000BD472 /* CalendarEventItemViewController.swift */; };
 		2E7EC0442255FCDF001C31D4 /* CreateEvent.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7EC0432255FCDF001C31D4 /* CreateEvent.storyboard */; };
-		2E7EC0462255FDB6001C31D4 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7EC0452255FDB6001C31D4 /* Calendar.storyboard */; };
+		2E7EC04A225602AC001C31D4 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7EC049225602AC001C31D4 /* Calendar.storyboard */; };
+		2E7EC04C2256039E001C31D4 /* Briefcase.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7EC04B2256039E001C31D4 /* Briefcase.storyboard */; };
+		2E7EC04F225603F2001C31D4 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7EC04E225603F2001C31D4 /* Content.storyboard */; };
 		2E8AE3E52201E24700C58E57 /* CalendarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8AE3E42201E24700C58E57 /* CalendarItemCell.swift */; };
 		2EA01DA12255E95E003B77B7 /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA01DA02255E95E003B77B7 /* Recipe.storyboard */; };
 		2EDC38E521FE437B009227DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC38E421FE437B009227DB /* LoginViewController.swift */; };
@@ -82,7 +84,9 @@
 		2E71B10E22035C26000BD472 /* EventItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItemTableViewCell.swift; sourceTree = "<group>"; };
 		2E71B11022036E96000BD472 /* CalendarEventItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventItemViewController.swift; sourceTree = "<group>"; };
 		2E7EC0432255FCDF001C31D4 /* CreateEvent.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateEvent.storyboard; sourceTree = "<group>"; };
-		2E7EC0452255FDB6001C31D4 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		2E7EC049225602AC001C31D4 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		2E7EC04B2256039E001C31D4 /* Briefcase.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Briefcase.storyboard; sourceTree = "<group>"; };
+		2E7EC04E225603F2001C31D4 /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
 		2E8AE3E42201E24700C58E57 /* CalendarItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemCell.swift; sourceTree = "<group>"; };
 		2EA01DA02255E95E003B77B7 /* Recipe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipe.storyboard; sourceTree = "<group>"; };
 		2EDC38E421FE437B009227DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -188,7 +192,9 @@
 			children = (
 				2EA01DA02255E95E003B77B7 /* Recipe.storyboard */,
 				2E7EC0432255FCDF001C31D4 /* CreateEvent.storyboard */,
-				2E7EC0452255FDB6001C31D4 /* Calendar.storyboard */,
+				2E7EC049225602AC001C31D4 /* Calendar.storyboard */,
+				2E7EC04B2256039E001C31D4 /* Briefcase.storyboard */,
+				2E7EC04E225603F2001C31D4 /* Content.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -523,9 +529,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E7EC0462255FDB6001C31D4 /* Calendar.storyboard in Resources */,
+				2E7EC04C2256039E001C31D4 /* Briefcase.storyboard in Resources */,
+				2E7EC04A225602AC001C31D4 /* Calendar.storyboard in Resources */,
 				2EA01DA12255E95E003B77B7 /* Recipe.storyboard in Resources */,
 				2EE293FF21ECD01000EAE0A3 /* LaunchScreen.storyboard in Resources */,
+				2E7EC04F225603F2001C31D4 /* Content.storyboard in Resources */,
 				2EE293FC21ECD01000EAE0A3 /* Assets.xcassets in Resources */,
 				2EE293FA21ECD00F00EAE0A3 /* Main.storyboard in Resources */,
 				2E7EC0442255FCDF001C31D4 /* CreateEvent.storyboard in Resources */,

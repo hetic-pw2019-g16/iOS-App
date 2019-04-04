@@ -60,7 +60,7 @@ class CalendarViewController: UIViewController {
     }
     
     func showPopUp(date: Date) {
-        let popUp = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "eventPopUp") as! CalendarEventViewController
+        let popUp = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "eventPopUp") as! CalendarEventViewController
 
         popUp.date = date
         let popUpNav = UINavigationController(rootViewController: popUp)
