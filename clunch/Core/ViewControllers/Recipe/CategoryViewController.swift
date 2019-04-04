@@ -23,7 +23,7 @@ class CategoryViewController: UIViewController {
         tableView.categotyStyle()
         // Cell Style
         
-        self.title = "Recettes"
+        self.title = "Recette"
         
         // TODO: API Call for all categories
         categories.append(CategoryItem(name: "Healthy"))
