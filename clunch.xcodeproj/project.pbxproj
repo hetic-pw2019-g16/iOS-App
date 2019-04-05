@@ -46,6 +46,7 @@
 		E2CFB9732254F8890077B58D /* ProfileCompletedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFB9722254F8890077B58D /* ProfileCompletedViewController.swift */; };
 		E2CFB97622562F310077B58D /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFB97522562F310077B58D /* ChangePasswordViewController.swift */; };
 		E2CFB97822563AB20077B58D /* PasswordChangedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFB97722563AB20077B58D /* PasswordChangedViewController.swift */; };
+		E2CFB97A22577E700077B58D /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFB97922577E700077B58D /* ContactUsViewController.swift */; };
 		E2DB3EE32251FD9C002443F1 /* CreateEventStep3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EE22251FD9C002443F1 /* CreateEventStep3ViewController.swift */; };
 		E2DB3EE5225362E9002443F1 /* PreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EE4225362E8002443F1 /* PreLoginViewController.swift */; };
 		E2DB3EE722536655002443F1 /* DontHaveAccountYetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EE622536655002443F1 /* DontHaveAccountYetViewController.swift */; };
@@ -122,6 +123,7 @@
 		E2CFB9722254F8890077B58D /* ProfileCompletedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCompletedViewController.swift; sourceTree = "<group>"; };
 		E2CFB97522562F310077B58D /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		E2CFB97722563AB20077B58D /* PasswordChangedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangedViewController.swift; sourceTree = "<group>"; };
+		E2CFB97922577E700077B58D /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
 		E2DB3EE22251FD9C002443F1 /* CreateEventStep3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventStep3ViewController.swift; sourceTree = "<group>"; };
 		E2DB3EE4225362E8002443F1 /* PreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoginViewController.swift; sourceTree = "<group>"; };
 		E2DB3EE622536655002443F1 /* DontHaveAccountYetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DontHaveAccountYetViewController.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				E2DB3EF32254DABE002443F1 /* MySettingsViewController.swift */,
+				E2CFB97922577E700077B58D /* ContactUsViewController.swift */,
 				E2CFB97522562F310077B58D /* ChangePasswordViewController.swift */,
 				E2CFB97722563AB20077B58D /* PasswordChangedViewController.swift */,
 			);
@@ -647,6 +650,7 @@
 				E2CFB97622562F310077B58D /* ChangePasswordViewController.swift in Sources */,
 				2EDC38F721FE52A6009227DB /* HomeViewController.swift in Sources */,
 				E2DB3EE32251FD9C002443F1 /* CreateEventStep3ViewController.swift in Sources */,
+				E2CFB97A22577E700077B58D /* ContactUsViewController.swift in Sources */,
 				2EDC38ED21FE447C009227DB /* Text.swift in Sources */,
 				E28BC1E0223A928800C47937 /* CreateEventStep2ViewController.swift in Sources */,
 				2EDC38FD21FEF660009227DB /* CategoryItem.swift in Sources */,

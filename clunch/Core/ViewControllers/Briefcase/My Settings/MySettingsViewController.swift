@@ -26,8 +26,8 @@ class MySettingsViewController: UIViewController {
     }
 
     @IBAction func contactUSAction(_ sender: Any) {
-        //let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ContactUsViewController") as! ContactUsViewController
-        //self.navigationController?.pushViewController(nextViewController, animated: true)
+        let nextViewController = self.storyboard?.instantiateViewController(withIdentifier: "ContactUsViewController") as! ContactUsViewController
+        self.navigationController?.pushViewController(nextViewController, animated: true)
         
     }
     
