@@ -56,14 +56,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonCreateAnEvent: UIButton!
     
     
-    var createdEvents:[Event] = [Event(title: "Event 1",
+    var createdEvents:[Event] = [Event(title: "24",
                                        commentaries: ["Commentaire 1", "Commentaire 2"])]
     
-    var participatedEvents:[Event] = [Event(title:"Participated 1",
+    var participatedEvents:[Event] = [Event(title:"12",
                                             commentaries: ["Commentaire 1"]),
-                                      Event(title: "eheheh 2",
+                                      Event(title: "15",
                                             commentaries: ["Commentaire 1", "Commentaire 2", "Commentaire 3"]),
-                                      Event(title: "eheheh 3",
+                                      Event(title: "26",
                                             commentaries: ["Commentaire 1", "Commentaire 2", "Commentaire 3"])]
     
     
