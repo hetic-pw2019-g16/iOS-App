@@ -11,7 +11,10 @@ import UIKit
 class HomeViewController: UIViewController {
 
     
-    //MARK:-  Block 0
+    //MARK:-  Header
+    
+    @IBOutlet weak var profileButton: UIBarButtonItem!
+    @IBOutlet weak var notificationButton: UIBarButtonItem!
     //MARK:-  myEventsView
     @IBOutlet weak var myEventsView: UIView!
     @IBOutlet weak var homeCreatedEvent: UILabel!
@@ -57,14 +60,16 @@ class HomeViewController: UIViewController {
     
     
     var createdEvents:[Event] = [Event(title: "24",
-                                       commentaries: ["Commentaire 1", "Commentaire 2"])]
+                                       commentaries: ["Commentaire 1", "Commentaire 2"],
+        meal: "Pâtes bolognaise")]
     
     var participatedEvents:[Event] = [Event(title:"12",
-                                            commentaries: ["Commentaire 1"]),
+                                            commentaries: ["Commentaire 1"], meal: "Pâtes au saumon"),
                                       Event(title: "15",
-                                            commentaries: ["Commentaire 1", "Commentaire 2", "Commentaire 3"]),
+                                            meal: "Pâtes au thon"),
                                       Event(title: "26",
-                                            commentaries: ["Commentaire 1", "Commentaire 2", "Commentaire 3"])]
+                                            commentaries: ["Commentaire 1", "Commentaire 2", "Commentaire 3"],
+                                      meal: "Pâtes à la sauce orange")]
     
     
     override func viewDidLoad() {
@@ -104,6 +109,15 @@ class HomeViewController: UIViewController {
 
     }
     
+    
+    @IBAction func briefcaseAction(_ sender: Any) {
+        let vc2 = UIStoryboard(name: "Briefcase", bundle: nil).instantiateViewController(withIdentifier: "BriefcaseMenuViewController") as! BriefcaseMenuViewController
+       // let vc = self.storyboard?.instantiateViewController(withIdentifier: "BriefcaseMenuViewController") as! BriefcaseMenuViewController
+        self.navigationController?.pushViewController(vc2, animated: true)
+    }
+    
+    @IBAction func notificationAction(_ sender: Any) {
+    }
     @IBAction func buttonSeeMoreCreatedEvent(_ sender: Any) {
     }
 
@@ -145,6 +159,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             
            // cell.event = self.createdEvents[indexPath.row] // regarder EventItemTableViewCell.item
             cell.dateTitle.text = self.createdEvents[indexPath.row].title
+            cell.mealTitle.text = self.participatedEvents[indexPath.row].meal
             let commentaryNumber = self.createdEvents[indexPath.row].commentaries.count
             cell.commentaries.text = String(format: "%d commentaires", commentaryNumber)
             cell.eventCreatedViewCell.addShadow()
@@ -155,6 +170,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
                                                           for: indexPath) as! ParticipatedEventCell
             
             cell.dateTitle.text = self.participatedEvents[indexPath.row].title
+            cell.mealTitle.text = self.participatedEvents[indexPath.row].meal
             let commentaryNumber = self.participatedEvents[indexPath.row].commentaries.count
             cell.commentaries.text = String(format: "%d commentaires", commentaryNumber)
             cell.eventParticipatedView.addShadow()

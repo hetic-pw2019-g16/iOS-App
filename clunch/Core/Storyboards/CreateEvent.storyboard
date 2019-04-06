@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LAX-Bx-OSu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LAX-Bx-OSu">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Event View Controller-->
+        <!--CREATION REPAS-->
         <scene sceneID="Gdg-dp-NBB">
             <objects>
                 <viewController storyboardIdentifier="EventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LAX-Bx-OSu" customClass="EventViewController" customModule="clunch" customModuleProvider="target" sceneMemberID="viewController">
@@ -126,9 +126,13 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsC-vS-wqP">
-                                        <rect key="frame" x="12" y="567" width="351" height="30"/>
-                                        <state key="normal" title="blablabla">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsC-vS-wqP">
+                                        <rect key="frame" x="165" y="552" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="45" id="GS1-HS-GAe"/>
+                                            <constraint firstAttribute="height" constant="45" id="qYh-hs-f2V"/>
+                                        </constraints>
+                                        <state key="normal" image="plus">
                                             <color key="titleColor" red="0.34901960780000002" green="0.74509803919999995" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -149,13 +153,12 @@
                                     <constraint firstItem="Kd0-sT-htr" firstAttribute="leading" secondItem="VpA-CN-KwB" secondAttribute="leading" constant="12" id="6OO-Ld-RC2"/>
                                     <constraint firstItem="0uf-XV-hWd" firstAttribute="leading" secondItem="VpA-CN-KwB" secondAttribute="leading" constant="30" id="74t-ff-yyg"/>
                                     <constraint firstAttribute="bottom" secondItem="Kd0-sT-htr" secondAttribute="bottom" constant="8" id="7d9-hN-OXo"/>
-                                    <constraint firstAttribute="trailing" secondItem="rsC-vS-wqP" secondAttribute="trailing" constant="12" id="C05-kI-0Z5"/>
                                     <constraint firstAttribute="trailing" secondItem="Kd0-sT-htr" secondAttribute="trailing" constant="12" id="Dh3-VD-xVg"/>
                                     <constraint firstItem="X7V-dX-5t8" firstAttribute="top" secondItem="0uf-XV-hWd" secondAttribute="bottom" constant="12" id="GJM-UU-bSA"/>
-                                    <constraint firstItem="rsC-vS-wqP" firstAttribute="leading" secondItem="VpA-CN-KwB" secondAttribute="leading" constant="12" id="KF2-Di-a0U"/>
                                     <constraint firstAttribute="bottom" secondItem="rsC-vS-wqP" secondAttribute="bottom" constant="50" id="PXN-9l-lAh"/>
                                     <constraint firstAttribute="trailing" secondItem="0uf-XV-hWd" secondAttribute="trailing" constant="30" id="RVo-nW-Agb"/>
                                     <constraint firstAttribute="trailing" secondItem="X7V-dX-5t8" secondAttribute="trailing" id="VrR-eI-541"/>
+                                    <constraint firstItem="rsC-vS-wqP" firstAttribute="centerX" secondItem="VpA-CN-KwB" secondAttribute="centerX" id="ZnH-in-WP2"/>
                                     <constraint firstItem="Kd0-sT-htr" firstAttribute="top" secondItem="rsC-vS-wqP" secondAttribute="bottom" constant="8" id="dG3-5b-fuF"/>
                                     <constraint firstItem="X7V-dX-5t8" firstAttribute="leading" secondItem="VpA-CN-KwB" secondAttribute="leading" id="mkc-x9-0zz"/>
                                 </constraints>
@@ -170,7 +173,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fCi-DU-gqp"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Jg1-Nu-vke"/>
+                    <navigationItem key="navigationItem" title="CREATION REPAS" id="Jg1-Nu-vke">
+                        <barButtonItem key="backBarButtonItem" title="Retour" id="oeO-n2-6Yj"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="buttonCreateNewEvent" destination="rsC-vS-wqP" id="pah-Yw-OhP"/>
                         <outlet property="createNewEventLabel" destination="Kd0-sT-htr" id="oF3-Kq-oEb"/>
@@ -566,8 +571,9 @@
     </scenes>
     <resources>
         <image name="Ingredients" width="527" height="485"/>
-        <image name="Participants_ (1)" width="303" height="302"/>
+        <image name="Participants_ (1)" width="606" height="604"/>
         <image name="calendar" width="496" height="519"/>
         <image name="creator_event2" width="156" height="160"/>
+        <image name="plus" width="122" height="120"/>
     </resources>
 </document>

@@ -11,9 +11,11 @@ import Foundation
 class Event {
     var title: String!
     var commentaries:[String]
+    var meal: String!
     
-    init(title: String, commentaries:[String] = []) {
+    init(title: String, commentaries:[String] = [], meal: String) {
         self.title = title
         self.commentaries = commentaries
+        self.meal = meal
     }
 }

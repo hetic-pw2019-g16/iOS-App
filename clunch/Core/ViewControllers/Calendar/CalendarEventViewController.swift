@@ -30,9 +30,9 @@ class CalendarEventViewController: UIViewController {
         popUp.popUp()
         
         // TODO Current Day + User related events
-        events.append(Event(title: "Vincent", commentaries: []))
-        events.append(Event(title: "Nicolas", commentaries: []))
-        events.append(Event(title: "Laurette", commentaries: []))
+        events.append(Event(title: "Vincent", commentaries: [], meal: "Pâtes sauce orange"))
+        events.append(Event(title: "Nicolas", commentaries: [], meal: "Pâtes Carbonara"))
+        events.append(Event(title: "Laurette", commentaries: [], meal: "Pâtes bolognaise"))
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

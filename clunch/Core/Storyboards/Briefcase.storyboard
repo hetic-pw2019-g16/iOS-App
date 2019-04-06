@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ayK-R7-P3d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IwU-Dg-vqw">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3h-FX-59C">
-                                <rect key="frame" x="70" y="264" width="265" height="36"/>
+                                <rect key="frame" x="70" y="220" width="265" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Mon profil">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="88q-UK-pWG">
-                                <rect key="frame" x="70" y="360" width="265" height="36"/>
+                                <rect key="frame" x="70" y="316" width="265" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Mes chartes à respecter">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5V6-9g-3qI">
-                                <rect key="frame" x="70" y="456" width="265" height="36"/>
+                                <rect key="frame" x="70" y="412" width="265" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="264" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Mes paramêtres">
@@ -50,7 +50,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FlK-s3-k0W">
-                                <rect key="frame" x="282" y="556" width="63" height="32"/>
+                                <rect key="frame" x="282" y="512" width="63" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Voir plus">
                                     <color key="titleColor" red="0.34901960780000002" green="0.74509803919999995" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -60,13 +60,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les conditions d'utilisations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMs-hA-37q">
-                                <rect key="frame" x="30" y="562" width="200" height="19.5"/>
+                                <rect key="frame" x="30" y="518" width="200" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p13-st-y7T">
-                                <rect key="frame" x="56" y="272" width="4" height="20"/>
+                                <rect key="frame" x="56" y="228" width="4" height="20"/>
                                 <color key="backgroundColor" red="0.34901960780000002" green="0.74509803919999995" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="2Fi-j0-xUG"/>
@@ -74,7 +74,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="or3-8C-z9k">
-                                <rect key="frame" x="56" y="368" width="4" height="20"/>
+                                <rect key="frame" x="56" y="324" width="4" height="20"/>
                                 <color key="backgroundColor" red="0.34901960780000002" green="0.74509803919999995" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="4" id="17u-T4-p2t"/>
@@ -84,7 +84,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zb-gt-SE1">
-                                <rect key="frame" x="56" y="464" width="4" height="20"/>
+                                <rect key="frame" x="56" y="420" width="4" height="20"/>
                                 <color key="backgroundColor" red="0.34901960780000002" green="0.74509803919999995" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="4" id="ErJ-JA-dMl"/>
@@ -94,28 +94,28 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_button" translatesAutoresizingMaskIntoConstraints="NO" id="bFC-Mj-Hgo">
-                                <rect key="frame" x="322" y="270" width="13" height="24"/>
+                                <rect key="frame" x="322" y="226" width="13" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="9mb-WP-VcR"/>
                                     <constraint firstAttribute="height" constant="24" id="TDd-Ei-DoS"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_button" translatesAutoresizingMaskIntoConstraints="NO" id="15K-Wk-y4c">
-                                <rect key="frame" x="322" y="366" width="13" height="24"/>
+                                <rect key="frame" x="322" y="322" width="13" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="MWr-lL-rCe"/>
                                     <constraint firstAttribute="height" constant="24" id="NTS-wf-RYH"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_button" translatesAutoresizingMaskIntoConstraints="NO" id="lg0-gR-9TW">
-                                <rect key="frame" x="322" y="462" width="13" height="24"/>
+                                <rect key="frame" x="322" y="418" width="13" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="mub-Xi-e3T"/>
                                     <constraint firstAttribute="height" constant="24" id="tcc-wg-giM"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C6k-ud-eGG">
-                                <rect key="frame" x="30" y="328" width="310" height="1"/>
+                                <rect key="frame" x="30" y="284" width="310" height="1"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="310" id="O29-of-r4Q"/>
@@ -125,7 +125,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9y0-ug-1Y9">
-                                <rect key="frame" x="30" y="426" width="310" height="1"/>
+                                <rect key="frame" x="30" y="382" width="310" height="1"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="310" id="Cw2-sS-9NT"/>
@@ -135,7 +135,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pdk-gd-ejb">
-                                <rect key="frame" x="30" y="522" width="310" height="1"/>
+                                <rect key="frame" x="30" y="478" width="310" height="1"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="7hR-oQ-bIt"/>
@@ -181,7 +181,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ALL-GN-R5q"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5gL-td-t0F"/>
+                    <navigationItem key="navigationItem" id="5gL-td-t0F">
+                        <barButtonItem key="backBarButtonItem" title="Retour" id="96f-eQ-vc4"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="myProfileButton" destination="Q3h-FX-59C" id="BIv-ys-JJ5"/>
                         <outlet property="myRulesButton" destination="88q-UK-pWG" id="Gqu-wV-rCO"/>
@@ -202,13 +204,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gestion des notifications" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zb2-sg-Oe9">
-                                <rect key="frame" x="32" y="200" width="235" height="24"/>
+                                <rect key="frame" x="32" y="270.5" width="235" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="woM-lI-J6c">
-                                <rect key="frame" x="32" y="244" width="200" height="70"/>
+                                <rect key="frame" x="32" y="314.5" width="200" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="Ddh-se-pCO"/>
                                     <constraint firstAttribute="width" constant="200" id="rNI-KO-LE2"/>
@@ -221,7 +223,7 @@ notifications pour mes
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LQP-3Z-HiL">
-                                <rect key="frame" x="32" y="334" width="176.5" height="38.5"/>
+                                <rect key="frame" x="32" y="404.5" width="176.5" height="38.5"/>
                                 <string key="text">Je souhaite recevoir des
 rappels d’événements</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -229,7 +231,7 @@ rappels d’événements</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h2S-Od-yLs">
-                                <rect key="frame" x="302" y="254" width="51" height="31"/>
+                                <rect key="frame" x="302" y="324.5" width="51" height="31"/>
                                 <color key="onTintColor" red="0.34901960780000002" green="0.74509803919999995" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="thumbTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
@@ -237,7 +239,7 @@ rappels d’événements</string>
                                 </connections>
                             </switch>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0m-rf-bHJ">
-                                <rect key="frame" x="32" y="412.5" width="310" height="1"/>
+                                <rect key="frame" x="32" y="483" width="310" height="1"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="M06-oF-q5N"/>
@@ -245,7 +247,7 @@ rappels d’événements</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xAf-D9-Oa2">
-                                <rect key="frame" x="32" y="508.5" width="310" height="1"/>
+                                <rect key="frame" x="32" y="579" width="310" height="1"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="ReE-37-kMx"/>
@@ -253,7 +255,7 @@ rappels d’événements</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doD-Dv-3MR">
-                                <rect key="frame" x="32" y="438.5" width="311" height="30"/>
+                                <rect key="frame" x="32" y="509" width="311" height="30"/>
                                 <state key="normal" title="Changer de mot de passe">
                                     <color key="titleColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -262,7 +264,7 @@ rappels d’événements</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GeI-x4-D13">
-                                <rect key="frame" x="32" y="534.5" width="311" height="30"/>
+                                <rect key="frame" x="32" y="605" width="311" height="30"/>
                                 <state key="normal" title="Nous contacter">
                                     <color key="titleColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -271,14 +273,14 @@ rappels d’événements</string>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_button" translatesAutoresizingMaskIntoConstraints="NO" id="208-gn-tgv">
-                                <rect key="frame" x="330" y="441.5" width="13" height="24"/>
+                                <rect key="frame" x="330" y="512" width="13" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="Pay-FA-CgQ"/>
                                     <constraint firstAttribute="height" constant="24" id="Sf3-K8-98m"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_button" translatesAutoresizingMaskIntoConstraints="NO" id="ABP-qO-asI">
-                                <rect key="frame" x="330" y="537.5" width="13" height="24"/>
+                                <rect key="frame" x="330" y="608" width="13" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Iqx-qM-DwI"/>
                                     <constraint firstAttribute="width" constant="13" id="YHa-mR-lGJ"/>
@@ -290,6 +292,7 @@ rappels d’événements</string>
                             <constraint firstItem="GeI-x4-D13" firstAttribute="top" secondItem="xAf-D9-Oa2" secondAttribute="bottom" constant="25" id="0JV-Gw-saS"/>
                             <constraint firstItem="ABP-qO-asI" firstAttribute="trailing" secondItem="GeI-x4-D13" secondAttribute="trailing" id="0Ky-XV-37a"/>
                             <constraint firstItem="yrB-Gh-k93" firstAttribute="trailing" secondItem="ABP-qO-asI" secondAttribute="trailing" constant="32" id="6CS-hb-L8X"/>
+                            <constraint firstItem="yrB-Gh-k93" firstAttribute="bottom" secondItem="GeI-x4-D13" secondAttribute="bottom" constant="32" id="92E-rI-biM"/>
                             <constraint firstItem="woM-lI-J6c" firstAttribute="top" secondItem="zb2-sg-Oe9" secondAttribute="bottom" constant="20" id="9KE-7q-hTk"/>
                             <constraint firstItem="woM-lI-J6c" firstAttribute="leading" secondItem="yrB-Gh-k93" secondAttribute="leading" constant="32" id="BU9-Cz-huX"/>
                             <constraint firstItem="yrB-Gh-k93" firstAttribute="trailing" secondItem="208-gn-tgv" secondAttribute="trailing" constant="32" id="CZY-wr-pGJ"/>
@@ -301,7 +304,6 @@ rappels d’événements</string>
                             <constraint firstItem="208-gn-tgv" firstAttribute="centerY" secondItem="doD-Dv-3MR" secondAttribute="centerY" id="Ylo-QI-ZuJ"/>
                             <constraint firstItem="208-gn-tgv" firstAttribute="trailing" secondItem="doD-Dv-3MR" secondAttribute="trailing" id="ai4-0s-ser"/>
                             <constraint firstItem="yrB-Gh-k93" firstAttribute="trailing" secondItem="h2S-Od-yLs" secondAttribute="trailing" constant="24" id="azM-pJ-6Rq"/>
-                            <constraint firstItem="zb2-sg-Oe9" firstAttribute="top" secondItem="yrB-Gh-k93" secondAttribute="top" constant="180" id="cf2-5e-GHT"/>
                             <constraint firstItem="GeI-x4-D13" firstAttribute="leading" secondItem="doD-Dv-3MR" secondAttribute="leading" id="chp-GS-tRi"/>
                             <constraint firstItem="LQP-3Z-HiL" firstAttribute="top" secondItem="woM-lI-J6c" secondAttribute="bottom" constant="20" id="elD-sx-Cgy"/>
                             <constraint firstItem="ABP-qO-asI" firstAttribute="centerY" secondItem="GeI-x4-D13" secondAttribute="centerY" id="gwD-bM-ae7"/>
@@ -346,37 +348,37 @@ rappels d’événements</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tapez votre ancien mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSU-Cv-S2w">
-                                <rect key="frame" x="32" y="220" width="311" height="21"/>
+                                <rect key="frame" x="32" y="316" width="311" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tapez votre nouveau mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JI-Ws-6uU">
-                                <rect key="frame" x="32" y="309" width="300" height="21"/>
+                                <rect key="frame" x="32" y="405" width="300" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirmez votre nouveau mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lc3-QC-ul0">
-                                <rect key="frame" x="32" y="398" width="300" height="21"/>
+                                <rect key="frame" x="32" y="494" width="300" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nouveau de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LoU-iG-Uba">
-                                <rect key="frame" x="32" y="338" width="300" height="30"/>
+                                <rect key="frame" x="32" y="434" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nouveau de passe" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hEH-Nk-LIX">
-                                <rect key="frame" x="32" y="427" width="300" height="30"/>
+                                <rect key="frame" x="32" y="523" width="300" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ancien mot de passe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P2a-eU-nPW">
-                                <rect key="frame" x="32" y="249" width="311" height="30"/>
+                                <rect key="frame" x="32" y="345" width="311" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -389,6 +391,7 @@ rappels d’événements</string>
                             <constraint firstItem="P2a-eU-nPW" firstAttribute="leading" secondItem="WSU-Cv-S2w" secondAttribute="leading" id="C7Z-Vx-HRm"/>
                             <constraint firstItem="LoU-iG-Uba" firstAttribute="top" secondItem="3JI-Ws-6uU" secondAttribute="bottom" constant="8" id="C8j-U9-cG9"/>
                             <constraint firstItem="hEH-Nk-LIX" firstAttribute="top" secondItem="Lc3-QC-ul0" secondAttribute="bottom" constant="8" id="CwH-Ns-UIF"/>
+                            <constraint firstItem="Jl7-Fj-Upb" firstAttribute="top" secondItem="hEH-Nk-LIX" secondAttribute="bottom" constant="32" id="DmF-NY-Cmu"/>
                             <constraint firstItem="3JI-Ws-6uU" firstAttribute="top" secondItem="P2a-eU-nPW" secondAttribute="bottom" constant="30" id="NFJ-ik-X65"/>
                             <constraint firstItem="Lc3-QC-ul0" firstAttribute="top" secondItem="LoU-iG-Uba" secondAttribute="bottom" constant="30" id="Nrr-tH-C5v"/>
                             <constraint firstItem="Lc3-QC-ul0" firstAttribute="centerX" secondItem="3JI-Ws-6uU" secondAttribute="centerX" id="WLx-kF-ALQ"/>
@@ -400,7 +403,6 @@ rappels d’événements</string>
                             <constraint firstItem="hEH-Nk-LIX" firstAttribute="leading" secondItem="WSU-Cv-S2w" secondAttribute="leading" id="gfk-MS-tLP"/>
                             <constraint firstItem="LoU-iG-Uba" firstAttribute="centerX" secondItem="3JI-Ws-6uU" secondAttribute="centerX" id="iKW-wR-LA9"/>
                             <constraint firstItem="P2a-eU-nPW" firstAttribute="top" secondItem="WSU-Cv-S2w" secondAttribute="bottom" constant="8" id="imI-Se-4Nc"/>
-                            <constraint firstItem="WSU-Cv-S2w" firstAttribute="top" secondItem="3Hl-mR-fuX" secondAttribute="top" constant="200" id="jEp-qC-9vC"/>
                             <constraint firstItem="P2a-eU-nPW" firstAttribute="centerX" secondItem="thZ-1l-GtK" secondAttribute="centerX" id="wDh-Ao-S6V"/>
                             <constraint firstItem="Jl7-Fj-Upb" firstAttribute="centerX" secondItem="thZ-1l-GtK" secondAttribute="centerX" id="xxi-Qh-riM"/>
                         </constraints>
@@ -767,27 +769,9 @@ tous les événéments</string>
             </objects>
             <point key="canvasLocation" x="5124" y="-1803"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="WbO-GD-dxs">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ayK-R7-P3d" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="A2N-TM-xdj">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="IwU-Dg-vqw" kind="relationship" relationship="rootViewController" id="biP-G8-r6B"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HgH-VE-T53" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3453.5999999999999" y="-1813.0434782608697"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="Participants_ (1)" width="303" height="302"/>
+        <image name="Participants_ (1)" width="606" height="604"/>
         <image name="arrow_button" width="26" height="48"/>
         <image name="chooseImageButton" width="216" height="322"/>
         <image name="dowload" width="48" height="46"/>

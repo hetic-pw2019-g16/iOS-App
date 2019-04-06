@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Accueil-->
+        <!--ACCUEIL-->
         <scene sceneID="8Cf-LB-Nff">
             <objects>
                 <viewController id="Df7-Zq-d7Y" customClass="HomeViewController" customModule="clunch" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xx4-nH-EvP">
-                                <rect key="frame" x="0.0" y="20" width="375" height="1611"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="1567"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWh-u4-p30">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="427"/>
@@ -838,7 +838,21 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="42u-t6-R34"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Accueil" image="home_logo" selectedImage="home_logo" id="BNq-4F-siz"/>
+                    <navigationItem key="navigationItem" title="ACCUEIL" id="GBJ-1m-91j">
+                        <barButtonItem key="backBarButtonItem" title="Retour" id="qwm-RK-ilv"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="profile" landscapeImage="profile" largeContentSizeImage="profile" style="plain" id="hiC-4k-WfB">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="briefcaseAction:" destination="Df7-Zq-d7Y" id="LK2-3V-eqc"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="notification" style="plain" id="RDT-4H-z3v">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="notificationAction:" destination="Df7-Zq-d7Y" id="9v7-zq-CuC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="375" height="1680"/>
                     <connections>
                         <outlet property="buttonCreateAnEvent" destination="dJv-Zd-8L5" id="1kb-4C-iZo"/>
@@ -865,7 +879,9 @@
                         <outlet property="newRecipe4" destination="aO6-FS-mXy" id="Eul-vb-dzu"/>
                         <outlet property="newRecipesLabel" destination="UGc-yb-MZX" id="YmK-bc-LeP"/>
                         <outlet property="newRecipesView" destination="cZR-Uz-BF8" id="lnX-r3-SNi"/>
+                        <outlet property="notificationButton" destination="RDT-4H-z3v" id="fuR-cs-8kG"/>
                         <outlet property="participatedEventCollectionView" destination="D7e-aK-jtL" id="y1I-wB-h5c"/>
+                        <outlet property="profileButton" destination="hiC-4k-WfB" id="dgV-dc-Pp2"/>
                         <outlet property="recipeTimeLabel1" destination="Nc5-HM-B35" id="ne0-ca-Qg2"/>
                         <outlet property="recipeTimeLabel2" destination="VFu-xi-a4s" id="rUH-2F-bj1"/>
                         <outlet property="recipeTimeLabel3" destination="d3o-P8-hA2" id="ftk-Ir-BH0"/>
@@ -878,7 +894,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r47-RW-JtI" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2541.5999999999999" y="-1464.4677661169417"/>
+            <point key="canvasLocation" x="3480.8000000000002" y="-1464.4677661169417"/>
         </scene>
         <!--CalendarViewController-->
         <scene sceneID="vq0-BB-sK4">
@@ -902,7 +918,7 @@
                         <color key="selectedImageTintColor" red="0.46274509800000002" green="0.88235294119999996" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Df7-Zq-d7Y" kind="relationship" relationship="viewControllers" id="NN9-0b-Tl0"/>
+                        <segue destination="VcI-Hn-OJM" kind="relationship" relationship="viewControllers" id="NN9-0b-Tl0"/>
                         <segue destination="7RK-Ig-t95" kind="relationship" relationship="viewControllers" id="cDv-F8-oRi"/>
                         <segue destination="00Z-DV-Q8T" kind="relationship" relationship="viewControllers" id="9BI-UY-DBJ"/>
                         <segue destination="4z4-8W-Gvt" kind="relationship" relationship="viewControllers" id="vAc-yp-Bf9"/>
@@ -921,6 +937,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="frU-3g-ftU">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="0.76078431369999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -940,6 +964,14 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1NX-tl-juC">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="0.76078431369999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -970,6 +1002,33 @@
             </objects>
             <point key="canvasLocation" x="3286" y="393"/>
         </scene>
+        <!--Accueil-->
+        <scene sceneID="49Y-yo-NeI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VcI-Hn-OJM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Accueil" image="home_logo" selectedImage="home_logo" id="BNq-4F-siz"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YVg-9A-RRV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="0.76078431369999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Df7-Zq-d7Y" kind="relationship" relationship="rootViewController" id="rnU-LM-Jow"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8L-j9-g8s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2541.5999999999999" y="-1464.9175412293855"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Quiche" width="752" height="200"/>
@@ -977,6 +1036,8 @@
         <image name="creator_event2" width="156" height="160"/>
         <image name="event_logo" width="24" height="22"/>
         <image name="home_logo" width="24" height="22"/>
+        <image name="notification" width="58" height="62"/>
+        <image name="profile" width="58" height="66"/>
         <image name="recipe_logo" width="24" height="24"/>
     </resources>
 </document>

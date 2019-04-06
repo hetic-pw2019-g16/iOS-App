@@ -37,9 +37,9 @@ class CalendarViewController: UIViewController {
         self.collectionView.calendarDelegate = self
         
         // TODO Current User related events
-        events.append(Event(title: "Vincent"))
-        events.append(Event(title: "Nicolas"))
-        events.append(Event(title: "Laurette"))
+        events.append(Event(title: "Vincent", meal: "hbjhsbx"))
+        events.append(Event(title: "Nicolas", meal: "jhdbzljjhn"))
+        events.append(Event(title: "Laurette", meal: "bdehjzs;vbz"))
     }
     
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState, date: Date! = nil) {
