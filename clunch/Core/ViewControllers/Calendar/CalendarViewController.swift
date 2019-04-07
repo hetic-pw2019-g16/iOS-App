@@ -10,8 +10,20 @@ import UIKit
 import JTAppleCalendar
 
 class CalendarViewController: UIViewController {
+    enum lastViewController {
+        case first
+        case second
+        case third
+    }
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var segmentedView: UIView!
+    
+    var lastVCToRemove: lastViewController = lastViewController.first
+    
+    
+    
+    //@IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: JTAppleCalendarView!
     
     let green = UIColor(red:0.35, green:0.75, blue:0.69, alpha:1.0)
@@ -28,10 +40,14 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Calendrier"
+         setupView()
         
+        self.title = "Calendrier"
+
+        /*
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        */
         
         self.collectionView.calendarDataSource = self
         self.collectionView.calendarDelegate = self
@@ -41,6 +57,123 @@ class CalendarViewController: UIViewController {
         events.append(Event(title: "Nicolas", meal: "jhdbzljjhn"))
         events.append(Event(title: "Laurette", meal: "bdehjzs;vbz"))
     }
+    
+    private func setupView() {
+        setupSegmentedControl()
+        updateView()
+    }
+    
+    private func setupSegmentedControl() {
+        // Configure Segmented Control
+        segmentedControl.addTarget(self, action: #selector(selectionDidChange(_:)), for: .valueChanged)
+        
+        // Select First Segment
+        segmentedControl.selectedSegmentIndex = 0
+    }
+    
+    @objc func selectionDidChange(_ sender: UISegmentedControl) {
+        updateView()
+    }
+    
+    private lazy var ComingEventsViewController: ComingEventsViewController = {
+        // Load Storyboard
+        let storyboard = UIStoryboard(name: "Calendar", bundle: Bundle.main)
+        
+        // Instantiate View Controller
+        var viewController = storyboard.instantiateViewController(withIdentifier: "ComingEventsViewController") as! ComingEventsViewController
+        
+        // Add View Controller as Child View Controller
+        self.add(asChildViewController: viewController)
+        
+        return viewController
+    }()
+    
+    private lazy var RegisteredEventsViewController: RegisteredEventsViewController = {
+        // Load Storyboard
+        let storyboard = UIStoryboard(name: "Calendar", bundle: Bundle.main)
+        
+        // Instantiate View Controller
+        var viewController = storyboard.instantiateViewController(withIdentifier: "RegisteredEventsViewController") as! RegisteredEventsViewController
+        
+        // Add View Controller as Child View Controller
+        self.add(asChildViewController: viewController)
+        
+        return viewController
+    }()
+    
+    private lazy var CreatedEventsViewController: CreatedEventsViewController = {
+        // Load Storyboard
+        let storyboard = UIStoryboard(name: "Calendar", bundle: Bundle.main)
+        
+        // Instantiate View Controller
+        var viewController = storyboard.instantiateViewController(withIdentifier: "CreatedEventsViewController") as! CreatedEventsViewController
+        
+        // Add View Controller as Child View Controller
+        self.add(asChildViewController: viewController)
+        
+        return viewController
+    }()
+    
+    private func add(asChildViewController viewController: UIViewController) {
+        // Add Child View Controller
+        self.addChild(viewController)
+        
+        // Add Child View as Subview
+        segmentedView.addSubview(viewController.view)
+        
+        // Configure Child View
+        viewController.view.frame = segmentedView.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        // Notify Child View Controller
+        viewController.didMove(toParent: self)
+    }
+    
+    private func remove(asChildViewController viewController: UIViewController) {
+        // Notify Child View Controller
+        viewController.willMove(toParent: nil)
+        
+        // Remove Child View From Superview
+        viewController.view.removeFromSuperview()
+        
+        // Notify Child View Controller
+        viewController.removeFromParent()
+    }
+    
+    private func updateView() {
+        
+        switch self.lastVCToRemove {
+        case .first:
+            remove(asChildViewController: ComingEventsViewController)
+            break
+        case .second:
+            remove(asChildViewController: RegisteredEventsViewController)
+            break
+        case .third:
+            remove(asChildViewController: CreatedEventsViewController)
+            break
+        }
+        
+        if segmentedControl.selectedSegmentIndex == 0 {
+            add(asChildViewController: ComingEventsViewController)
+            self.lastVCToRemove = .first
+            
+        } else if segmentedControl.selectedSegmentIndex == 1 {
+            add(asChildViewController: RegisteredEventsViewController)
+            self.lastVCToRemove = .second
+        } else {
+            add(asChildViewController: CreatedEventsViewController)
+            self.lastVCToRemove = .third
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState, date: Date! = nil) {
         guard let cell = view as? CalendarItemCell else { return }
@@ -69,6 +202,7 @@ class CalendarViewController: UIViewController {
 }
 
 
+/*
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -87,6 +221,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
 }
+*/
 
 extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource {
     

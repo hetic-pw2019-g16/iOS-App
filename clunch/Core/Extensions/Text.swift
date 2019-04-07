@@ -32,6 +32,7 @@ extension UITextField {
     static let green = UIColor(red: 89/255, green: 190/255, blue: 176/255, alpha: 1)
     static let greyblack = UIColor(red: 77/255, green: 77/255, blue: 77/255, alpha: 1)
     static let greyclear = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
+    static let pink = UIColor(red: 246/255, green: 105/255, blue: 118/255, alpha: 1)
     
     func loginTextStyle(color:UIColor) {
         

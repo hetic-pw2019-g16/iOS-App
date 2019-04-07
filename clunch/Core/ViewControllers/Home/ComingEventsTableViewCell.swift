@@ -14,7 +14,8 @@ class ComingEventsTableViewCell: UITableViewCell {
     @IBOutlet weak var mealTitle: UILabel!
     @IBOutlet weak var inscriptionNumber: UILabel!
     @IBOutlet weak var commentaries: UILabel!
-
+    @IBOutlet weak var backView: UIView!
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
