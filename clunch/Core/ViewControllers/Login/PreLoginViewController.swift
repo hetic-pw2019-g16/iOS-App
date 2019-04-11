@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class PreLoginViewController: UIViewController {
     
@@ -31,8 +33,25 @@ class PreLoginViewController: UIViewController {
     }
     
     @IBAction func nextStepToPassworScreenButton(_ sender: Any) {
-        let nextStepViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-        self.navigationController?.pushViewController(nextStepViewController, animated: true)
+        
+        let body = ["email": emailAddressTextField.text]
+        Alamofire.request("http://clunch.maximegrec.com/api/users/checks", method: .post, parameters: body as Parameters, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { response in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                let nextStepViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                nextStepViewController.email = self.emailAddressTextField.text ?? ""
+                self.navigationController?.pushViewController(nextStepViewController, animated: true)
+                break
+            case .failure(let error):
+                print(error)
+                break
+            }
+            
+        })
+
     }
     
 

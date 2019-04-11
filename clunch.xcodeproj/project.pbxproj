@@ -50,6 +50,8 @@
 		E2CFB97C225A36580077B58D /* ComingEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFB97B225A36580077B58D /* ComingEventsViewController.swift */; };
 		E2CFB97E225A36B10077B58D /* RegisteredEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFB97D225A36B10077B58D /* RegisteredEventsViewController.swift */; };
 		E2CFB980225A36D00077B58D /* CreatedEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFB97F225A36D00077B58D /* CreatedEventsViewController.swift */; };
+		E2CFB982225E6B880077B58D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFB981225E6B880077B58D /* User.swift */; };
+		E2CFB984225FB3F90077B58D /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CFB983225FB3F90077B58D /* UserDefaults.swift */; };
 		E2DB3EE32251FD9C002443F1 /* CreateEventStep3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EE22251FD9C002443F1 /* CreateEventStep3ViewController.swift */; };
 		E2DB3EE5225362E9002443F1 /* PreLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EE4225362E8002443F1 /* PreLoginViewController.swift */; };
 		E2DB3EE722536655002443F1 /* DontHaveAccountYetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2DB3EE622536655002443F1 /* DontHaveAccountYetViewController.swift */; };
@@ -130,6 +132,8 @@
 		E2CFB97B225A36580077B58D /* ComingEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingEventsViewController.swift; sourceTree = "<group>"; };
 		E2CFB97D225A36B10077B58D /* RegisteredEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredEventsViewController.swift; sourceTree = "<group>"; };
 		E2CFB97F225A36D00077B58D /* CreatedEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedEventsViewController.swift; sourceTree = "<group>"; };
+		E2CFB981225E6B880077B58D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		E2CFB983225FB3F90077B58D /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		E2DB3EE22251FD9C002443F1 /* CreateEventStep3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventStep3ViewController.swift; sourceTree = "<group>"; };
 		E2DB3EE4225362E8002443F1 /* PreLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLoginViewController.swift; sourceTree = "<group>"; };
 		E2DB3EE622536655002443F1 /* DontHaveAccountYetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DontHaveAccountYetViewController.swift; sourceTree = "<group>"; };
@@ -167,14 +171,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E32D988220042FC00985453 /* Recipe */ = {
-			isa = PBXGroup;
-			children = (
-				2E32D9892200430800985453 /* RecipeItem.swift */,
-			);
-			path = Recipe;
-			sourceTree = "<group>";
-		};
 		2E32D98B2200464200985453 /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				2EDC38EC21FE447C009227DB /* Text.swift */,
+				E2CFB983225FB3F90077B58D /* UserDefaults.swift */,
 				2E32D98E2200D13D00985453 /* TableVIew.swift */,
 				2E71B10B22033DDA000BD472 /* View.swift */,
 			);
@@ -306,19 +303,12 @@
 		2EDC38FA21FEF4DC009227DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2EE870992201F97B006F0BA3 /* Event */,
-				2E32D988220042FC00985453 /* Recipe */,
-				2EDC38FB21FEF4E7009227DB /* Category */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		2EDC38FB21FEF4E7009227DB /* Category */ = {
-			isa = PBXGroup;
-			children = (
+				2EE8709A2201F99A006F0BA3 /* Event.swift */,
+				E2CFB981225E6B880077B58D /* User.swift */,
+				2E32D9892200430800985453 /* RecipeItem.swift */,
 				2EDC38FC21FEF660009227DB /* CategoryItem.swift */,
 			);
-			path = Category;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		2EDC38FE21FEF7A4009227DB /* Cells */ = {
@@ -391,14 +381,6 @@
 				2EE2941621ECD01000EAE0A3 /* Info.plist */,
 			);
 			path = clunchUITests;
-			sourceTree = "<group>";
-		};
-		2EE870992201F97B006F0BA3 /* Event */ = {
-			isa = PBXGroup;
-			children = (
-				2EE8709A2201F99A006F0BA3 /* Event.swift */,
-			);
-			path = Event;
 			sourceTree = "<group>";
 		};
 		AF32C6D9DA91AC9D0EBB630D /* Frameworks */ = {
@@ -591,18 +573,22 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-clunch/Pods-clunch-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-clunch/Pods-clunch-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-clunch/Pods-clunch-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-clunch/Pods-clunch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EBE9438BA32F490C59DEBC8E /* [CP] Check Pods Manifest.lock */ = {
@@ -635,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E32D98521FF527200985453 /* DetailRecipeViewController.swift in Sources */,
+				E2CFB984225FB3F90077B58D /* UserDefaults.swift in Sources */,
 				E28BC1DE223A801000C47937 /* CreateEventStep1ViewController.swift in Sources */,
 				2E32D98A2200430800985453 /* RecipeItem.swift in Sources */,
 				E2DB3EEE2254D5E7002443F1 /* BriefcaseMenuViewController.swift in Sources */,
@@ -654,6 +641,7 @@
 				2EDC38F521FE529B009227DB /* EventViewController.swift in Sources */,
 				2EE8709B2201F99A006F0BA3 /* Event.swift in Sources */,
 				E2DB3EE722536655002443F1 /* DontHaveAccountYetViewController.swift in Sources */,
+				E2CFB982225E6B880077B58D /* User.swift in Sources */,
 				E2DB3EF02254DA9B002443F1 /* MyProfileViewController.swift in Sources */,
 				E2DB3EE5225362E9002443F1 /* PreLoginViewController.swift in Sources */,
 				2E32D987220041D500985453 /* RecipeViewController.swift in Sources */,
@@ -780,7 +768,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -835,7 +823,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

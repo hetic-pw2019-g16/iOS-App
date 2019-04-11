@@ -3,4 +3,6 @@ use_frameworks!
 
 target 'clunch' do
   pod 'JTAppleCalendar', '~> 7.0'
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
 end

@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    
+    var user: User = User()
     //MARK:-  Header
     
     @IBOutlet weak var profileButton: UIBarButtonItem!
@@ -74,6 +74,8 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let user:User = UserDefaults.getTheUserStored() ?? User()
         
         buttonSeeMoreCreatedEvent.buttonStyle(color: UIButton.green)
         buttonSeeMoreParticpatedEvent.buttonStyle(color: UIButton.green)

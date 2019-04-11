@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class LoginViewController: UIViewController {
 
@@ -19,6 +21,7 @@ class LoginViewController: UIViewController {
     
     
     let navigationHomeIdentifier = "navigation_home_identifier"
+    var email: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,8 +53,36 @@ class LoginViewController: UIViewController {
         //      Case 2: False
         //          Throw Error Empty Fields
         
-        let navigationController = UIStoryboard(name: "Content", bundle: nil).instantiateViewController(withIdentifier: navigationHomeIdentifier) as! UITabBarController
+        let params = ["email": email,"password": passwordTextField.text!]
+        Alamofire.request("http://clunch.maximegrec.com/api/login_check", method: .post, parameters: params as Parameters, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { response in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print(json)
+                
+               
+                
+                let userId = String(json["user"]["id"].int ?? -1)
+                let username = json["user"]["username"].string ?? ""
+                let email = json["user"]["email"].string ?? ""
+                let password = json["user"]["password"].string ?? ""
+                
+                let user = User.init(userId: userId, username: username, email: email, password: password)
+                
+                
+                UserDefaults.saveThisUser(user: user)
+                
+                let navigationController = UIStoryboard(name: "Content", bundle: nil).instantiateViewController(withIdentifier: self.navigationHomeIdentifier) as! UITabBarController
+                self.navigationController?.pushViewController(navigationController, animated: true)
+                break
+            case .failure(let error):
+                print(error)
+                break
         
-        self.navigationController?.pushViewController(navigationController, animated: true)
+        
+        
     }
+})
+}
 }
