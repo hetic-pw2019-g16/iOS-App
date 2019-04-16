@@ -39,8 +39,9 @@ class AuthService {
                 let username = json["user"]["username"].string ?? ""
                 let email = json["user"]["email"].string ?? ""
                 let token = json["token"].string ?? ""
+                let companyId = json["user"]["company"]["id"].int ?? 0
                 
-                let user = User.init(userId: userId, username: username, email: email, token: token)
+                let user = User.init(userId: userId, username: username, email: email, token: token, companyId: companyId)
                 
                 callBack(user, nil)
                 

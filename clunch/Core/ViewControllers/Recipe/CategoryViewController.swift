@@ -28,11 +28,9 @@ class CategoryViewController: UIViewController {
         RecipeService.getCategoryListAction() { (res, error) in
             self.categories.removeAll()
             
-            
             for category in res {
                 self.categories.append(CategoryItem(name: category["name"] as! String, id: category["id"] as! Int))
             }
-
             
             self.tableView.reloadData()
         }

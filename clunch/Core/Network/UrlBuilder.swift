@@ -28,4 +28,8 @@ class UrlBuilder {
     static func categoryItemUrl(id: String) -> String {
         return "\(baseUrl)/categories/" + id + "/recipes"
     }
+    
+    static func dateEventsUrl(id: String, date: String) -> String {
+        return "\(baseUrl)/events/" + id + "/companies/" + date + "/date"
+    }
 }

@@ -40,6 +40,20 @@ extension UserDefaults {
             return token
         }
     }
+    
+    
+    static func getCompanyId() -> Int? {
+        let userData = UserDefaults.standard.data(forKey: "clunch_user")
+        if (userData == nil) {
+            return nil
+        }
+        else {
+            let userFound:User? = NSKeyedUnarchiver.unarchiveObject(with: userData!) as? User
+            let companyId = userFound!.companyId
+            
+            return companyId
+        }
+    }
 }
 
 
