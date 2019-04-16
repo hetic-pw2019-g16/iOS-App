@@ -22,10 +22,17 @@ class RecipeViewController: UIViewController {
 
         self.title = category.name
         
-        // TODO API Call get Recipe By category
-        recipes.append(RecipeItem(name: "Pizza", category: category))
-        recipes.append(RecipeItem(name: "Lasagnes Végétarienne", category: category))
-        recipes.append(RecipeItem(name: "Pattes", category: category))
+        
+        RecipeService.getCategoryItemAction(id: category.id) { (res, error) in
+            self.recipes.removeAll()
+            
+            
+            for recipe in res {
+                self.recipes.append(RecipeItem(name: recipe["title"] as! String, category: self.category))
+            }
+            
+            self.tableView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

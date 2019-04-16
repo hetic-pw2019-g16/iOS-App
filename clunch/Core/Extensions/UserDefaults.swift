@@ -26,6 +26,20 @@ extension UserDefaults {
             return userFound
         }
     }
+    
+    
+    static func getToken() -> String? {
+        let userData = UserDefaults.standard.data(forKey: "clunch_user")
+        if (userData == nil) {
+            return nil
+        }
+        else {
+            let userFound:User? = NSKeyedUnarchiver.unarchiveObject(with: userData!) as? User
+            let token = userFound!.token
+            
+            return token
+        }
+    }
 }
 
 

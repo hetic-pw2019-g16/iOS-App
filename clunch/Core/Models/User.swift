@@ -9,14 +9,14 @@
 import Foundation
 
 class User: NSObject, NSCoding {
-    let userId : String
+    let userId : Int
     let username : String
     let email : String
-    let password : String
+    let token : String
     
     //userId : Int = -1
-    init(userId : String = "", username : String = "", email : String = "", password : String = "") {
-        self.password = password
+    init(userId : Int = 0, username : String = "", email : String = "", token : String = "") {
+        self.token = token
         self.userId = userId
         self.username = username
         self.email = email
@@ -26,14 +26,13 @@ class User: NSObject, NSCoding {
         aCoder.encode(userId, forKey : "userId")
         aCoder.encode(username, forKey : "username")
         aCoder.encode(email, forKey : "email")
-        aCoder.encode(password, forKey : "password")
+        aCoder.encode(token, forKey : "token")
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.userId = aDecoder.decodeObject(forKey: "userId") as! String
+        self.userId = aDecoder.decodeInteger(forKey: "userId")
         self.username = aDecoder.decodeObject(forKey: "username") as! String
         self.email = aDecoder.decodeObject(forKey: "email") as! String
-        self.password = aDecoder.decodeObject(forKey: "password") as! String
-
+        self.token = aDecoder.decodeObject(forKey: "token") as! String
     }
 }

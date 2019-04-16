@@ -16,8 +16,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        
+
+        // Only For Dev : Reset User
+//        UserDefaults.standard.set(nil, forKey: "clunch_user")
+        // TODO -> Token Exppiration
         if (UserDefaults.getTheUserStored() != nil) {
             let storyboard:UIStoryboard = UIStoryboard(name: "Content", bundle: nil)
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "navigation_home_identifier")

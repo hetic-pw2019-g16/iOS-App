@@ -25,10 +25,17 @@ class CategoryViewController: UIViewController {
         
         self.title = "Recette"
         
-        // TODO: API Call for all categories
-        categories.append(CategoryItem(name: "Healthy"))
-        categories.append(CategoryItem(name: "Viande"))
-        categories.append(CategoryItem(name: "Italien"))
+        RecipeService.getCategoryListAction() { (res, error) in
+            self.categories.removeAll()
+            
+            
+            for category in res {
+                self.categories.append(CategoryItem(name: category["name"] as! String, id: category["id"] as! Int))
+            }
+
+            
+            self.tableView.reloadData()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

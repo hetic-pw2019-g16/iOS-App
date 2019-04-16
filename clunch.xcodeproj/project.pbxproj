@@ -23,6 +23,9 @@
 		2E7EC04F225603F2001C31D4 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7EC04E225603F2001C31D4 /* Content.storyboard */; };
 		2E8AE3E52201E24700C58E57 /* CalendarItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8AE3E42201E24700C58E57 /* CalendarItemCell.swift */; };
 		2EA01DA12255E95E003B77B7 /* Recipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EA01DA02255E95E003B77B7 /* Recipe.storyboard */; };
+		2ECA97152265C21F00B74F3B /* RecipeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECA97142265C21F00B74F3B /* RecipeService.swift */; };
+		2ECD269C22646F2B009D9669 /* UrlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD269B22646F2B009D9669 /* UrlBuilder.swift */; };
+		2ECD269E22647128009D9669 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ECD269D22647128009D9669 /* AuthService.swift */; };
 		2EDC38E521FE437B009227DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC38E421FE437B009227DB /* LoginViewController.swift */; };
 		2EDC38ED21FE447C009227DB /* Text.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC38EC21FE447C009227DB /* Text.swift */; };
 		2EDC38F321FE528B009227DB /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDC38F221FE528B009227DB /* CalendarViewController.swift */; };
@@ -97,6 +100,9 @@
 		2E7EC04E225603F2001C31D4 /* Content.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
 		2E8AE3E42201E24700C58E57 /* CalendarItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarItemCell.swift; sourceTree = "<group>"; };
 		2EA01DA02255E95E003B77B7 /* Recipe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Recipe.storyboard; sourceTree = "<group>"; };
+		2ECA97142265C21F00B74F3B /* RecipeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeService.swift; sourceTree = "<group>"; };
+		2ECD269B22646F2B009D9669 /* UrlBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlBuilder.swift; sourceTree = "<group>"; };
+		2ECD269D22647128009D9669 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		2EDC38E421FE437B009227DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2EDC38EC21FE447C009227DB /* Text.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Text.swift; sourceTree = "<group>"; };
 		2EDC38F221FE528B009227DB /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
@@ -207,9 +213,20 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+		2ECD269A22646E87009D9669 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2ECD269B22646F2B009D9669 /* UrlBuilder.swift */,
+				2ECD269D22647128009D9669 /* AuthService.swift */,
+				2ECA97142265C21F00B74F3B /* RecipeService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		2EDC38E021FE4327009227DB /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2ECD269A22646E87009D9669 /* Network */,
 				2EA01DA32255FB59003B77B7 /* Storyboards */,
 				2EDC38FE21FEF7A4009227DB /* Cells */,
 				2EDC38FA21FEF4DC009227DB /* Models */,
@@ -573,7 +590,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-clunch/Pods-clunch-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-clunch/Pods-clunch-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -588,7 +605,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-clunch/Pods-clunch-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-clunch/Pods-clunch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EBE9438BA32F490C59DEBC8E /* [CP] Check Pods Manifest.lock */ = {
@@ -625,12 +642,15 @@
 				E28BC1DE223A801000C47937 /* CreateEventStep1ViewController.swift in Sources */,
 				2E32D98A2200430800985453 /* RecipeItem.swift in Sources */,
 				E2DB3EEE2254D5E7002443F1 /* BriefcaseMenuViewController.swift in Sources */,
+				2ECD269C22646F2B009D9669 /* UrlBuilder.swift in Sources */,
 				E2DB3EF22254DAAF002443F1 /* MyRulesViewController.swift in Sources */,
+				2ECA97152265C21F00B74F3B /* RecipeService.swift in Sources */,
 				2E32D98D2200468200985453 /* RecipeItemTableViewCell.swift in Sources */,
 				2EDC38F321FE528B009227DB /* CalendarViewController.swift in Sources */,
 				E28BC1D82237C6DB00C47937 /* ParticipatedEventCell.swift in Sources */,
 				E2CFB9732254F8890077B58D /* ProfileCompletedViewController.swift in Sources */,
 				2E8AE3E52201E24700C58E57 /* CalendarItemCell.swift in Sources */,
+				2ECD269E22647128009D9669 /* AuthService.swift in Sources */,
 				E2CFB97822563AB20077B58D /* PasswordChangedViewController.swift in Sources */,
 				E2DB3EF42254DABE002443F1 /* MySettingsViewController.swift in Sources */,
 				E28BC1D62237C6CC00C47937 /* CreatedEventCell.swift in Sources */,

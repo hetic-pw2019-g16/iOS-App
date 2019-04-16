@@ -40,7 +40,8 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         setupView()
+        setupView()
+        
         
         self.title = "Calendrier"
 

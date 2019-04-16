@@ -54,35 +54,12 @@ class LoginViewController: UIViewController {
         //          Throw Error Empty Fields
         
         let params = ["email": email,"password": passwordTextField.text!]
-        Alamofire.request("http://clunch.maximegrec.com/api/login_check", method: .post, parameters: params as Parameters, encoding: JSONEncoding.default, headers: nil).responseJSON(completionHandler: { response in
+        AuthService.loginAction(body: params) { (res, error) in
             
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print(json)
-                
-               
-                
-                let userId = String(json["user"]["id"].int ?? -1)
-                let username = json["user"]["username"].string ?? ""
-                let email = json["user"]["email"].string ?? ""
-                let password = json["user"]["password"].string ?? ""
-                
-                let user = User.init(userId: userId, username: username, email: email, password: password)
-                
-                
-                UserDefaults.saveThisUser(user: user)
-                
-                let navigationController = UIStoryboard(name: "Content", bundle: nil).instantiateViewController(withIdentifier: self.navigationHomeIdentifier) as! UITabBarController
-                self.navigationController?.pushViewController(navigationController, animated: true)
-                break
-            case .failure(let error):
-                print(error)
-                break
-        
-        
-        
+            UserDefaults.saveThisUser(user: res as! User)
+            
+            let navigationController = UIStoryboard(name: "Content", bundle: nil).instantiateViewController(withIdentifier: self.navigationHomeIdentifier) as! UITabBarController
+            self.navigationController?.pushViewController(navigationController, animated: true)
+        }
     }
-})
-}
 }
