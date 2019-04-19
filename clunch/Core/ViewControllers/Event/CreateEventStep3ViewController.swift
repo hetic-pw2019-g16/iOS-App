@@ -16,6 +16,11 @@ class CreateEventStep3ViewController: UIViewController {
     @IBOutlet weak var addColleagueButton: UIButton!
     @IBOutlet weak var invitColleagueLabel: UILabel!
    
+    var recipe: String = ""
+    var recipeDescription: String = ""
+    var finishDate: Date = Date()
+    var eventDate: Date = Date()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
