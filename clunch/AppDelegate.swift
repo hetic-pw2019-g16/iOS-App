@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
 
         // Only For Dev : Reset User
-//        UserDefaults.standard.set(nil, forKey: "clunch_user")
+//        UserDefaults.stndard.set(nil, forKey: "clunch_user")
         // TODO -> Token Exppiration
         if (UserDefaults.getTheUserStored() != nil) {
             let storyboard:UIStoryboard = UIStoryboard(name: "Content", bundle: nil)

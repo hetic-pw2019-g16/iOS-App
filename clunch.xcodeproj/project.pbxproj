@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		08CB290C40E0D4D1F6AC1B34 /* Pods_clunch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0659C9FAA84CD2B09E05A5 /* Pods_clunch.framework */; };
+		2E07CF5F226DF2410072091B /* EventService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E07CF5E226DF2410072091B /* EventService.swift */; };
 		2E32D98521FF527200985453 /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E32D98421FF527200985453 /* DetailRecipeViewController.swift */; };
 		2E32D987220041D500985453 /* RecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E32D986220041D500985453 /* RecipeViewController.swift */; };
 		2E32D98A2200430800985453 /* RecipeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E32D9892200430800985453 /* RecipeItem.swift */; };
@@ -86,6 +87,7 @@
 
 /* Begin PBXFileReference section */
 		2CA745FFBB8DC08111EEEA5F /* Pods-clunch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clunch.release.xcconfig"; path = "Pods/Target Support Files/Pods-clunch/Pods-clunch.release.xcconfig"; sourceTree = "<group>"; };
+		2E07CF5E226DF2410072091B /* EventService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventService.swift; sourceTree = "<group>"; };
 		2E32D98421FF527200985453 /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
 		2E32D986220041D500985453 /* RecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewController.swift; sourceTree = "<group>"; };
 		2E32D9892200430800985453 /* RecipeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeItem.swift; sourceTree = "<group>"; };
@@ -222,6 +224,7 @@
 				2ECD269D22647128009D9669 /* AuthService.swift */,
 				2ECA97142265C21F00B74F3B /* RecipeService.swift */,
 				2ECA971A2266179B00B74F3B /* CalendarService.swift */,
+				2E07CF5E226DF2410072091B /* EventService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -640,6 +643,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E07CF5F226DF2410072091B /* EventService.swift in Sources */,
 				2E32D98521FF527200985453 /* DetailRecipeViewController.swift in Sources */,
 				E2CFB984225FB3F90077B58D /* UserDefaults.swift in Sources */,
 				E28BC1DE223A801000C47937 /* CreateEventStep1ViewController.swift in Sources */,

@@ -32,4 +32,8 @@ class UrlBuilder {
     static func dateEventsUrl(id: String, date: String) -> String {
         return "\(baseUrl)/events/" + id + "/companies/" + date + "/date"
     }
+    
+    static func addEventsUrl(id: String) -> String {
+        return "\(baseUrl)/events/" + id + "/creates"
+    }
 }

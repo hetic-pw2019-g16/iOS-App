@@ -31,9 +31,21 @@ class CreateEventStep3ViewController: UIViewController {
     }
     
     @IBAction func addColleagueButton(_ sender: Any) {
+
     }
     @IBAction func nextStepToRecapScreenButton(_ sender: Any) {
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "dd.MM.yyyy"
         
+        let date = dateFormatterPrint.string(from: eventDate)
+
+        let body = ["recipe": recipe, "date": date, "desc": recipeDescription, "quantity": 2] as [String : Any]
+        let id = UserDefaults.getTheUserStored()!.userId as Int
+        
+        EventService.addEventAction(id: id, body: body) { (res, error) in
+            print("hello")
+            print(res)
+        }
     }
     
     /*
