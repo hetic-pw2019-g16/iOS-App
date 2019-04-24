@@ -2,7 +2,7 @@
 //  HomeViewController.swift
 //  clunch
 //
-//  Created by Samy on 27/01/2019.
+//  Created by Eléa on 27/01/2019.
 //  Copyright © 2019 Clunch. All rights reserved.
 //
 
@@ -59,9 +59,8 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonCreateAnEvent: UIButton!
     
     
-    var createdEvents:[Event] = [Event(title: "24",
-                                       commentaries: ["Commentaire 1", "Commentaire 2"],
-        meal: "Pâtes bolognaise")]
+    /*
+    var createdEvents:[Event] = [Event(recipe: recipe, description: description, date: Date, user: user, quantity: quantity)]
     
     var participatedEvents:[Event] = [Event(title:"12",
                                             commentaries: ["Commentaire 1"], meal: "Pâtes au saumon"),
@@ -70,7 +69,7 @@ class HomeViewController: UIViewController {
                                       Event(title: "26",
                                             commentaries: ["Commentaire 1", "Commentaire 2", "Commentaire 3"],
                                       meal: "Pâtes à la sauce orange")]
-    
+    */
     
     
     override func viewDidLoad() {
@@ -146,22 +145,26 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        /*
         if (collectionView == self.createdEventCollectionView){
             return self.createdEvents.count
         }
         else {
             return self.participatedEvents.count
         }
+ */
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
         -> UICollectionViewCell {
+            /*
         if (collectionView == self.createdEventCollectionView){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreatedEventCell",
                                                           for: indexPath) as! CreatedEventCell
             
            // cell.event = self.createdEvents[indexPath.row] // regarder EventItemTableViewCell.item
-            cell.dateTitle.text = self.createdEvents[indexPath.row].title
+            cell.dateTitle.text = self.createdEvents[indexPath.row].recipe
             cell.mealTitle.text = self.participatedEvents[indexPath.row].meal
             let commentaryNumber = self.createdEvents[indexPath.row].commentaries.count
             cell.commentaries.text = String(format: "%d commentaires", commentaryNumber)
@@ -179,6 +182,8 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.eventParticipatedView.addShadow()
             return cell
         }
+ */
+            return UICollectionViewCell()
     }
 }
 
@@ -194,7 +199,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
         
     }
-    
-    
-    
 }

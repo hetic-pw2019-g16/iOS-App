@@ -36,4 +36,9 @@ class UrlBuilder {
     static func addEventsUrl(id: String) -> String {
         return "\(baseUrl)/events/" + id + "/creates"
     }
+    
+    static func getEventsByCompagny(id: String) -> String {
+        return "\(baseUrl)/events/" + id + "/company"
+    }
 }
+

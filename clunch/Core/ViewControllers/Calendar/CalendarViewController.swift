@@ -2,7 +2,7 @@
 //  CalendarViewController.swift
 //  clunch
 //
-//  Created by Samy on 27/01/2019.
+//  Created by Eléa on 27/01/2019.
 //  Copyright © 2019 Clunch. All rights reserved.
 //
 
@@ -54,9 +54,12 @@ class CalendarViewController: UIViewController {
         self.collectionView.calendarDelegate = self
         
         // TODO Current User related events
-        events.append(Event(title: "Vincent", meal: "hbjhsbx"))
-        events.append(Event(title: "Nicolas", meal: "jhdbzljjhn"))
-        events.append(Event(title: "Laurette", meal: "bdehjzs;vbz"))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getEvents()
+
     }
     
     private func setupView() {
@@ -64,6 +67,14 @@ class CalendarViewController: UIViewController {
         updateView()
     }
     
+    //MARK:- RECUPERER LES EVENEMENTS
+    func getEvents(){
+        CalendarService.getEventListByCompagny(companyId: UserDefaults.getCompanyId()!, callBack: {(res, error) in
+            self.events = res
+        })
+    }
+    
+    //MARK:- SEGMENTED CONTROL
     private func setupSegmentedControl() {
         // Configure Segmented Control
         segmentedControl.addTarget(self, action: #selector(selectionDidChange(_:)), for: .valueChanged)
@@ -76,19 +87,22 @@ class CalendarViewController: UIViewController {
         updateView()
     }
     
+    //MARK:- EVENEMNTS A VENIR
     private lazy var ComingEventsViewController: ComingEventsViewController = {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "Calendar", bundle: Bundle.main)
         
         // Instantiate View Controller
         var viewController = storyboard.instantiateViewController(withIdentifier: "ComingEventsViewController") as! ComingEventsViewController
+        // viewController.events = self.events
         
         // Add View Controller as Child View Controller
         self.add(asChildViewController: viewController)
         
         return viewController
     }()
-    
+   
+    //MARK:- EVENEMNTS INSCRITS
     private lazy var RegisteredEventsViewController: RegisteredEventsViewController = {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "Calendar", bundle: Bundle.main)
@@ -102,6 +116,7 @@ class CalendarViewController: UIViewController {
         return viewController
     }()
     
+    //MARK:- EVENEMNTS CRÉÉS
     private lazy var CreatedEventsViewController: CreatedEventsViewController = {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "Calendar", bundle: Bundle.main)
@@ -115,6 +130,7 @@ class CalendarViewController: UIViewController {
         return viewController
     }()
     
+    //MARK:- AFFICHER L'UNE DES LISTES D'EVENEMENTS DANS LE SEGMENTED CONTROL
     private func add(asChildViewController viewController: UIViewController) {
         // Add Child View Controller
         self.addChild(viewController)
@@ -130,6 +146,7 @@ class CalendarViewController: UIViewController {
         viewController.didMove(toParent: self)
     }
     
+    //MARK:- SUPPRIMER L'UNE DES LISTES D'EVENEMENTS DANS LE SEGMENTED CONTROL
     private func remove(asChildViewController viewController: UIViewController) {
         // Notify Child View Controller
         viewController.willMove(toParent: nil)
@@ -141,6 +158,7 @@ class CalendarViewController: UIViewController {
         viewController.removeFromParent()
     }
     
+    //MARK:- PROCESSUS : AFFICHER ET SUPPRIMER L'UNE DES LISTES D'EVENEMENTS DANS LE SEGMENTED CONTROL
     private func updateView() {
         
         switch self.lastVCToRemove {
@@ -168,14 +186,7 @@ class CalendarViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
+    //MARK:- AFFICHER LA COULEUR DE LA CELLULE SI EVENEMENT
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState, date: Date! = nil) {
         guard let cell = view as? CalendarItemCell else { return }
         
@@ -192,13 +203,18 @@ class CalendarViewController: UIViewController {
             }
         }
     }
-    
+    //MARK:- MONTRER L'EVENEMENT
     func showPopUp(date: Date) {
         let popUp = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "eventPopUp") as! CalendarEventViewController
 
         popUp.date = date
         let popUpNav = UINavigationController(rootViewController: popUp)
         self.present(popUpNav, animated: true, completion: nil)
+    }
+    
+    //MARK:- TRIER LES EVENEMENTS
+    func sortEventsByDate(){
+        self.events.sort {$0.date < $1.date}
     }
 }
 
@@ -224,11 +240,16 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
 }
 */
 
+//MARK:- CALENDRIER
 extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource {
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellTextColor(view: cell, cellState: cellState, date: date)
 
+        // Faire la correspondance entre la date actuelle et tous les eventes de self.events qui ont la meme date
+        // si il y a des event alors mettre le truc vert
+        // Parmi ces events voir si je suisinclu dedans et mettre pastille en consequence
+        
         self.viewEvent.isHidden = false
         
         self.viewEvent.backgroundColor = green

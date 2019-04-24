@@ -75,6 +75,11 @@ extension UILabel {
     func setClunchButtonColor() {
         self.textColor = UIColor(red: 89/255, green: 190/255, blue: 176/255, alpha: 1)
     }
+}
 
-    
+extension String {
+    func subString(to:Int) -> String{
+        let toindex = self.index(self.startIndex, offsetBy: to)
+        return String(self[...toindex])
+    }
 }
