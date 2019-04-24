@@ -2,7 +2,7 @@
 //  CalendarEventViewController.swift
 //  clunch
 //
-//  Created by Samy on 31/01/2019.
+//  Created by Eléa on 31/01/2019.
 //  Copyright © 2019 Clunch. All rights reserved.
 //
 
@@ -30,6 +30,11 @@ class CalendarEventViewController: UIViewController {
         popUp.popUp()
         
         
+        CalendarService.getEventListByCompagny(companyId: UserDefaults.getCompanyId()!, callBack: {(res, error) in
+            self.events = res
+            self.tableView.reloadData()
+        })
+        /*
         CalendarService.getEventListByDateAction(companyId: UserDefaults.getCompanyId()!, date: date) {(res, error) in
             self.events.removeAll()
             
@@ -40,7 +45,7 @@ class CalendarEventViewController: UIViewController {
             
             self.tableView.reloadData()
             
-        }
+        }*/
         
 //        // TODO Current Day + User related events
 //        events.append(Event(title: "Vincent", commentaries: [], meal: "Pâtes sauce orange"))
@@ -52,7 +57,7 @@ class CalendarEventViewController: UIViewController {
         if let segueIdentifier = segue.identifier {
             if segueIdentifier==detailEventIdentifier {
                 if let eventCell = sender as? EventItemTableViewCell, let destinationViewController = segue.destination as? CalendarEventItemViewController {
-                    destinationViewController.name = eventCell.item.title
+                   // destinationViewController.name = eventCell.item.title
                 }
             }
         }

@@ -2,7 +2,7 @@
 //  ComingEventsTableViewCell.swift
 //  clunch
 //
-//  Created by Macintosh on 12/03/2019.
+//  Created by Eléa on 12/03/2019.
 //  Copyright © 2019 Clunch. All rights reserved.
 //
 

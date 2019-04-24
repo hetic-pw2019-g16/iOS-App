@@ -2,7 +2,7 @@
 //  UserDefaults.swift
 //  clunch
 //
-//  Created by Macintosh on 11/04/2019.
+//  Created by Eléa on 11/04/2019.
 //  Copyright © 2019 Clunch. All rights reserved.
 //
 

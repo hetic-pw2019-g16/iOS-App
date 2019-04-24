@@ -2,7 +2,7 @@
 //  CreateEventStep3ViewController.swift
 //  clunch
 //
-//  Created by Macintosh on 01/04/2019.
+//  Created by Eléa on 01/04/2019.
 //  Copyright © 2019 Clunch. All rights reserved.
 //
 

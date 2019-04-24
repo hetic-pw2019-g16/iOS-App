@@ -2,7 +2,7 @@
 //  RegisteredEventsViewController.swift
 //  clunch
 //
-//  Created by Macintosh on 07/04/2019.
+//  Created by Eléa on 07/04/2019.
 //  Copyright © 2019 Clunch. All rights reserved.
 //
 

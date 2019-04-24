@@ -2,7 +2,7 @@
 //  CalendarEventItemViewController.swift
 //  clunch
 //
-//  Created by Samy on 31/01/2019.
+//  Created by Eléa on 31/01/2019.
 //  Copyright © 2019 Clunch. All rights reserved.
 //
 
