@@ -121,20 +121,35 @@ class HomeViewController: UIViewController {
     @IBAction func notificationAction(_ sender: Any) {
     }
     @IBAction func buttonSeeMoreCreatedEvent(_ sender: Any) {
+        let vc = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CreatedEventsViewController") as! CreatedEventsViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 
 
     
     @IBAction func buttonSeeMoreParticipatedEvent(_ sender: Any) {
+        let vc = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "RegisteredEventsViewController") as! RegisteredEventsViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func buttonSeeAllComingEvents(_ sender: Any) {
+        let vc = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "ComingEventsViewController") as! ComingEventsViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func buttonFindAnEvent(_ sender: Any) {
+        let vc = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func buttonCreateAnEvent(_ sender: Any) {
+        let vc = UIStoryboard(name: "CreateEvent", bundle: nil).instantiateViewController(withIdentifier: "CreateEventStep1ViewController") as! CreateEventStep1ViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     
     }
     

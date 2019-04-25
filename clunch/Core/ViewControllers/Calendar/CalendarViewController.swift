@@ -16,6 +16,7 @@ class CalendarViewController: UIViewController {
         case third
     }
     
+    @IBOutlet weak var viewCalendarView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var segmentedView: UIView!
     
@@ -39,6 +40,8 @@ class CalendarViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.viewCalendarView.addShadow(withRadius: true, radius: 7)
         
         setupView()
         
@@ -243,6 +246,7 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK:- CALENDRIER
 extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource {
     
+    
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellTextColor(view: cell, cellState: cellState, date: date)
 
@@ -250,6 +254,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         // si il y a des event alors mettre le truc vert
         // Parmi ces events voir si je suisinclu dedans et mettre pastille en consequence
         
+        /*
         self.viewEvent.isHidden = false
         
         self.viewEvent.backgroundColor = green
@@ -257,12 +262,15 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         self.viewEvent.layer.zPosition = -1
         
         cell?.addSubview(self.viewEvent)
-        
+        */
+        cell?.backgroundColor = green
+        cell?.layer.cornerRadius = 5
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
         handleCellTextColor(view: cell, cellState: cellState)
-        self.viewEvent.isHidden = true
+        //self.viewEvent.isHidden = true
+        cell?.backgroundColor = UIColor.white
     }
     
     
@@ -277,13 +285,12 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
-        let startDate = formatter.date(from: "2017 01 01")!
-        let endDate = formatter.date(from: "2017 12 31")!
+        let startDate = formatter.date(from: "2019 01 01")!
+        let endDate = formatter.date(from: "2019 12 31")!
         
-        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
+        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate, generateOutDates: .tillEndOfRow)
         return parameters
     }
-    
     
     
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {

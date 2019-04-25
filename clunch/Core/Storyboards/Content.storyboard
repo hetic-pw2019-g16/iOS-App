@@ -896,10 +896,10 @@
             </objects>
             <point key="canvasLocation" x="3480.8000000000002" y="-1464.4677661169417"/>
         </scene>
-        <!--CalendarViewController-->
+        <!--NavCalendar-->
         <scene sceneID="vq0-BB-sK4">
             <objects>
-                <viewControllerPlaceholder storyboardName="Calendar" referencedIdentifier="CalendarViewController" id="7RK-Ig-t95" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Calendar" referencedIdentifier="NavCalendar" id="7RK-Ig-t95" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="fg8-IL-H2r"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quJ-8b-Q0p" userLabel="First Responder" sceneMemberID="firstResponder"/>

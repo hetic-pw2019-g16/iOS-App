@@ -97,10 +97,10 @@ public struct ConfigurationParameters {
         self.startDate = startDate
         self.endDate = endDate
 
-        if numberOfRows > 0 && numberOfRows < 7 {
+        if numberOfRows > 0 && numberOfRows < 6 {
             self.numberOfRows = numberOfRows
         } else {
-            self.numberOfRows = 6
+            self.numberOfRows = 5
         }
 
         if let nonNilHasStrictBoundaries = hasStrictBoundaries {

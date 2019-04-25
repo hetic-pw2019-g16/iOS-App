@@ -32,7 +32,12 @@ class RegisteredEventsViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.registeredEventsTableView.deselectRow(at: indexPath, animated: false)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PreviewEventViewController") as! PreviewEventViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    
 
     /*
     // MARK: - Navigation
