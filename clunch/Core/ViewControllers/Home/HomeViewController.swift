@@ -270,6 +270,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)
         let gooddate = dateStr.toString(to: 8)
         cell.dateTitle.text = gooddate
+        cell.inscriptionNumber.text = String(format: "%d participants", self.events[indexPath.row].participants.count)
         
         
         

@@ -38,6 +38,7 @@ class CreatedEventsViewController: UIViewController,
         let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)
         let gooddate = dateStr.toString(to: 8)
         cell.dateTitle.text = gooddate
+        cell.inscriptionNumber.text = String(format: "%d participants", tmpEvent.participants.count)
 
 
         cell.backView.backgroundColor = UIColor(red: 246/255, green: 105/255, blue: 118/255, alpha: 1)
@@ -47,6 +48,7 @@ class CreatedEventsViewController: UIViewController,
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.createdEventsTableView.deselectRow(at: indexPath, animated: false)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PreviewEventViewController") as! PreviewEventViewController
+        vc.event = self.events[indexPath.row]
         let nav = self.navigationController
         nav?.pushViewController(vc, animated: true)
         

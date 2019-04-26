@@ -38,6 +38,7 @@ class RegisteredEventsViewController: UIViewController, UITableViewDelegate, UIT
         let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)
         let gooddate = dateStr.toString(to: 8)
         cell.dateTitle.text = gooddate
+        cell.inscriptionNumber.text = String(format: "%d participants", tmpEvent.participants.count)
         
         return cell
     }
@@ -45,6 +46,8 @@ class RegisteredEventsViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.registeredEventsTableView.deselectRow(at: indexPath, animated: false)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PreviewEventViewController") as! PreviewEventViewController
+        vc.event = self.events[indexPath.row]
+        vc.backview = 1
         
         self.navigationController?.pushViewController(vc, animated: true)
     }

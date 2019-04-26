@@ -715,6 +715,7 @@
                         <viewLayoutGuide key="safeArea" id="iRV-di-f45"/>
                     </view>
                     <connections>
+                        <outlet property="backView" destination="AsK-0f-euW" id="13S-iM-zYp"/>
                         <outlet property="creatorEventImage" destination="7Uq-3S-n0z" id="aab-A8-oxf"/>
                         <outlet property="creatorEventLabel" destination="AkC-1a-tW0" id="c6k-v9-8Pd"/>
                         <outlet property="dateEventLabel" destination="CCP-CR-4ni" id="Sjb-Mx-oVg"/>
