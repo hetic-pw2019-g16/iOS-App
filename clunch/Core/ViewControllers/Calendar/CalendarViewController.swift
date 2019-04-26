@@ -300,8 +300,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         
         cell?.addSubview(self.viewEvent)
         */
-        cell?.backgroundColor = green
-        cell?.layer.cornerRadius = 5
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
@@ -336,9 +334,48 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         self.calendar(calendar, willDisplay: myCustomCell, forItemAt: date, cellState: cellState, indexPath: indexPath)
         myCustomCell.cellDay.text = cellState.text
         
-        handleCellTextColor(view: myCustomCell, cellState: cellState, date: date)
+        //handleCellTextColor(view: myCustomCell, cellState: cellState, date: date)
+        
+        if cellState.dateBelongsTo == .thisMonth {
+            myCustomCell.cellDay.textColor = grey
+        } else {
+            myCustomCell.cellDay.textColor = greyInactive
+        }
+        
+        let array:[Event] = self.bulletPoint(cellDate: date)
+        if (array.count != 0) {
+            myCustomCell.cellDay.textColor = .white
+            myCustomCell.backgroundColor = green
+            myCustomCell.layer.cornerRadius = 5
+
+            //myCustomCell.bulletPointView.backgroundColor = UIColor.red
+            //myCustomCell.bulletPointView.isHidden = false
+        } else {
+            myCustomCell.backgroundColor = UIColor.white
+            myCustomCell.layer.cornerRadius = 0
+
+            //myCustomCell.bulletPointView.isHidden = true
+        }
         
         return myCustomCell
+    }
+    
+    func bulletPoint(cellDate: Date) -> [Event]{
+        var array : [Event] = []
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        let dateStr = dateFormatter.string(from: cellDate)
+        
+        var i : Int = 0
+        while (i < self.events.count) {
+            let eventDateStr = dateFormatter.string(from: self.events[i].date)
+            if (dateStr == eventDateStr) {
+                print(dateStr)
+                array.append(self.events[i])
+            }
+            i = i+1
+        }
+        return array
     }
 }
 

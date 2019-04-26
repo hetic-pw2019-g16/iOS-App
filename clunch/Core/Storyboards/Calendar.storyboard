@@ -51,16 +51,21 @@
                                                             <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4CM-xU-vdk">
-                                                            <rect key="frame" x="77" y="0.0" width="25" height="28"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CM-xU-vdk">
+                                                            <rect key="frame" x="100" y="0.0" width="10" height="10"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="10" id="VOg-Kv-6Ve"/>
+                                                                <constraint firstAttribute="height" constant="10" id="zeT-2a-wMN"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                 </view>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="ePV-Av-LDV" firstAttribute="centerY" secondItem="0Gg-vY-YDC" secondAttribute="centerY" id="45y-i2-EIe"/>
+                                                    <constraint firstAttribute="trailing" secondItem="4CM-xU-vdk" secondAttribute="trailing" id="RSF-wD-c2Z"/>
+                                                    <constraint firstItem="4CM-xU-vdk" firstAttribute="top" secondItem="0Gg-vY-YDC" secondAttribute="top" id="bXO-gm-27R"/>
                                                     <constraint firstItem="ePV-Av-LDV" firstAttribute="centerX" secondItem="0Gg-vY-YDC" secondAttribute="centerX" id="gdh-JP-eXI"/>
                                                 </constraints>
                                                 <connections>
