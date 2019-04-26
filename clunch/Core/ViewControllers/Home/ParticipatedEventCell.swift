@@ -17,4 +17,5 @@ class ParticipatedEventCell: UICollectionViewCell {
     @IBOutlet weak var mealTitle: UILabel!
     @IBOutlet weak var inscriptionNumber: UILabel!
     @IBOutlet weak var commentaries: UILabel!
+    @IBOutlet weak var hourLabel: UILabel!
 }

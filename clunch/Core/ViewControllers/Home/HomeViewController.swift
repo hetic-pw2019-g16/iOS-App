@@ -11,6 +11,8 @@ import UIKit
 class HomeViewController: UIViewController {
 
     var user: User = User()
+
+    
     //MARK:-  Header
     
     @IBOutlet weak var profileButton: UIBarButtonItem!
@@ -59,22 +61,17 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var buttonCreateAnEvent: UIButton!
     
     
-    /*
-    var createdEvents:[Event] = [Event(recipe: recipe, description: description, date: Date, user: user, quantity: quantity)]
     
-    var participatedEvents:[Event] = [Event(title:"12",
-                                            commentaries: ["Commentaire 1"], meal: "Pâtes au saumon"),
-                                      Event(title: "15",
-                                            meal: "Pâtes au thon"),
-                                      Event(title: "26",
-                                            commentaries: ["Commentaire 1", "Commentaire 2", "Commentaire 3"],
-                                      meal: "Pâtes à la sauce orange")]
-    */
+    var createdEvents:[Event] = []
+    var participatedEvents:[Event] = []
+    var events: [Event] = []
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+
         let user:User = UserDefaults.getTheUserStored() ?? User()
         
         buttonSeeMoreCreatedEvent.buttonStyle(color: UIButton.green)
@@ -111,6 +108,51 @@ class HomeViewController: UIViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.getEvents()
+    }
+    
+    func loadparticipatedEvents () {
+        let me = UserDefaults.getTheUserStored()
+        var i = 0
+        var j = 0
+        self.participatedEvents = []
+        while (i < self.events.count){
+            while (j < self.events[i].participants.count){
+                if (me?.username == self.events[i].participants[j].username){
+                    self.participatedEvents.append(self.events[i])
+                }
+                j = j+1
+            }
+            i = i+1
+        }
+    }
+    
+    func loadCreatedEvents () {
+        let me = UserDefaults.getTheUserStored()
+        var i = 0
+        self.createdEvents = []
+        while (i < self.events.count){
+            if (me?.username == self.events[i].user.username){
+                self.createdEvents.append(self.events[i])
+            }
+            i = i+1
+        }
+    }
+    
+    func getEvents(){
+        CalendarService.getEventListByCompagny(companyId: UserDefaults.getCompanyId()!, callBack: {(res, error) in
+            self.events = res
+            self.loadCreatedEvents()
+            self.loadparticipatedEvents()
+            print(self.createdEvents.count)
+            print(self.participatedEvents.count)
+            self.createdEventCollectionView.reloadData()
+            self.participatedEventCollectionView.reloadData()
+            self.comingEventsTableView.reloadData()
+        })
+    }
     
     @IBAction func briefcaseAction(_ sender: Any) {
         let vc2 = UIStoryboard(name: "Briefcase", bundle: nil).instantiateViewController(withIdentifier: "BriefcaseMenuViewController") as! BriefcaseMenuViewController
@@ -122,7 +164,7 @@ class HomeViewController: UIViewController {
     }
     @IBAction func buttonSeeMoreCreatedEvent(_ sender: Any) {
         let vc = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CreatedEventsViewController") as! CreatedEventsViewController
-        
+        vc.events = self.createdEvents
         self.navigationController?.pushViewController(vc, animated: true)
     }
 
@@ -130,19 +172,20 @@ class HomeViewController: UIViewController {
     
     @IBAction func buttonSeeMoreParticipatedEvent(_ sender: Any) {
         let vc = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "RegisteredEventsViewController") as! RegisteredEventsViewController
-        
+        vc.events = self.participatedEvents
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func buttonSeeAllComingEvents(_ sender: Any) {
+
         let vc = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "ComingEventsViewController") as! ComingEventsViewController
-        
+        vc.events = self.events
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func buttonFindAnEvent(_ sender: Any) {
         let vc = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
-        
+
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -160,29 +203,31 @@ class HomeViewController: UIViewController {
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        /*
+        
         if (collectionView == self.createdEventCollectionView){
             return self.createdEvents.count
         }
         else {
             return self.participatedEvents.count
         }
- */
-        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath)
         -> UICollectionViewCell {
-            /*
+            
         if (collectionView == self.createdEventCollectionView){
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreatedEventCell",
                                                           for: indexPath) as! CreatedEventCell
             
            // cell.event = self.createdEvents[indexPath.row] // regarder EventItemTableViewCell.item
-            cell.dateTitle.text = self.createdEvents[indexPath.row].recipe
-            cell.mealTitle.text = self.participatedEvents[indexPath.row].meal
-            let commentaryNumber = self.createdEvents[indexPath.row].commentaries.count
-            cell.commentaries.text = String(format: "%d commentaires", commentaryNumber)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "YYYY-MM-dd"
+            let dateStr = dateFormatter.string(from: self.createdEvents[indexPath.row].date)
+            let gooddate = dateStr.toString(to: 8)
+            cell.dateTitle.text = gooddate
+            cell.mealTitle.text = self.createdEvents[indexPath.row].recipe
+            cell.eventCreator.text = self.createdEvents[indexPath.row].user.username
+            cell.inscriptionNumber.text = String(format: "%d participants", self.createdEvents[indexPath.row].participants.count)
             cell.eventCreatedViewCell.addShadow()
             return cell
         }
@@ -190,28 +235,48 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ParticipatedEventCell",
                                                           for: indexPath) as! ParticipatedEventCell
             
-            cell.dateTitle.text = self.participatedEvents[indexPath.row].title
-            cell.mealTitle.text = self.participatedEvents[indexPath.row].meal
-            let commentaryNumber = self.participatedEvents[indexPath.row].commentaries.count
-            cell.commentaries.text = String(format: "%d commentaires", commentaryNumber)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "YYYY-MM-dd"
+            let dateStr = dateFormatter.string(from: self.participatedEvents[indexPath.row].date)
+            let gooddate = dateStr.toString(to: 8)
+            cell.dateTitle.text = gooddate
+            cell.mealTitle.text = self.participatedEvents[indexPath.row].recipe
+            cell.eventCreator.text = self.participatedEvents[indexPath.row].user.username
+            cell.inscriptionNumber.text = String(format: "%d participants", self.participatedEvents[indexPath.row].participants.count)
             cell.eventParticipatedView.addShadow()
             return cell
         }
- */
-            return UICollectionViewCell()
-    }
+     }
 }
 
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if (self.events.count < 4){
+            return self.events.count
+        } else {
+            return 3
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ComingEventsTableViewCell", for: indexPath) as! ComingEventsTableViewCell
-        cell.eventCreator.text = "FELIX"
+        
+        let tmpEvent = self.events[indexPath.row]
+        cell.eventCreator.text = tmpEvent.user.username
+        cell.mealTitle.text = tmpEvent.recipe
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)
+        let gooddate = dateStr.toString(to: 8)
+        cell.dateTitle.text = gooddate
+        
+        
+        
         return cell
         
     }
 }
+
+
+

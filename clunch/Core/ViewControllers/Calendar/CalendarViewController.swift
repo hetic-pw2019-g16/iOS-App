@@ -23,7 +23,6 @@ class CalendarViewController: UIViewController {
     var lastVCToRemove: lastViewController = lastViewController.first
     
     
-    
     //@IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var collectionView: JTAppleCalendarView!
     
@@ -36,7 +35,9 @@ class CalendarViewController: UIViewController {
     
     let formatter = DateFormatter()
     
-    lazy var events = [Event]()
+    var events = [Event]()
+    var createdEvents: [Event] = []
+    var participatedEvents: [Event] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +66,34 @@ class CalendarViewController: UIViewController {
 
     }
     
+    func loadparticipatedEvents () {
+        let me = UserDefaults.getTheUserStored()
+        var i = 0
+        var j = 0
+        self.participatedEvents = []
+        while (i < self.events.count){
+            while (j < self.events[i].participants.count){
+                if (me?.username == self.events[i].participants[j].username){
+                    self.participatedEvents.append(self.events[i])
+                }
+                j = j+1
+            }
+            i = i+1
+        }
+    }
+    
+    func loadCreatedEvents () {
+        let me = UserDefaults.getTheUserStored()
+        var i = 0
+        self.createdEvents = []
+        while (i < self.events.count){
+            if (me?.username == self.events[i].user.username){
+                self.createdEvents.append(self.events[i])
+            }
+            i = i+1
+        }
+    }
+    
     private func setupView() {
         setupSegmentedControl()
         updateView()
@@ -74,6 +103,10 @@ class CalendarViewController: UIViewController {
     func getEvents(){
         CalendarService.getEventListByCompagny(companyId: UserDefaults.getCompanyId()!, callBack: {(res, error) in
             self.events = res
+            self.lastVCToRemove = .first
+            self.updateView()
+            self.loadCreatedEvents()
+            self.loadparticipatedEvents()
         })
     }
     
@@ -98,7 +131,6 @@ class CalendarViewController: UIViewController {
         // Instantiate View Controller
         var viewController = storyboard.instantiateViewController(withIdentifier: "ComingEventsViewController") as! ComingEventsViewController
         // viewController.events = self.events
-        
         // Add View Controller as Child View Controller
         self.add(asChildViewController: viewController)
         
@@ -178,14 +210,18 @@ class CalendarViewController: UIViewController {
         
         if segmentedControl.selectedSegmentIndex == 0 {
             add(asChildViewController: ComingEventsViewController)
+            ComingEventsViewController.refreshEvents(allEvents: self.events)
             self.lastVCToRemove = .first
             
         } else if segmentedControl.selectedSegmentIndex == 1 {
             add(asChildViewController: RegisteredEventsViewController)
+            RegisteredEventsViewController.refreshEvents(allEvents: self.participatedEvents)
             self.lastVCToRemove = .second
         } else {
             add(asChildViewController: CreatedEventsViewController)
+            CreatedEventsViewController.refreshEvents(allEvents: self.createdEvents)
             self.lastVCToRemove = .third
+            
         }
     }
     
@@ -196,7 +232,7 @@ class CalendarViewController: UIViewController {
         if cellState.isSelected {
             cell.cellDay.textColor = .white
             if date != nil {
-                showPopUp(date: date)
+                //showPopUp(date: date)
             }
         } else {
             if cellState.dateBelongsTo == .thisMonth {
@@ -207,13 +243,13 @@ class CalendarViewController: UIViewController {
         }
     }
     //MARK:- MONTRER L'EVENEMENT
-    func showPopUp(date: Date) {
+   /* func showPopUp(date: Date) {
         let popUp = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "eventPopUp") as! CalendarEventViewController
 
         popUp.date = date
         let popUpNav = UINavigationController(rootViewController: popUp)
         self.present(popUpNav, animated: true, completion: nil)
-    }
+    }*/
     
     //MARK:- TRIER LES EVENEMENTS
     func sortEventsByDate(){
@@ -253,7 +289,8 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         // Faire la correspondance entre la date actuelle et tous les eventes de self.events qui ont la meme date
         // si il y a des event alors mettre le truc vert
         // Parmi ces events voir si je suisinclu dedans et mettre pastille en consequence
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PreviewEventViewController") as! PreviewEventViewController
+        self.navigationController?.pushViewController(vc, animated: true)
         /*
         self.viewEvent.isHidden = false
         
@@ -306,4 +343,14 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
 }
 
 
+//MARK:- AFFICHER LA PASTILLE
 
+/*func pastille(creator: Bool, participant: Bool) -> <#return type#> {
+    if participant {
+        // Pastille Jaune
+    } else if creator {
+        // Pastille Rouge
+    }
+    
+    return uIrbg uhy gjteigtyrue
+}*/

@@ -13,6 +13,8 @@ class CreatedEventsViewController: UIViewController,
     
     @IBOutlet weak var createdEventsTableView: UITableView!
 
+    var events: [Event] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
@@ -22,11 +24,21 @@ class CreatedEventsViewController: UIViewController,
         // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ComingEventsTableViewCell", for: indexPath) as! ComingEventsTableViewCell
+        
+        let tmpEvent = self.events[indexPath.row]
+        cell.eventCreator.text = tmpEvent.user.username
+        cell.mealTitle.text = tmpEvent.recipe
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)
+        let gooddate = dateStr.toString(to: 8)
+        cell.dateTitle.text = gooddate
+
 
         cell.backView.backgroundColor = UIColor(red: 246/255, green: 105/255, blue: 118/255, alpha: 1)
         return cell
@@ -37,16 +49,14 @@ class CreatedEventsViewController: UIViewController,
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PreviewEventViewController") as! PreviewEventViewController
         let nav = self.navigationController
         nav?.pushViewController(vc, animated: true)
+        
     }
+    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension CreatedEventsViewController {
+    func refreshEvents (allEvents:[Event]){
+        self.events = allEvents
+        self.createdEventsTableView.reloadData()
     }
-    */
-
 }

@@ -82,4 +82,10 @@ extension String {
         let toindex = self.index(self.startIndex, offsetBy: to)
         return String(self[...toindex])
     }
+    
+    func toString(to:Int) -> String{
+        let toindex = self.index(self.startIndex, offsetBy: to)
+        return String(self[toindex...])
+    }
 }
+

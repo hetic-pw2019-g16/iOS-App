@@ -18,11 +18,20 @@ class PreviewEventViewController: UIViewController {
     @IBOutlet weak var nameParticipantsLabel: UILabel!
     @IBOutlet weak var hourEventLabel: UILabel!
     @IBOutlet weak var dateEventLabel: UILabel!
+    @IBOutlet weak var viewEventView: UIView!
+    @IBOutlet weak var headerEventView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.viewEventView.addShadow(withRadius: true, radius: 7)
+
+        if #available(iOS 11.0, *) {
+            headerEventView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
+        } else {
+            self.headerEventView.addShadow(withRadius: true, radius: 7)
+        }
+        
     }
     
     @IBAction func validateButtonAction(_ sender: Any) {

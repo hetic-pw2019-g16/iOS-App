@@ -12,6 +12,8 @@ class ComingEventsViewController: UIViewController, UITableViewDelegate, UITable
 
     @IBOutlet weak var tableView: UITableView!
     
+    var events : [Event] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,26 +31,29 @@ class ComingEventsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ComingEventsTableViewCell", for: indexPath) as! ComingEventsTableViewCell
-        cell.eventCreator.text = "Eléa"
+        
+        let tmpEvent = self.events[indexPath.row]
+        cell.eventCreator.text = tmpEvent.user.username
+        cell.mealTitle.text = tmpEvent.recipe
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-dd"
+        let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)
+        let gooddate = dateStr.toString(to: 8)
+        cell.dateTitle.text = gooddate
+
+        
         return cell
     }
-    
-   
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension ComingEventsViewController {
+    func refreshEvents (allEvents:[Event]){
+        self.events = allEvents
+        self.tableView.reloadData()
     }
-    */
-
 }

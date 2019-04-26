@@ -77,6 +77,7 @@ class CalendarService {
                         let tmpPart: User = User(userId: id, username: username, companyId: cmpId)
                         allParticipatns.append(tmpPart)
                         j += 1
+                        singleParticipant = participantsTab[j]
                     }
                     let tmpEvent = Event(id: id, recipe: recipe, description: description, date: date, user: user, quantity: quantity, participants: allParticipatns)
                     
