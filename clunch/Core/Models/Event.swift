@@ -17,7 +17,8 @@ class Event {
     var quantity: Int!
     var participants: [User]
     var commentaries:[String]
-
+    var participating: Bool
+    var creator: Bool
     
     init(id: Int = 0, recipe: String, description: String, date: Date, user: User, quantity: Int, participants: [User] = [], commentaries:[String] = []) {
         self.id = id
@@ -28,8 +29,7 @@ class Event {
         self.quantity = quantity
         self.participants = participants
         self.commentaries = commentaries
-
+        self.creator = UserDefaults.getTheUserStored()?.userId == user.userId ? true : false
+        self.participating = participants.contains(where: { $0.userId == UserDefaults.getTheUserStored()?.userId })
     }
 }
-
-

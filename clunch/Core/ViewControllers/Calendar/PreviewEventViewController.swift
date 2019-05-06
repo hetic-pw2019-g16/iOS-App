@@ -53,6 +53,7 @@ class PreviewEventViewController: UIViewController {
         if (self.event != nil) {
             self.creatorEventLabel.text = self.event?.user.username
             self.mealTitleLabel.text = self.event?.recipe
+            self.mealDescriptionLabel.text = self.event?.description
             var array:[String] = []
             var i = 0
             while (i < (self.event?.participants.count)!){
@@ -66,6 +67,15 @@ class PreviewEventViewController: UIViewController {
             let dateStr = dateFormatter.string(from: self.event!.date)
             let gooddate = dateStr.toString(to: 8)
             self.dateEventLabel.text = gooddate
+            
+            if self.event!.participating {
+                self.validateActionButton.setTitle("Quitter", for: .normal)
+                self.validateActionButton.backgroundColor = UIColor(red: 246/255, green: 105/255, blue: 118/255, alpha: 1)
+            }
+            
+            if self.event!.creator {
+                self.validateActionButton.removeFromSuperview()
+            }
         }
         
         
@@ -74,6 +84,14 @@ class PreviewEventViewController: UIViewController {
     
     
     @IBAction func validateButtonAction(_ sender: Any) {
+        if (self.event != nil) {
+            if (!self.event!.creator) {
+                EventService.participationToEventAction(eventId: self.event!.id, userId: UserDefaults.getTheUserStored()!.userId, state: self.event!.participating) { (res, error) in
+
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            }
+        }
     }
     
     /*

@@ -40,5 +40,18 @@ class UrlBuilder {
     static func getEventsByCompagny(id: String) -> String {
         return "\(baseUrl)/events/" + id + "/company"
     }
+    
+    static func participationToEventUrl(eventId: String, userId: String, state: Bool) -> String {
+        var res: String
+        
+        if state {
+            res = "\(baseUrl)/events/" + eventId + "/users/" + userId + "/leaves"
+        } else {
+            res = "\(baseUrl)/events/" + eventId + "/users/" + userId + "/joins"
+        }
+        
+        return res
+    }
 }
+
 

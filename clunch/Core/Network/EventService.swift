@@ -28,4 +28,20 @@ class EventService {
             }
         })
     }
+    
+    static func participationToEventAction(eventId: Int, userId: Int, state: Bool, callBack: @escaping CallbackEvent) {
+        Alamofire.request(UrlBuilder.participationToEventUrl(eventId: String(eventId), userId: String(userId), state: state), method: .post, parameters: nil, encoding: JSONEncoding.default, headers: AuthService.getHeadersAction()).responseJSON(completionHandler: { response in
+            
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                callBack(json, nil)
+                
+            case .failure(let error):
+                print(error)
+                break
+            }
+        })
+    }
 }
