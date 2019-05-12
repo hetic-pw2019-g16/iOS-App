@@ -55,11 +55,21 @@ class LoginViewController: UIViewController {
         
         let params = ["email": email,"password": passwordTextField.text!]
         AuthService.loginAction(body: params) { (res, error) in
-            
-            UserDefaults.saveThisUser(user: res as! User)
-            
-            let navigationController = UIStoryboard(name: "Content", bundle: nil).instantiateViewController(withIdentifier: self.navigationHomeIdentifier) as! UITabBarController
-            self.navigationController?.pushViewController(navigationController, animated: true)
+            if error {
+                let title = "Erreur"
+                let message = "Not Found"
+                let button = "Close"
+                
+                let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: button, style: UIAlertAction.Style.cancel, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                UserDefaults.saveThisUser(user: res as! User)
+                
+                let navigationController = UIStoryboard(name: "Content", bundle: nil).instantiateViewController(withIdentifier: self.navigationHomeIdentifier) as! UITabBarController
+                self.navigationController?.pushViewController(navigationController, animated: true)
+            }
         }
     }
 }

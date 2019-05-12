@@ -36,9 +36,22 @@ class PreLoginViewController: UIViewController {
         
         let body = ["email": emailAddressTextField.text]
         AuthService.userCheckAction(body: body as [String : Any]) { (res, error) in
-            let nextStepViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-            nextStepViewController.email = self.emailAddressTextField.text ?? ""
-            self.navigationController?.pushViewController(nextStepViewController, animated: true)
+            let code = res["code"].int
+            
+            if code == UrlBuilder.errorCode {
+                let title = "Erreur"
+                let message = "Not Found"
+                let button = "Close"
+                
+                let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title: button, style: UIAlertAction.Style.cancel, handler: nil))
+                
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                let nextStepViewController = self.storyboard?.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                nextStepViewController.email = self.emailAddressTextField.text ?? ""
+                self.navigationController?.pushViewController(nextStepViewController, animated: true)
+            }
         }
     }
     

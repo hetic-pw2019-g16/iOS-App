@@ -9,6 +9,9 @@
 import Foundation
 
 class UrlBuilder {
+    static let errorCode = 400
+    static let sucessCode = 200
+    
     private static let baseUrl: String = {
         return "http://clunch.maximegrec.com/api"
     }()
