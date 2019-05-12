@@ -348,13 +348,12 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
             myCustomCell.backgroundColor = green
             myCustomCell.layer.cornerRadius = 5
 
-            //myCustomCell.bulletPointView.backgroundColor = UIColor.red
-            //myCustomCell.bulletPointView.isHidden = false
+            myCustomCell.bulletPointView.setBulletPoit(creator: array[0].creator, participant: array[0].participating)
         } else {
             myCustomCell.backgroundColor = UIColor.white
             myCustomCell.layer.cornerRadius = 0
 
-            //myCustomCell.bulletPointView.isHidden = true
+            myCustomCell.bulletPointView.isHidden = true
         }
         
         return myCustomCell

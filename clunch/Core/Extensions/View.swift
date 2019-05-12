@@ -40,4 +40,20 @@ extension UIView {
         self.layer.shadowOffset = CGSize.zero
         self.layer.shadowRadius = 10
     }
+    
+    func setBulletPoit(creator: Bool, participant: Bool) {
+        if creator || participant {
+            if creator {
+                self.backgroundColor = UIColor.red
+                self.isHidden = false
+            }
+            
+            if participant {
+                self.backgroundColor = UIColor.yellow
+                self.isHidden = false
+            }
+        } else {
+            self.isHidden = true
+        }
+    }
 }
