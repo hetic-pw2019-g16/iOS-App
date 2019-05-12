@@ -63,7 +63,6 @@ class CalendarViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.getEvents()
-
     }
     
     func loadparticipatedEvents () {
@@ -107,6 +106,7 @@ class CalendarViewController: UIViewController {
             self.updateView()
             self.loadCreatedEvents()
             self.loadparticipatedEvents()
+            self.collectionView.reloadData()
         })
     }
     
@@ -370,7 +370,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         while (i < self.events.count) {
             let eventDateStr = dateFormatter.string(from: self.events[i].date)
             if (dateStr == eventDateStr) {
-                print(dateStr)
                 array.append(self.events[i])
             }
             i = i+1

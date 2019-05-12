@@ -86,7 +86,7 @@ class CalendarService {
                     i += 1
                     json = jsonTab[(i)]
                 }
-                // TODO -> Work With Model to prevent errors 
+                // TODO -> Work With Model to prevent errors
                 callBack(eventslist, nil)
                 
             case .failure(let error):
