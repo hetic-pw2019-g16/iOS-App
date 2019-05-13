@@ -73,6 +73,10 @@ class PreviewEventViewController: UIViewController {
                 self.validateActionButton.backgroundColor = UIColor(red: 246/255, green: 105/255, blue: 118/255, alpha: 1)
             }
             
+            if self.event?.participants.count ?? 0 >= self.event?.quantity ?? 0 && !self.event!.participating {
+                self.validateActionButton.removeFromSuperview()
+            }
+            
             if self.event?.creator ?? false {
                 self.validateActionButton.removeFromSuperview()
             }
