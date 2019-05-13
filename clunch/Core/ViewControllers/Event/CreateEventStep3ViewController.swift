@@ -39,9 +39,10 @@ class CreateEventStep3ViewController: UIViewController {
         dateFormatterPrint.dateFormat = "dd.MM.yyyy"
         
         let date = dateFormatterPrint.string(from: eventDate)
+        let limitDate = dateFormatterPrint.string(from: finishDate)
         let number = Int(sliderParticipantsNumber.value)
 
-        let body = ["recipe": recipe, "date": date, "desc": recipeDescription, "quantity": number] as [String : Any]
+        let body = ["recipe": recipe, "date": date, "desc": recipeDescription, "quantity": number, "limitDate": limitDate] as [String : Any]
         let id = UserDefaults.getTheUserStored()!.userId as Int
         
         EventService.addEventAction(id: id, body: body) { (res, error) in
