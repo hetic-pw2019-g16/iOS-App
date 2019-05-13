@@ -68,18 +68,19 @@ class PreviewEventViewController: UIViewController {
             let gooddate = dateStr.toString(to: 8)
             self.dateEventLabel.text = gooddate
             
-            if self.event!.participating {
+            if self.event?.participating ?? false {
                 self.validateActionButton.setTitle("Quitter", for: .normal)
                 self.validateActionButton.backgroundColor = UIColor(red: 246/255, green: 105/255, blue: 118/255, alpha: 1)
             }
             
-            if self.event!.creator {
+            if self.event?.creator ?? false {
+                self.validateActionButton.removeFromSuperview()
+            }
+            
+            if Date() > event?.date ?? Date() {
                 self.validateActionButton.removeFromSuperview()
             }
         }
-        
-        
-
     }
     
     
