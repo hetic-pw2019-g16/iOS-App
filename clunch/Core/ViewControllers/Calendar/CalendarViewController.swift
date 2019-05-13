@@ -228,7 +228,6 @@ class CalendarViewController: UIViewController {
     //MARK:- AFFICHER LA COULEUR DE LA CELLULE SI EVENEMENT
     func handleCellTextColor(view: JTAppleCell?, cellState: CellState, date: Date! = nil) {
         guard let cell = view as? CalendarItemCell else { return }
-        
         if cellState.isSelected {
             cell.cellDay.textColor = .white
             if date != nil {
@@ -284,13 +283,17 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
     
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        handleCellTextColor(view: cell, cellState: cellState, date: date)
-
         // Faire la correspondance entre la date actuelle et tous les eventes de self.events qui ont la meme date
         // si il y a des event alors mettre le truc vert
-        // Parmi ces events voir si je suisinclu dedans et mettre pastille en consequence
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "PreviewEventViewController") as! PreviewEventViewController
-        self.navigationController?.pushViewController(vc, animated: true)
+        // Parmi ces events voir si je suisinclu dedans et mett re pastille en consequence
+        let eventCell = cell as! CalendarItemCell
+        if eventCell.event != nil {
+            handleCellTextColor(view: cell, cellState: cellState, date: date)
+            let vc = self.storyboard?.instantiateViewController(withIdentifier: "PreviewEventViewController") as! PreviewEventViewController
+            vc.event = eventCell.event
+            let nav = self.navigationController
+            nav?.pushViewController(vc, animated: true)
+        }
         /*
         self.viewEvent.isHidden = false
         
@@ -302,10 +305,12 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         */
     }
     
-    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        handleCellTextColor(view: cell, cellState: cellState)
-        //self.viewEvent.isHidden = true
-        cell?.backgroundColor = UIColor.white
+    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState, event: Event?) {
+        if event == nil {
+            handleCellTextColor(view: cell, cellState: cellState)
+            //self.viewEvent.isHidden = true
+            cell?.backgroundColor = UIColor.white
+        }
     }
     
     
@@ -332,6 +337,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         let myCustomCell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarItemCell
         
         self.calendar(calendar, willDisplay: myCustomCell, forItemAt: date, cellState: cellState, indexPath: indexPath)
+        
         myCustomCell.cellDay.text = cellState.text
         
         //handleCellTextColor(view: myCustomCell, cellState: cellState, date: date)
@@ -349,6 +355,7 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
             myCustomCell.layer.cornerRadius = 5
 
             myCustomCell.bulletPointView.setBulletPoit(creator: array[0].creator, participant: array[0].participating)
+            myCustomCell.event = array[0]
         } else {
             myCustomCell.backgroundColor = UIColor.white
             myCustomCell.layer.cornerRadius = 0

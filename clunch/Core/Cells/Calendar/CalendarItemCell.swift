@@ -13,5 +13,7 @@ class CalendarItemCell: JTAppleCell {
 
     @IBOutlet var cellDay: UILabel!
     @IBOutlet weak var bulletPointView: UIView!
+    
+    var event: Event?
 }
 
