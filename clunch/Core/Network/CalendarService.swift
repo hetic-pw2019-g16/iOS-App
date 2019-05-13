@@ -43,11 +43,9 @@ class CalendarService {
             case .success(let value):
                 var eventslist : [Event] = []
                 var jsonTab: JSON = JSON(value)
-                print(jsonTab["message"])
                 var i:Int = 0
                 var json:JSON = jsonTab[i]
                 while (json != JSON.null){
-                    print(json)
                     let id = json["id"].int ?? 0
                     let recipe = json["recipe"].string ?? ""
                     let description = json["description"].string ?? ""

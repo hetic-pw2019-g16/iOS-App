@@ -61,32 +61,28 @@ class CalendarViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("holo")
         super.viewWillAppear(animated)
         self.getEvents()
+        setupView()
     }
     
     func loadparticipatedEvents () {
-        let me = UserDefaults.getTheUserStored()
         var i = 0
-        var j = 0
         self.participatedEvents = []
         while (i < self.events.count){
-            while (j < self.events[i].participants.count){
-                if (me?.username == self.events[i].participants[j].username){
-                    self.participatedEvents.append(self.events[i])
-                }
-                j = j+1
+            if (self.events[i].participating){
+                self.participatedEvents.append(self.events[i])
             }
             i = i+1
         }
     }
     
     func loadCreatedEvents () {
-        let me = UserDefaults.getTheUserStored()
         var i = 0
         self.createdEvents = []
         while (i < self.events.count){
-            if (me?.username == self.events[i].user.username){
+            if (self.events[i].creator){
                 self.createdEvents.append(self.events[i])
             }
             i = i+1
