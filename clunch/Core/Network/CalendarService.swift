@@ -52,10 +52,13 @@ class CalendarService {
                     let recipe = json["recipe"].string ?? ""
                     let description = json["description"].string ?? ""
                     var dateStr: String = json["date"].string!
+                    var limitDateStr: String = json["limitDate"].string!
                     dateStr = dateStr.subString(to: 9)
+                    limitDateStr = limitDateStr.subString(to: 9)
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateFormat = "yyyy-MM-dd"
                     let date:Date = dateFormatter.date(from: dateStr)!
+                    let limitDate:Date = dateFormatter.date(from: limitDateStr)!
                     let quantity = json["quantity"].int ?? 0
                     
                     let userId = json["user"]["id"].int ?? 0
@@ -79,7 +82,7 @@ class CalendarService {
                         j += 1
                         singleParticipant = participantsTab[j]
                     }
-                    let tmpEvent = Event(id: id, recipe: recipe, description: description, date: date, user: user, quantity: quantity, participants: allParticipatns)
+                    let tmpEvent = Event(id: id, recipe: recipe, description: description, date: date, user: user, quantity: quantity, participants: allParticipatns, limitDate: limitDate)
                     
                     eventslist.append(tmpEvent)
                     

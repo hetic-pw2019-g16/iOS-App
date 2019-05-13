@@ -80,6 +80,10 @@ class PreviewEventViewController: UIViewController {
             if Date() > event?.date ?? Date() {
                 self.validateActionButton.removeFromSuperview()
             }
+            
+            if Date() > event?.limitDate ?? Date() {
+                self.validateActionButton.removeFromSuperview()
+            }
         }
     }
     

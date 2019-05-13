@@ -13,6 +13,7 @@ class Event {
     var recipe: String!
     var description: String!
     var date: Date = Date()
+    var limitDate: Date = Date()
     var user: User
     var quantity: Int!
     var participants: [User]
@@ -20,11 +21,12 @@ class Event {
     var participating: Bool
     var creator: Bool
     
-    init(id: Int = 0, recipe: String, description: String, date: Date, user: User, quantity: Int, participants: [User] = [], commentaries:[String] = []) {
+    init(id: Int = 0, recipe: String, description: String, date: Date, user: User, quantity: Int, participants: [User] = [], commentaries:[String] = [], limitDate: Date) {
         self.id = id
         self.recipe = recipe
         self.description = description
         self.date = date
+        self.limitDate = limitDate
         self.user = user
         self.quantity = quantity
         self.participants = participants
