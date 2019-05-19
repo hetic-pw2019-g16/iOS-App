@@ -25,6 +25,8 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.hideKeyboardOnTouch()
 
         self.loginButton.layer.cornerRadius = 5
         //passwordTextField.loginTextStyleNear(color: UITextField.greyclear)

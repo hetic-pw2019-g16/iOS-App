@@ -43,7 +43,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" restorationIdentifier="password" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="*******" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qs8-12-zNH">
-                                                <rect key="frame" x="0.0" y="45" width="65" height="30"/>
+                                                <rect key="frame" x="0.0" y="45" width="244" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
@@ -66,6 +66,9 @@
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="qs8-12-zNH" secondAttribute="trailing" id="etY-F8-ikE"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -426,8 +429,8 @@ sur votre boite mail</string>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSM-8Z-Er7">
                                                 <rect key="frame" x="0.0" y="37" width="295" height="81.5"/>
                                                 <string key="text">Si toute fois cela n’a pas fonctionné,
-nous vous invitons à vous rapprocher de votre RH ou de réessayer
-N’hésitez pas à regarder vos spams</string>
+nous vous invitons à vous rapprocher de votre RH ou de réessayer.
+N’hésitez pas à regarder vos spams.</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

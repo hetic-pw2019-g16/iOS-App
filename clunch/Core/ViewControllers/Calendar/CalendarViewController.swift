@@ -9,6 +9,12 @@
 import UIKit
 import JTAppleCalendar
 
+
+class DateHeader: JTAppleCollectionReusableView  {
+        @IBOutlet weak var monthTitle: UILabel!
+}
+
+
 class CalendarViewController: UIViewController {
     enum lastViewController {
         case first
@@ -16,6 +22,8 @@ class CalendarViewController: UIViewController {
         case third
     }
     
+
+    @IBOutlet weak var collectionView: JTAppleCalendarView!
     @IBOutlet weak var viewCalendarView: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var segmentedView: UIView!
@@ -24,7 +32,6 @@ class CalendarViewController: UIViewController {
     
     
     //@IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var collectionView: JTAppleCalendarView!
     
     let green = UIColor(red:0.35, green:0.75, blue:0.69, alpha:1.0)
     let grey = UIColor(red:0.50, green:0.50, blue:0.50, alpha:1.0)
@@ -42,12 +49,15 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.collectionView.scrollDirection = .horizontal
+        self.collectionView.scrollingMode   = .stopAtEachCalendarFrame
+    self.collectionView.showsHorizontalScrollIndicator = false
+        
         self.viewCalendarView.addShadow(withRadius: true, radius: 7)
         
         setupView()
         
         
-        self.title = "Calendrier"
 
         /*
         self.tableView.delegate = self
@@ -61,7 +71,6 @@ class CalendarViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("holo")
         super.viewWillAppear(animated)
         self.getEvents()
         setupView()
@@ -321,13 +330,23 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
-        let startDate = formatter.date(from: "2019 01 01")!
+        let startDate = Date()
         let endDate = formatter.date(from: "2019 12 31")!
         
-        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate, generateOutDates: .tillEndOfRow)
+        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate, numberOfRows: 6, generateOutDates: .tillEndOfRow)
         return parameters
     }
     
+   func calendar(_ calendar: JTAppleCalendarView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTAppleCollectionReusableView {
+    formatter.dateFormat = "MMMM"
+      let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "DateHeader", for: indexPath) as! DateHeader
+      header.monthTitle.text = formatter.string(from: range.start)
+      return header
+   }
+    
+       func calendarSizeForMonths(_ calendar: JTAppleCalendarView?) -> MonthSize? {
+       return MonthSize(defaultSize: 50)
+  }
     
     func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
         let myCustomCell = self.collectionView.dequeueReusableCell(withReuseIdentifier: "CalendarCell", for: indexPath) as! CalendarItemCell

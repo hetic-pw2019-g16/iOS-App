@@ -869,8 +869,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B483EE0B7F6ADE3B8A581B0 /* Pods-clunch.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R8XP3LMF69;
 				INFOPLIST_FILE = clunch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -878,6 +879,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = clunch.clunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -887,8 +889,9 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CA745FFBB8DC08111EEEA5F /* Pods-clunch.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = R8XP3LMF69;
 				INFOPLIST_FILE = clunch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -896,6 +899,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = clunch.clunch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

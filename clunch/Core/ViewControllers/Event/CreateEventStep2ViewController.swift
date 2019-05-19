@@ -34,7 +34,7 @@ class CreateEventStep2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-   
+        self.view.hideKeyboardOnTouch()
         self.nextStepToStep3Button.layer.cornerRadius = 5
         self.clearView.isHidden = true
     }
@@ -44,7 +44,7 @@ class CreateEventStep2ViewController: UIViewController {
         if (self.isOnEventDate){
             self.eventDate = self.datePicker.date
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "YYYY-MM-dd"
+            dateFormatter.dateFormat = "YYYY-MM-ddJT"
             let dateStr = dateFormatter.string(from: self.eventDate)
             self.eventDateButton.setTitle(dateStr, for: .normal)
         }else{

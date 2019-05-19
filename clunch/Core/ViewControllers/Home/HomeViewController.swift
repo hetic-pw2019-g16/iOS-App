@@ -95,6 +95,7 @@ class HomeViewController: UIViewController {
         self.newRecipe4.addShadow(withRadius: true, radius: 5)
         
     
+        profileButton.width = 30
         
         
         self.createdEventCollectionView.delegate = self
@@ -112,6 +113,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         self.getEvents()
     }
+ 
     
     func loadparticipatedEvents () {
         let me = UserDefaults.getTheUserStored()

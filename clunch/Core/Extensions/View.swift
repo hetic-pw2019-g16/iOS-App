@@ -9,6 +9,12 @@
 import UIKit
 
 extension UIView {
+    
+    func hideKeyboardOnTouch(){
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.endEditing(_:))))
+    }
+
+    
     func popUp() {
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
@@ -42,14 +48,16 @@ extension UIView {
     }
     
     func setBulletPoit(creator: Bool, participant: Bool) {
+        self.layer.cornerRadius = 5
+        
         if creator || participant {
             if creator {
-                self.backgroundColor = UIColor.red
+                self.backgroundColor = UIButton.yellow
                 self.isHidden = false
             }
             
             if participant {
-                self.backgroundColor = UIColor.yellow
+                self.backgroundColor = UITextField.pink
                 self.isHidden = false
             }
         } else {

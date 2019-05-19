@@ -16,4 +16,3 @@ class CalendarItemCell: JTAppleCell {
     
     var event: Event?
 }
-

@@ -23,7 +23,6 @@ class CategoryViewController: UIViewController {
         tableView.categotyStyle()
         // Cell Style
         
-        self.title = "Recette"
         
         RecipeService.getCategoryListAction() { (res, error) in
             self.categories.removeAll()
