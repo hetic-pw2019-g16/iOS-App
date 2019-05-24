@@ -207,16 +207,17 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		2EA01DA32255FB59003B77B7 /* Storyboards */ = {
+		2EA01DA32255FB59003B77B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2EDC38FE21FEF7A4009227DB /* Cells */,
 				2EA01DA02255E95E003B77B7 /* Recipe.storyboard */,
 				2E7EC0432255FCDF001C31D4 /* CreateEvent.storyboard */,
 				2E7EC049225602AC001C31D4 /* Calendar.storyboard */,
 				2E7EC04B2256039E001C31D4 /* Briefcase.storyboard */,
 				2E7EC04E225603F2001C31D4 /* Content.storyboard */,
 			);
-			path = Storyboards;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		2ECD269A22646E87009D9669 /* Network */ = {
@@ -231,20 +232,7 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		2EDC38E021FE4327009227DB /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				2ECD269A22646E87009D9669 /* Network */,
-				2EA01DA32255FB59003B77B7 /* Storyboards */,
-				2EDC38FE21FEF7A4009227DB /* Cells */,
-				2EDC38FA21FEF4DC009227DB /* Models */,
-				2EDC38E621FE4391009227DB /* Extensions */,
-				2EDC38E221FE433C009227DB /* ViewControllers */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		2EDC38E221FE433C009227DB /* ViewControllers */ = {
+		2EDC38E221FE433C009227DB /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				E2DB3EEC2254D59F002443F1 /* Briefcase */,
@@ -254,7 +242,7 @@
 				2EDC38EE21FE5238009227DB /* Recipe */,
 				2EDC38E321FE4355009227DB /* Login */,
 			);
-			path = ViewControllers;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		2EDC38E321FE4355009227DB /* Login */ = {
@@ -329,6 +317,7 @@
 		2EDC38FA21FEF4DC009227DB /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2ECD269A22646E87009D9669 /* Network */,
 				2EE8709A2201F99A006F0BA3 /* Event.swift */,
 				E2CFB981225E6B880077B58D /* User.swift */,
 				2E32D9892200430800985453 /* RecipeItem.swift */,
@@ -381,7 +370,10 @@
 		2EE293F121ECD00F00EAE0A3 /* clunch */ = {
 			isa = PBXGroup;
 			children = (
-				2EDC38E021FE4327009227DB /* Core */,
+				2EDC38FA21FEF4DC009227DB /* Models */,
+				2EA01DA32255FB59003B77B7 /* Views */,
+				2EDC38E221FE433C009227DB /* Controllers */,
+				2EDC38E621FE4391009227DB /* Extensions */,
 				2EE293F221ECD00F00EAE0A3 /* AppDelegate.swift */,
 				2EE293F821ECD00F00EAE0A3 /* Main.storyboard */,
 				2EE293FB21ECD01000EAE0A3 /* Assets.xcassets */,
@@ -871,7 +863,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R8XP3LMF69;
+				DEVELOPMENT_TEAM = Y6P264XEGQ;
 				INFOPLIST_FILE = clunch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -891,7 +883,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R8XP3LMF69;
+				DEVELOPMENT_TEAM = Y6P264XEGQ;
 				INFOPLIST_FILE = clunch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

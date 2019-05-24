@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g1h-s1-2DQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S4t-ga-Ga6">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,16 +10,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--CREATION REPAS-->
+        <!--Event View Controller-->
         <scene sceneID="Gdg-dp-NBB">
             <objects>
                 <viewController storyboardIdentifier="EventViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="LAX-Bx-OSu" customClass="EventViewController" customModule="clunch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1S0-8J-tPb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VpA-CN-KwB">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retrouver tous les événéments auquels vous êtes inscrits ou que vous avez créé" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uf-XV-hWd">
                                         <rect key="frame" x="30" y="12" width="315" height="60"/>
@@ -31,7 +31,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="X7V-dX-5t8">
-                                        <rect key="frame" x="0.0" y="84" width="375" height="370"/>
+                                        <rect key="frame" x="0.0" y="84" width="375" height="463"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ComingEventsTableViewCell" rowHeight="88" id="776-Pp-G5v" customClass="ComingEventsTableViewCell" customModule="clunch" customModuleProvider="target">
@@ -127,7 +127,7 @@
                                         </prototypes>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsC-vS-wqP">
-                                        <rect key="frame" x="165" y="459" width="45" height="45"/>
+                                        <rect key="frame" x="165" y="552" width="45" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="GS1-HS-GAe"/>
                                             <constraint firstAttribute="height" constant="45" id="qYh-hs-f2V"/>
@@ -140,7 +140,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Créer un nouvel événement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kd0-sT-htr">
-                                        <rect key="frame" x="12" y="512" width="351" height="34"/>
+                                        <rect key="frame" x="12" y="605" width="351" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="0.34901960780000002" green="0.74509803919999995" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -173,9 +173,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fCi-DU-gqp"/>
                     </view>
-                    <navigationItem key="navigationItem" title="CREATION REPAS" id="Jg1-Nu-vke">
-                        <barButtonItem key="backBarButtonItem" title="Retour" id="oeO-n2-6Yj"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="buttonCreateNewEvent" destination="rsC-vS-wqP" id="pah-Yw-OhP"/>
                         <outlet property="createNewEventLabel" destination="Kd0-sT-htr" id="oF3-Kq-oEb"/>
@@ -185,9 +182,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uHd-FH-qyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4421.6000000000004" y="-321.58920539730138"/>
+            <point key="canvasLocation" x="3524" y="-247"/>
         </scene>
-        <!--Create Event Step1 View Controller-->
+        <!--CREATION REPAS-->
         <scene sceneID="Yse-4K-rCN">
             <objects>
                 <viewController storyboardIdentifier="CreateEventStep1ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zRK-Nc-Toc" customClass="CreateEventStep1ViewController" customModule="clunch" customModuleProvider="target" sceneMemberID="viewController">
@@ -196,7 +193,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFW-TX-yxP">
-                                <rect key="frame" x="112.5" y="310" width="150" height="32"/>
+                                <rect key="frame" x="112.5" y="354" width="150" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="HMq-VU-MlD"/>
                                 </constraints>
@@ -206,7 +203,7 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zIz-JN-i1T">
-                                <rect key="frame" x="37.5" y="592" width="300" height="50"/>
+                                <rect key="frame" x="37.5" y="543" width="300" height="50"/>
                                 <color key="backgroundColor" red="0.34901960780000002" green="0.74509803919999995" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="FcR-Hq-R4f"/>
@@ -221,21 +218,21 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ingredients" translatesAutoresizingMaskIntoConstraints="NO" id="P5G-Iw-y1N">
-                                <rect key="frame" x="87.5" y="45" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="89" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="XPg-Oy-HyO"/>
                                     <constraint firstAttribute="height" constant="200" id="iES-wG-j2V"/>
                                 </constraints>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5XT-yg-HWY">
-                                <rect key="frame" x="24" y="366" width="327" height="167"/>
+                                <rect key="frame" x="24" y="410" width="327" height="74"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nom de la recette" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3V5-pM-Ufa">
-                                <rect key="frame" x="120" y="275" width="135" height="20"/>
+                                <rect key="frame" x="120" y="319" width="135" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="135" id="qGv-0H-hdo"/>
                                 </constraints>
@@ -262,6 +259,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bwj-cU-OLK"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Création repas" image="event_logo" landscapeImage="event_logo" largeContentSizeImage="event_logo" id="HZ8-Sh-u3g"/>
+                    <navigationItem key="navigationItem" title="CREATION REPAS" id="Jg1-Nu-vke">
+                        <barButtonItem key="backBarButtonItem" title="Retour" id="oeO-n2-6Yj"/>
+                    </navigationItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="RecipeNameTextField" destination="3V5-pM-Ufa" id="Knl-kZ-w7p"/>
                         <outlet property="buttonFindRecipe" destination="aFW-TX-yxP" id="ZGf-w5-4yh"/>
@@ -273,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6uU-5o-3tS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5359.1999999999998" y="-322.48875562218893"/>
+            <point key="canvasLocation" x="6298.3999999999996" y="-322.48875562218893"/>
         </scene>
         <!--Create Event Step2 View Controller-->
         <scene sceneID="spg-2O-Hz8">
@@ -471,7 +473,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTk-ZQ-X4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6213.6000000000004" y="-322.48875562218893"/>
+            <point key="canvasLocation" x="7152.8000000000002" y="-322.48875562218893"/>
         </scene>
         <!--Create Event Step3 View Controller-->
         <scene sceneID="Ugb-Eu-iwX">
@@ -583,31 +585,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yul-E2-BVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7095.1999999999998" y="-322.48875562218893"/>
+            <point key="canvasLocation" x="8034.3999999999996" y="-322.48875562218893"/>
         </scene>
-        <!--Créer un repas-->
-        <scene sceneID="C0s-XZ-EMP">
+        <!--Navigation Controller-->
+        <scene sceneID="a0Q-zE-Nrf">
             <objects>
-                <navigationController storyboardIdentifier="NavCreateEvent" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="g1h-s1-2DQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Créer un repas" image="event_logo" landscapeImage="event_logo" largeContentSizeImage="event_logo" selectedImage="event_logo" id="4pI-4T-npe"/>
+                <navigationController storyboardIdentifier="NavCreateEvent" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="S4t-ga-Ga6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="FSW-me-gam">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Ty-0Q-M8c">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.76078431369999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="LAX-Bx-OSu" kind="relationship" relationship="rootViewController" id="7RF-2o-Vzg"/>
+                        <segue destination="zRK-Nc-Toc" kind="relationship" relationship="rootViewController" id="0P3-hz-uNK"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zS1-DL-clo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KVW-MB-gNw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3482.4000000000001" y="-321.58920539730138"/>
+            <point key="canvasLocation" x="5359.1999999999998" y="-322.48875562218893"/>
         </scene>
     </scenes>
     <resources>
