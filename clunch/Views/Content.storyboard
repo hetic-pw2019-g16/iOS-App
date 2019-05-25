@@ -542,7 +542,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CJv-KA-I0X">
                                                 <rect key="frame" x="17.5" y="96" width="160" height="120"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Quiche" translatesAutoresizingMaskIntoConstraints="NO" id="4vi-WJ-jRP">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="pates_saumon" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4vi-WJ-jRP">
                                                         <rect key="frame" x="0.0" y="0.0" width="160" height="66"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="160" id="YVj-y7-yxX"/>
@@ -617,7 +617,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nao-Gq-dnJ">
                                                 <rect key="frame" x="17.5" y="240" width="160" height="120"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Quiche" translatesAutoresizingMaskIntoConstraints="NO" id="bzy-y7-uB2">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="lasagne_vege" translatesAutoresizingMaskIntoConstraints="NO" id="bzy-y7-uB2">
                                                         <rect key="frame" x="0.0" y="0.0" width="160" height="66"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="160" id="YOZ-hC-eYY"/>
@@ -656,7 +656,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aO6-FS-mXy">
                                                 <rect key="frame" x="197.5" y="240" width="160" height="120"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Quiche" translatesAutoresizingMaskIntoConstraints="NO" id="oHg-iE-VDj">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="poulet_caramelise" translatesAutoresizingMaskIntoConstraints="NO" id="oHg-iE-VDj">
                                                         <rect key="frame" x="0.0" y="0.0" width="160" height="66"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="160" id="cCb-IY-tCF"/>
@@ -952,7 +952,10 @@
         <image name="creator_event" width="154" height="156"/>
         <image name="creator_event2" width="156" height="160"/>
         <image name="home_logo" width="24" height="22"/>
+        <image name="lasagne_vege" width="299" height="168"/>
         <image name="notification" width="58" height="62"/>
+        <image name="pates_saumon" width="300" height="225"/>
+        <image name="poulet_caramelise" width="275" height="183"/>
         <image name="profile" width="58" height="66"/>
     </resources>
 </document>

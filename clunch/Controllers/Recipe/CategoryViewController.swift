@@ -21,6 +21,7 @@ class CategoryViewController: UIViewController {
         
         // Table Style
         tableView.categotyStyle()
+        self.tableView.delegate = self
         // Cell Style
         
         
@@ -47,7 +48,7 @@ class CategoryViewController: UIViewController {
 }
 
 
-extension CategoryViewController: UITableViewDataSource {
+extension CategoryViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categories.count
     }
@@ -59,5 +60,9 @@ extension CategoryViewController: UITableViewDataSource {
         cell.item = categories[indexPath.row]
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    
     }
 }

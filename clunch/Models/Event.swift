@@ -6,7 +6,7 @@
 //  Copyright © 2019 Clunch. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Event {
     var id: Int!
@@ -20,6 +20,7 @@ class Event {
     var commentaries:[String]
     var participating: Bool
     var creator: Bool
+    var imageCreator: UIImage?
     
     init(id: Int = 0, recipe: String, description: String, date: Date, user: User, quantity: Int, participants: [User] = [], commentaries:[String] = [], limitDate: Date) {
         self.id = id

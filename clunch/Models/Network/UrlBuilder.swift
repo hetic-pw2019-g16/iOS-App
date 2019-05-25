@@ -29,6 +29,7 @@ class UrlBuilder {
     }
     
     static func categoryItemUrl(id: String) -> String {
+        print("\(baseUrl)/categories/" + id + "/recipes")
         return "\(baseUrl)/categories/" + id + "/recipes"
     }
     

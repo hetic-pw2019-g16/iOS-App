@@ -38,6 +38,7 @@ class CreatedEventsViewController: UIViewController,
         let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)
         let gooddate = dateStr.toString(to: 8)
         cell.dateTitle.text = gooddate
+        cell.profileImage.image = tmpEvent.imageCreator
         cell.inscriptionNumber.text = String(format: "%d participants", tmpEvent.participants.count)
 
 

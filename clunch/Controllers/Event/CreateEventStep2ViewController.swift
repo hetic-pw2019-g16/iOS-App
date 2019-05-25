@@ -44,20 +44,22 @@ class CreateEventStep2ViewController: UIViewController {
         if (self.isOnEventDate){
             self.eventDate = self.datePicker.date
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "YYYY-MM-ddJT"
+            dateFormatter.locale = Locale(identifier: "fr_FR")
+            dateFormatter.dateFormat = "EEEE d MMM, HH:mm"
             let dateStr = dateFormatter.string(from: self.eventDate)
             self.eventDateButton.setTitle(dateStr, for: .normal)
         }else{
             self.finishDate = self.datePicker.date
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "YYYY-MM-dd"
+            dateFormatter.locale = Locale(identifier: "fr_FR")
+            dateFormatter.dateFormat = "EEEE d MMM, HH:mm"
             let dateStr = dateFormatter.string(from: self.finishDate)
             self.eventLimitDateButton.setTitle(dateStr, for: .normal)  
         }
     }
     
     @IBAction func eventLimitDateButton(_ sender: Any) {
-        self.clearView.isHidden = false
+       self.clearView.isHidden = false
         self.isOnEventDate = false
     }
     
@@ -65,7 +67,7 @@ class CreateEventStep2ViewController: UIViewController {
     }
     
     @IBAction func eventDateButton(_ sender: Any) {
-        self.clearView.isHidden = false
+    self.clearView.isHidden = false
         self.isOnEventDate = true
     }
     

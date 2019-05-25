@@ -48,8 +48,8 @@ class CreateEventStep3ViewController: UIViewController {
         EventService.addEventAction(id: id, body: body) { (res, error) in
             print(res)
             let alert = UIAlertController(title: "Création", message: "Votre événement a bien été créé", preferredStyle: .alert)
-            let nextStepViewController = self.storyboard?.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
-            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in  self.navigationController?.pushViewController(nextStepViewController, animated: true)}))
+            
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in  self.navigationController?.popToRootViewController(animated: true)}))
             
             self.present(alert, animated: true)
         }
