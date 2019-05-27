@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipeViewController: UIViewController {
+class RecipeViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -21,6 +21,7 @@ class RecipeViewController: UIViewController {
         super.viewDidLoad()
 
         self.title = category.name
+        self.tableView.delegate = self
         
         
         RecipeService.getCategoryItemAction(id: category.id) { (res, error) in
@@ -29,9 +30,9 @@ class RecipeViewController: UIViewController {
             
             for recipe in res {
                 let errorManagementImage = "https://avatars0.githubusercontent.com/u/44369575?s=460&v=4"
-                let errorManagementDescrition = "Pas de description"
+                let errorManagementDescription = "Pas de description"
                 self.recipes.append(RecipeItem(name: recipe["title"] as? String ?? "pas de titre pour la recette", category: self.category,
-                                               description: recipe["description"] as? String ?? errorManagementDescrition,
+                                               description: recipe["body"] as? String ?? errorManagementDescription,
                                                ingredients: recipe["ingredients"] as? String ?? "pas d'ingredients oups",
                                               image: URL(string: recipe["image"] as? String ?? errorManagementImage)!))
             }
@@ -44,7 +45,8 @@ class RecipeViewController: UIViewController {
         if let segueIdentifier = segue.identifier {
             if segueIdentifier==detailRecipeIdentifier {
                 if let recipeCell = sender as? RecipeItemTableViewCell, let destinationViewController = segue.destination as? DetailRecipeViewController {
-                    destinationViewController.parametre = recipeCell.item.name
+                    destinationViewController.parametre = recipeCell.item
+                    
                 }
             }
         }
@@ -63,5 +65,10 @@ extension RecipeViewController: UITableViewDataSource {
         cell.item = recipes[indexPath.row]
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+        
     }
 }

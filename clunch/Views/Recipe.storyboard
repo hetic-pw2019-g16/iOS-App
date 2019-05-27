@@ -107,7 +107,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Salade" translatesAutoresizingMaskIntoConstraints="NO" id="hPl-IG-atD">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Salade" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPl-IG-atD">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST2-HN-g0K">
@@ -127,6 +127,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageRecipeView" destination="hPl-IG-atD" id="ngu-QC-mw2"/>
                                             <outlet property="nameLabel" destination="ST2-HN-g0K" id="fw6-XP-Q2f"/>
                                             <segue destination="TVG-Be-Ogo" kind="show" identifier="detail_recipe_identifier" id="rng-6j-Zec"/>
                                         </connections>
@@ -194,14 +195,8 @@
                                         <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingrédients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="irV-FJ-YyU">
-                                        <rect key="frame" x="147" y="168.5" width="81.5" height="19.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="0.46274509800000002" green="0.88235294119999996" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KIq-dw-bXX">
-                                        <rect key="frame" x="16" y="200" width="343" height="354"/>
+                                        <rect key="frame" x="16" y="168.5" width="343" height="385.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -214,11 +209,8 @@
                                     <constraint firstItem="YeL-KW-hlF" firstAttribute="top" secondItem="qo2-cV-hRG" secondAttribute="top" id="6Bo-fW-79F"/>
                                     <constraint firstAttribute="trailing" secondItem="KIq-dw-bXX" secondAttribute="trailing" constant="16" id="8A3-Cp-gzQ"/>
                                     <constraint firstItem="YeL-KW-hlF" firstAttribute="leading" secondItem="qo2-cV-hRG" secondAttribute="leading" id="ASP-gp-HOI"/>
-                                    <constraint firstItem="irV-FJ-YyU" firstAttribute="top" secondItem="0Da-50-DIF" secondAttribute="bottom" constant="12" id="Cf5-c6-1qN"/>
                                     <constraint firstAttribute="trailing" secondItem="YeL-KW-hlF" secondAttribute="trailing" id="TD7-bH-p6Z"/>
-                                    <constraint firstItem="KIq-dw-bXX" firstAttribute="top" secondItem="irV-FJ-YyU" secondAttribute="bottom" constant="12" id="U4Y-C8-XX9"/>
                                     <constraint firstAttribute="trailing" secondItem="0Da-50-DIF" secondAttribute="trailing" constant="107.5" id="UYq-FP-gyr"/>
-                                    <constraint firstItem="irV-FJ-YyU" firstAttribute="top" secondItem="0Da-50-DIF" secondAttribute="bottom" constant="12" id="YP4-SZ-6TA"/>
                                     <constraint firstItem="KIq-dw-bXX" firstAttribute="leading" secondItem="qo2-cV-hRG" secondAttribute="leading" constant="16" id="ayk-ZI-Lqv"/>
                                     <constraint firstItem="0Da-50-DIF" firstAttribute="leading" secondItem="qo2-cV-hRG" secondAttribute="leading" constant="107.5" id="oZj-i8-XJQ"/>
                                 </constraints>
@@ -234,6 +226,8 @@
                         <viewLayoutGuide key="safeArea" id="Yn8-wm-UWY"/>
                     </view>
                     <connections>
+                        <outlet property="imageRecipeDetailView" destination="YeL-KW-hlF" id="Nt5-hK-c9W"/>
+                        <outlet property="recipeDescription" destination="KIq-dw-bXX" id="VWk-sk-8BK"/>
                         <outlet property="recipeLabel" destination="0Da-50-DIF" id="tRR-EN-pva"/>
                     </connections>
                 </viewController>

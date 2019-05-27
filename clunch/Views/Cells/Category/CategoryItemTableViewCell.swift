@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class CategoryItemTableViewCell: UITableViewCell {
    
@@ -19,6 +20,8 @@ class CategoryItemTableViewCell: UITableViewCell {
     var item: CategoryItem! {
         didSet {
             nameLabel.text = item.name
+            imageCategoryView.af_setImage(withURL: item.image)
+            
             
         }
     }

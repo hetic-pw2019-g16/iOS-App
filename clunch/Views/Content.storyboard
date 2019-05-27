@@ -123,7 +123,7 @@
                                                                                 <constraint firstAttribute="width" constant="50" id="mG0-a2-Xj1"/>
                                                                             </constraints>
                                                                         </view>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creator_event" translatesAutoresizingMaskIntoConstraints="NO" id="lZU-BJ-Otm">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creator_event" translatesAutoresizingMaskIntoConstraints="NO" id="lZU-BJ-Otm">
                                                                             <rect key="frame" x="58" y="8" width="35" height="35"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="35" id="WGU-Ll-ZcF"/>
@@ -245,7 +245,7 @@
                                                                                 <constraint firstItem="C5c-Ot-s4T" firstAttribute="leading" secondItem="FZU-iF-0NC" secondAttribute="leading" constant="8" id="oR5-HI-Cb5"/>
                                                                             </constraints>
                                                                         </view>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creator_event2" translatesAutoresizingMaskIntoConstraints="NO" id="m2P-6A-eeU">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creator_event2" translatesAutoresizingMaskIntoConstraints="NO" id="m2P-6A-eeU">
                                                                             <rect key="frame" x="58" y="8" width="35" height="35"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="35" id="WAB-wZ-iBp"/>
@@ -421,7 +421,7 @@
                                                                                 <constraint firstItem="SbW-47-83A" firstAttribute="top" secondItem="qzz-DE-8Ta" secondAttribute="top" constant="45" id="mgm-ai-c8g"/>
                                                                             </constraints>
                                                                         </view>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creator_event2" translatesAutoresizingMaskIntoConstraints="NO" id="MSa-tJ-tLn">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="creator_event2" translatesAutoresizingMaskIntoConstraints="NO" id="MSa-tJ-tLn">
                                                                             <rect key="frame" x="65" y="15" width="35" height="35"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="35" id="0Rt-nC-tTN"/>
@@ -815,12 +815,6 @@
                                 <action selector="briefcaseAction:" destination="Df7-Zq-d7Y" id="LK2-3V-eqc"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="notification" style="plain" id="RDT-4H-z3v">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <connections>
-                                <action selector="notificationAction:" destination="Df7-Zq-d7Y" id="9v7-zq-CuC"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1680"/>
                     <connections>
@@ -848,7 +842,6 @@
                         <outlet property="newRecipe4" destination="aO6-FS-mXy" id="Eul-vb-dzu"/>
                         <outlet property="newRecipesLabel" destination="UGc-yb-MZX" id="YmK-bc-LeP"/>
                         <outlet property="newRecipesView" destination="cZR-Uz-BF8" id="lnX-r3-SNi"/>
-                        <outlet property="notificationButton" destination="RDT-4H-z3v" id="fuR-cs-8kG"/>
                         <outlet property="participatedEventCollectionView" destination="D7e-aK-jtL" id="y1I-wB-h5c"/>
                         <outlet property="profileButton" destination="hiC-4k-WfB" id="dgV-dc-Pp2"/>
                         <outlet property="recipeTimeLabel1" destination="Nc5-HM-B35" id="ne0-ca-Qg2"/>
@@ -949,13 +942,12 @@
     </scenes>
     <resources>
         <image name="Quiche" width="752" height="200"/>
-        <image name="creator_event" width="154" height="156"/>
-        <image name="creator_event2" width="156" height="160"/>
+        <image name="creator_event" width="362" height="362"/>
+        <image name="creator_event2" width="441" height="495"/>
         <image name="home_logo" width="24" height="22"/>
         <image name="lasagne_vege" width="299" height="168"/>
-        <image name="notification" width="58" height="62"/>
         <image name="pates_saumon" width="300" height="225"/>
         <image name="poulet_caramelise" width="275" height="183"/>
-        <image name="profile" width="58" height="66"/>
+        <image name="profile" width="25" height="29"/>
     </resources>
 </document>

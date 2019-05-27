@@ -38,7 +38,13 @@ class CreatedEventsViewController: UIViewController,
         let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)
         let gooddate = dateStr.toString(to: 8)
         cell.dateTitle.text = gooddate
-        cell.profileImage.image = tmpEvent.imageCreator
+        if (tmpEvent.user.username == "Samy"){
+            cell.profileImage.image = UIImage(named: "creator_event2")
+        } else if (tmpEvent.user.username == "Elea"){
+            cell.profileImage.image = UIImage(named: "creator_event")
+        } else {
+            cell.profileImage.image = UIImage(named: "creator_event3")
+        }
         cell.inscriptionNumber.text = String(format: "%d participants", tmpEvent.participants.count)
 
 

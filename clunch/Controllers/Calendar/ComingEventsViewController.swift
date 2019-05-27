@@ -41,6 +41,13 @@ class ComingEventsViewController: UIViewController, UITableViewDelegate, UITable
         let tmpEvent = self.events[indexPath.row]
         cell.eventCreator.text = tmpEvent.user.username
         cell.mealTitle.text = tmpEvent.recipe
+        if (tmpEvent.user.username == "Samy"){
+            cell.profileImage.image = UIImage(named: "creator_event2")
+        } else if (tmpEvent.user.username == "Elea"){
+            cell.profileImage.image = UIImage(named: "creator_event")
+        } else {
+            cell.profileImage.image = UIImage(named: "creator_event3")
+        }        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
         let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)

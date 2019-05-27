@@ -47,6 +47,7 @@ extension UIView {
         self.layer.shadowRadius = 10
     }
     
+    
     func setBulletPoit(creator: Bool, participant: Bool) {
         self.layer.cornerRadius = 5
         

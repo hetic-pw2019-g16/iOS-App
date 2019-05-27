@@ -10,14 +10,20 @@ import UIKit
 
 class DetailRecipeViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var imageRecipeDetailView: UIImageView!
     @IBOutlet weak var recipeLabel: UILabel!
+    @IBOutlet weak var recipeDescription: UITextView!
     
-    var parametre: String!
+    var parametre: RecipeItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = parametre
-        recipeLabel.text = parametre
+        self.title = parametre.name
+        recipeLabel.text = parametre.name
+        imageRecipeDetailView.af_setImage(withURL: parametre.image)
+        recipeDescription.text = parametre.description
+        
+        
     }
 }

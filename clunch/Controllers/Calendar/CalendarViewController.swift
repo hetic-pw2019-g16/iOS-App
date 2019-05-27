@@ -49,6 +49,9 @@ class CalendarViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.formatter.timeZone = Calendar.current.timeZone
+        self.formatter.locale = Locale(identifier: "fr_FR")
+        
         self.collectionView.scrollDirection = .horizontal
         self.collectionView.scrollingMode   = .stopAtEachCalendarFrame
     self.collectionView.showsHorizontalScrollIndicator = false
@@ -326,9 +329,8 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
     
     
     func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters {
-        formatter.dateFormat = "yyyy MM dd"
-        formatter.timeZone = Calendar.current.timeZone
-        formatter.locale = Calendar.current.locale
+        self.formatter.dateFormat = "yyyy MM dd"
+        
         
         let startDate = Date()
         let endDate = formatter.date(from: "2019 12 31")!
@@ -338,9 +340,9 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
     }
     
    func calendar(_ calendar: JTAppleCalendarView, headerViewForDateRange range: (start: Date, end: Date), at indexPath: IndexPath) -> JTAppleCollectionReusableView {
-    formatter.dateFormat = "MMMM"
+    self.formatter.dateFormat = "MMMM"
       let header = calendar.dequeueReusableJTAppleSupplementaryView(withReuseIdentifier: "DateHeader", for: indexPath) as! DateHeader
-      header.monthTitle.text = formatter.string(from: range.start)
+      header.monthTitle.text = formatter.string(from: range.start).capitalized
       return header
    }
     

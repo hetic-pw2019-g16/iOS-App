@@ -11,6 +11,7 @@ import UIKit
 class RecipeItemTableViewCell: UITableViewCell {
 
     
+    @IBOutlet weak var imageRecipeView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     
     static let identifier = "recipe_cell_identifier"
@@ -21,6 +22,7 @@ class RecipeItemTableViewCell: UITableViewCell {
         didSet {
             // Refresh UI
             nameLabel.text = item.name
+            imageRecipeView.af_setImage(withURL: item.image)
         }
     }
     

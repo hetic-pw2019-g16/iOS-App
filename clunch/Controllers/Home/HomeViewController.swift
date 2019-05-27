@@ -120,8 +120,9 @@ class HomeViewController: UIViewController {
         var i = 0
         var j = 0
         self.participatedEvents = []
-        while (i < self.events.count){
-            while (j < self.events[i].participants.count){
+        while (self.events.count > 0 && i < self.events.count ){
+            j = 0
+            while (self.events[i].participants.count > 0 && j < self.events[i].participants.count){
                 if (me?.username == self.events[i].participants[j].username){
                     self.participatedEvents.append(self.events[i])
                 }
@@ -158,12 +159,9 @@ class HomeViewController: UIViewController {
     
     @IBAction func briefcaseAction(_ sender: Any) {
         let vc2 = UIStoryboard(name: "Briefcase", bundle: nil).instantiateViewController(withIdentifier: "BriefcaseMenuViewController") as! BriefcaseMenuViewController
-       // let vc = self.storyboard?.instantiateViewController(withIdentifier: "BriefcaseMenuViewController") as! BriefcaseMenuViewController
         self.navigationController?.pushViewController(vc2, animated: true)
     }
     
-    @IBAction func notificationAction(_ sender: Any) {
-    }
     @IBAction func buttonSeeMoreCreatedEvent(_ sender: Any) {
         let vc = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "CreatedEventsViewController") as! CreatedEventsViewController
         vc.events = self.createdEvents
@@ -229,6 +227,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.dateTitle.text = gooddate
             cell.mealTitle.text = self.createdEvents[indexPath.row].recipe
             cell.eventCreator.text = self.createdEvents[indexPath.row].user.username
+             if (self.createdEvents[indexPath.row].user.username == "Elea"){
+                cell.profileImage.image = UIImage(named: "creator_event")
+            } else {
+                cell.profileImage.image = UIImage(named: "creator_event3")
+            }
             cell.inscriptionNumber.text = String(format: "%d participants", self.createdEvents[indexPath.row].participants.count)
             cell.eventCreatedViewCell.addShadow()
             return cell
@@ -245,6 +248,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.mealTitle.text = self.participatedEvents[indexPath.row].recipe
             cell.eventCreator.text = self.participatedEvents[indexPath.row].user.username
             cell.inscriptionNumber.text = String(format: "%d participants", self.participatedEvents[indexPath.row].participants.count)
+            if (self.createdEvents[indexPath.row].user.username == "Samy"){
+                cell.profileImage.image = UIImage(named: "creator_event2")
+            } else {
+                cell.profileImage.image = UIImage(named: "creator_event3")
+            }
+
             cell.eventParticipatedView.addShadow()
             return cell
         }
@@ -272,6 +281,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)
         let gooddate = dateStr.toString(to: 8)
         cell.dateTitle.text = gooddate
+        if (self.events[indexPath.row].user.username == "Samy"){
+            cell.profileImage.image = UIImage(named: "creator_event2")
+        } else if (self.events[indexPath.row].user.username == "Elea"){
+            cell.profileImage.image = UIImage(named: "creator_event")
+        } else {
+            cell.profileImage.image = UIImage(named: "creator_event3")
+        }
+        cell.profileImage.layer.cornerRadius = 10
         cell.inscriptionNumber.text = String(format: "%d participants", self.events[indexPath.row].participants.count)
         
         

@@ -51,6 +51,13 @@ class PreviewEventViewController: UIViewController {
         }
     
         if (self.event != nil) {
+            if (self.event?.user.username == "Samy"){
+                self.creatorEventImage.image = UIImage(named: "creator_event2")
+            } else if (self.event?.user.username == "Elea"){
+                self.creatorEventImage.image = UIImage(named: "creator_event")
+            } else {
+                self.creatorEventImage.image = UIImage(named: "creator_event3")
+            }
             self.creatorEventLabel.text = self.event?.user.username
             self.mealTitleLabel.text = self.event?.recipe
             self.mealDescriptionLabel.text = self.event?.description
@@ -63,10 +70,10 @@ class PreviewEventViewController: UIViewController {
             let allparticipants = array.joined(separator: "  -  ")
             self.nameParticipantsLabel.text = allparticipants
             let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "YYYY-MM-dd"
+            dateFormatter.locale = Locale(identifier: "fr_FR")
+            dateFormatter.dateFormat = "d MMM"
             let dateStr = dateFormatter.string(from: self.event!.date)
-            let gooddate = dateStr.toString(to: 8)
-            self.dateEventLabel.text = gooddate
+            self.dateEventLabel.text = dateStr.capitalized
             
             if self.event?.participating ?? false {
                 self.validateActionButton.setTitle("Quitter", for: .normal)
