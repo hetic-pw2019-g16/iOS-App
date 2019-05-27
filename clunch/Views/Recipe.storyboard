@@ -49,6 +49,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="imageCategoryView" destination="Sta-DI-rcE" id="4fj-uw-vRY"/>
                                             <outlet property="nameLabel" destination="M5f-4x-tZ2" id="EQS-FE-KgN"/>
                                             <segue destination="VBi-3z-CSq" kind="show" identifier="list_recipe_identifier" id="h6m-g5-wZH"/>
                                         </connections>

@@ -11,9 +11,11 @@ import Foundation
 class CategoryItem {
     var name: String
     var id: Int
+    var image: URL
     
-    init(name: String, id: Int) {
+    init(name: String, id: Int, image: URL) {
         self.name = name
         self.id = id
+        self.image = image
     }
 }

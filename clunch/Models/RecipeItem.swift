@@ -11,9 +11,15 @@ import Foundation
 class RecipeItem {
     var name: String
     var category: CategoryItem
+    var description: String
+    var ingredients: String
+    var image: URL
     
-    init(name: String, category: CategoryItem) {
+    init(name: String, category: CategoryItem, description: String, ingredients: String, image: URL) {
         self.name = name
         self.category = category
+        self.description = description
+        self.ingredients = ingredients
+        self.image = image
     }
 }

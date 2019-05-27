@@ -18,8 +18,8 @@ class RecipeService {
         Alamofire.request(UrlBuilder.categoryListUrl(), method: .get, parameters: nil, encoding: JSONEncoding.default, headers: AuthService.getHeadersAction()).responseJSON(completionHandler: { response in
             
             switch response.result {
-            case .success(let value):                
-            
+            case .success(let value):
+                print(value)
                 // TODO -> Work With Model to prevent errors
                 callBack(value as! [[String : Any]], nil)
                 

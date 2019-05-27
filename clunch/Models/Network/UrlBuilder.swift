@@ -21,7 +21,7 @@ class UrlBuilder {
     }
     
     static func loginUrl() -> String {
-        return "\(baseUrl)/login_check"
+        return "\(baseUrl)/login"
     }
     
     static func categoryListUrl() -> String {

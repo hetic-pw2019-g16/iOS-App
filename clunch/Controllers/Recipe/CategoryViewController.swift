@@ -29,7 +29,10 @@ class CategoryViewController: UIViewController {
             self.categories.removeAll()
             
             for category in res {
-                self.categories.append(CategoryItem(name: category["name"] as! String, id: category["id"] as! Int))
+                let errorManagementImage = "https://avatars0.githubusercontent.com/u/44369575?s=460&v=4"
+                self.categories.append(CategoryItem(name: category["name"] as? String ?? "pas de nom de catégories",
+                                                    id: category["id"] as? Int ?? 0,
+                                                    image: URL(string: category["image"] as? String ?? errorManagementImage)!))
             }
             
             self.tableView.reloadData()

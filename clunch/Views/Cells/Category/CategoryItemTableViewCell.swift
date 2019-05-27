@@ -10,13 +10,16 @@ import UIKit
 
 class CategoryItemTableViewCell: UITableViewCell {
    
+    @IBOutlet weak var imageCategoryView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+
     
     static let identifier = "category_cell_identifier"
     
     var item: CategoryItem! {
         didSet {
             nameLabel.text = item.name
+            
         }
     }
     

@@ -28,7 +28,12 @@ class RecipeViewController: UIViewController {
             
             
             for recipe in res {
-                self.recipes.append(RecipeItem(name: recipe["title"] as! String, category: self.category))
+                let errorManagementImage = "https://avatars0.githubusercontent.com/u/44369575?s=460&v=4"
+                let errorManagementDescrition = "Pas de description"
+                self.recipes.append(RecipeItem(name: recipe["title"] as? String ?? "pas de titre pour la recette", category: self.category,
+                                               description: recipe["description"] as? String ?? errorManagementDescrition,
+                                               ingredients: recipe["ingredients"] as? String ?? "pas d'ingredients oups",
+                                              image: URL(string: recipe["image"] as? String ?? errorManagementImage)!))
             }
             
             self.tableView.reloadData()

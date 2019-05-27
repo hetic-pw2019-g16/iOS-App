@@ -861,6 +861,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8B483EE0B7F6ADE3B8A581B0 /* Pods-clunch.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6P264XEGQ;
@@ -881,6 +882,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CA745FFBB8DC08111EEEA5F /* Pods-clunch.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6P264XEGQ;
