@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Muli-Regular.ttf">
+            <string>Muli</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--RECETTES-->
         <scene sceneID="2oe-KV-7mF">
@@ -19,8 +24,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TF4-t8-dbp">
-                                <rect key="frame" x="0.0" y="56" width="375" height="498"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" red="1" green="0.99215686270000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="category_cell_identifier" rowHeight="88" id="fcS-3s-w30" customClass="CategoryItemTableViewCell" customModule="clunch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="88"/>
@@ -29,12 +34,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="végétarien" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sta-DI-rcE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sta-DI-rcE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Végétarien" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M5f-4x-tZ2">
-                                                    <rect key="frame" x="110.5" y="25" width="154.5" height="38"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                    <rect key="frame" x="110.5" y="24" width="154.5" height="40"/>
+                                                    <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" white="0.0" alpha="0.25331763699999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -42,14 +47,17 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Sta-DI-rcE" firstAttribute="leading" secondItem="zCf-Mx-c1V" secondAttribute="leading" id="CR6-VF-DTc"/>
                                                 <constraint firstItem="M5f-4x-tZ2" firstAttribute="centerX" secondItem="zCf-Mx-c1V" secondAttribute="centerX" id="ZoR-vL-cw5"/>
                                                 <constraint firstItem="Sta-DI-rcE" firstAttribute="centerY" secondItem="zCf-Mx-c1V" secondAttribute="centerY" id="n6O-Dm-Q8z"/>
                                                 <constraint firstItem="M5f-4x-tZ2" firstAttribute="centerY" secondItem="zCf-Mx-c1V" secondAttribute="centerY" id="nd7-hf-Vc1"/>
+                                                <constraint firstItem="Sta-DI-rcE" firstAttribute="top" secondItem="zCf-Mx-c1V" secondAttribute="top" id="qkB-xm-1tq"/>
                                                 <constraint firstItem="Sta-DI-rcE" firstAttribute="centerX" secondItem="zCf-Mx-c1V" secondAttribute="centerX" id="x5D-5X-Doa"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="imageCategoryView" destination="Sta-DI-rcE" id="4fj-uw-vRY"/>
+                                            <outlet property="imageCategoryView" destination="Sta-DI-rcE" id="8P2-w4-bYV"/>
                                             <outlet property="nameLabel" destination="M5f-4x-tZ2" id="EQS-FE-KgN"/>
                                             <segue destination="VBi-3z-CSq" kind="show" identifier="list_recipe_identifier" id="h6m-g5-wZH"/>
                                         </connections>
@@ -59,19 +67,11 @@
                                     <outlet property="dataSource" destination="Os7-5v-gaN" id="3cY-XH-m1j"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="x5m-1V-KcO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                <color key="barTintColor" red="1" green="0.76078431369999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="x5m-1V-KcO" firstAttribute="trailing" secondItem="wkm-iv-OAQ" secondAttribute="trailing" id="C9Y-El-Eq7"/>
+                            <constraint firstItem="TF4-t8-dbp" firstAttribute="top" secondItem="wkm-iv-OAQ" secondAttribute="top" id="1HX-S5-Mpo"/>
                             <constraint firstItem="TF4-t8-dbp" firstAttribute="trailing" secondItem="wkm-iv-OAQ" secondAttribute="trailing" id="CeG-XF-0Tu"/>
-                            <constraint firstItem="TF4-t8-dbp" firstAttribute="top" secondItem="x5m-1V-KcO" secondAttribute="bottom" id="HrV-Co-egv"/>
-                            <constraint firstItem="x5m-1V-KcO" firstAttribute="leading" secondItem="wkm-iv-OAQ" secondAttribute="leading" id="TL6-ca-lU0"/>
-                            <constraint firstItem="x5m-1V-KcO" firstAttribute="top" secondItem="wkm-iv-OAQ" secondAttribute="top" id="Ue4-bv-80y"/>
                             <constraint firstItem="TF4-t8-dbp" firstAttribute="leading" secondItem="wkm-iv-OAQ" secondAttribute="leading" id="YOd-Tn-soB"/>
                             <constraint firstItem="TF4-t8-dbp" firstAttribute="bottom" secondItem="wkm-iv-OAQ" secondAttribute="bottom" id="tPI-Sz-kwA"/>
                         </constraints>
@@ -91,14 +91,14 @@
         <!--Recipe View Controller-->
         <scene sceneID="aEH-KA-rvS">
             <objects>
-                <viewController id="VBi-3z-CSq" customClass="RecipeViewController" customModule="clunch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VBi-3z-CSq" customClass="RecipeViewController" customModule="clunch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fPL-7U-k0r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HDn-Um-a2N">
-                                <rect key="frame" x="0.0" y="56" width="375" height="498"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <color key="backgroundColor" red="1" green="0.99215686270000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="recipe_cell_identifier" rowHeight="88" id="vAa-aN-SP5" customClass="RecipeItemTableViewCell" customModule="clunch" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="88"/>
@@ -107,12 +107,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Salade" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPl-IG-atD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hPl-IG-atD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="87.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST2-HN-g0K">
-                                                    <rect key="frame" x="138.5" y="25" width="98" height="38"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                    <rect key="frame" x="138" y="24" width="99.5" height="40"/>
+                                                    <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" white="0.0" alpha="0.25331763699999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -120,12 +120,15 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="hPl-IG-atD" firstAttribute="top" secondItem="i93-pG-0aL" secondAttribute="top" id="0xe-mI-4RJ"/>
                                                 <constraint firstItem="ST2-HN-g0K" firstAttribute="centerX" secondItem="i93-pG-0aL" secondAttribute="centerX" id="gDU-fV-2TH"/>
                                                 <constraint firstItem="hPl-IG-atD" firstAttribute="centerY" secondItem="i93-pG-0aL" secondAttribute="centerY" id="hbc-ih-Bye"/>
                                                 <constraint firstItem="hPl-IG-atD" firstAttribute="centerX" secondItem="i93-pG-0aL" secondAttribute="centerX" id="sFv-Xj-Yeh"/>
+                                                <constraint firstItem="hPl-IG-atD" firstAttribute="leading" secondItem="i93-pG-0aL" secondAttribute="leading" id="uHp-17-OQu"/>
                                                 <constraint firstItem="ST2-HN-g0K" firstAttribute="centerY" secondItem="i93-pG-0aL" secondAttribute="centerY" id="zRL-21-In2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="imageRecipeView" destination="hPl-IG-atD" id="ngu-QC-mw2"/>
                                             <outlet property="nameLabel" destination="ST2-HN-g0K" id="fw6-XP-Q2f"/>
@@ -137,21 +140,13 @@
                                     <outlet property="dataSource" destination="VBi-3z-CSq" id="qZW-2m-teg"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" text="" translatesAutoresizingMaskIntoConstraints="NO" id="Igh-7b-9dp">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                <color key="barTintColor" red="1" green="0.76078431369999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="HDn-Um-a2N" firstAttribute="bottom" secondItem="9zp-2D-yHw" secondAttribute="bottom" id="6Eh-j6-v8l"/>
                             <constraint firstItem="HDn-Um-a2N" firstAttribute="leading" secondItem="9zp-2D-yHw" secondAttribute="leading" id="89y-oC-6wA"/>
-                            <constraint firstItem="Igh-7b-9dp" firstAttribute="top" secondItem="9zp-2D-yHw" secondAttribute="top" id="AjD-ps-NCo"/>
-                            <constraint firstItem="Igh-7b-9dp" firstAttribute="trailing" secondItem="9zp-2D-yHw" secondAttribute="trailing" id="KGv-1l-APS"/>
+                            <constraint firstItem="HDn-Um-a2N" firstAttribute="top" secondItem="9zp-2D-yHw" secondAttribute="top" id="E4U-60-7Pl"/>
                             <constraint firstItem="HDn-Um-a2N" firstAttribute="trailing" secondItem="9zp-2D-yHw" secondAttribute="trailing" id="SFF-nn-lml"/>
-                            <constraint firstItem="Igh-7b-9dp" firstAttribute="leading" secondItem="9zp-2D-yHw" secondAttribute="leading" id="XLk-ch-Bmg"/>
-                            <constraint firstItem="HDn-Um-a2N" firstAttribute="top" secondItem="Igh-7b-9dp" secondAttribute="bottom" id="cbj-RE-PAM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="9zp-2D-yHw"/>
                     </view>
@@ -190,17 +185,17 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lasagne végétarienne" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Da-50-DIF">
-                                        <rect key="frame" x="107.5" y="137" width="160" height="19.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <rect key="frame" x="107.5" y="137" width="160" height="23"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="18"/>
                                         <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KIq-dw-bXX">
-                                        <rect key="frame" x="16" y="168.5" width="343" height="385.5"/>
+                                        <rect key="frame" x="16" y="172" width="343" height="382"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" red="0.50196078430000002" green="0.50196078430000002" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <fontDescription key="fontDescription" name="Muli" family="Muli" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -265,9 +260,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Salade" width="752" height="200"/>
         <image name="logo_orange_gradient" width="214" height="214"/>
         <image name="recipe_logo" width="24" height="24"/>
-        <image name="végétarien" width="752" height="200"/>
     </resources>
 </document>

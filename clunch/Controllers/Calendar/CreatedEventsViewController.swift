@@ -35,9 +35,18 @@ class CreatedEventsViewController: UIViewController,
         cell.mealTitle.text = tmpEvent.recipe
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.locale = Locale(identifier: "fr_FR")
         let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)
         let gooddate = dateStr.toString(to: 8)
+        dateFormatter.locale = Locale(identifier: "fr_FR")
+        dateFormatter.dateFormat = "MMM"
+        let month = dateFormatter.string(from: self.events[indexPath.row].date).uppercased()
+        dateFormatter.locale = Locale(identifier: "fr_FR")
+        dateFormatter.dateFormat = "HH:mm"
+        let hour = dateFormatter.string(from: self.events[indexPath.row].date)
         cell.dateTitle.text = gooddate
+        cell.monthLabel.text = month
+        cell.hourLabel.text = hour
         if (tmpEvent.user.username == "Samy"){
             cell.profileImage.image = UIImage(named: "creator_event2")
         } else if (tmpEvent.user.username == "Elea"){

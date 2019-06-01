@@ -17,10 +17,7 @@ class RecipeItemTableViewCell: UITableViewCell {
     static let identifier = "recipe_cell_identifier"
     
     var item: RecipeItem! {
-        // lorsque item sera assigné
-        // alors le code du block didSet sera executé
         didSet {
-            // Refresh UI
             nameLabel.text = item.name
             imageRecipeView.af_setImage(withURL: item.image)
         }
@@ -28,13 +25,8 @@ class RecipeItemTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        self.imageRecipeView.alpha = 0.6
+        
     }
 
 }

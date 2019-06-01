@@ -34,7 +34,7 @@ class CreateEventStep2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.hideKeyboardOnTouch()
+
         self.nextStepToStep3Button.layer.cornerRadius = 5
         self.clearView.isHidden = true
     }

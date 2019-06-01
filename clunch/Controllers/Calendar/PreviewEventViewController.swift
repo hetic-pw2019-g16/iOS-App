@@ -23,22 +23,14 @@ class PreviewEventViewController: UIViewController {
     @IBOutlet weak var backView: UIView!
     
     var event : Event?
-    var backview : Int = 0
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        switch backview {
-        case 1:
-            self.backView.backgroundColor = UIColor(red:1.00, green:0.76, blue:0.33, alpha:1.0)
-            break
-        case 2:
-            self.backView.backgroundColor = UIColor(red: 89/255, green: 190/255, blue: 176/255, alpha: 1)
-             break
-        default:
-            self.backView.backgroundColor = UIColor(red: 246/255, green: 105/255, blue: 118/255, alpha: 1)
-            
-        }
+        self.headerEventView.setColor(creator: event?.creator ?? false, participant: event?.participating ?? false)
+        
+
         self.validateActionButton.layer.cornerRadius = 5
         self.viewEventView.addShadow(withRadius: true, radius: 7)
 
@@ -58,22 +50,32 @@ class PreviewEventViewController: UIViewController {
             } else {
                 self.creatorEventImage.image = UIImage(named: "creator_event3")
             }
+            
             self.creatorEventLabel.text = self.event?.user.username
             self.mealTitleLabel.text = self.event?.recipe
             self.mealDescriptionLabel.text = self.event?.description
             var array:[String] = []
             var i = 0
-            while (i < (self.event?.participants.count)!){
-                array.append((self.event?.participants[i].username)!)
-                i = i+1
+            if (self.event?.participants.count != 0) {
+                while (i < (self.event?.participants.count)!){
+                    array.append((self.event?.participants[i].username)!)
+                    i = i+1
+                }
+                let allparticipants = array.joined(separator: "  -  ")
+                self.nameParticipantsLabel.text = allparticipants
+            } else {
+                self.nameParticipantsLabel.text = "Pas encore de participants"
             }
-            let allparticipants = array.joined(separator: "  -  ")
-            self.nameParticipantsLabel.text = allparticipants
+            
             let dateFormatter = DateFormatter()
             dateFormatter.locale = Locale(identifier: "fr_FR")
-            dateFormatter.dateFormat = "d MMM"
+            dateFormatter.dateFormat = "d MMMM"
             let dateStr = dateFormatter.string(from: self.event!.date)
-            self.dateEventLabel.text = dateStr.capitalized
+            self.dateEventLabel.text = dateStr.uppercased()
+            dateFormatter.dateFormat = "HH.mm"
+            let hour = dateFormatter.string(from: self.event!.date)
+            self.hourEventLabel.text = hour
+            
             
             if self.event?.participating ?? false {
                 self.validateActionButton.setTitle("Quitter", for: .normal)
@@ -109,15 +111,5 @@ class PreviewEventViewController: UIViewController {
             }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

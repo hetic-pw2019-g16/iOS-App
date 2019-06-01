@@ -16,7 +16,6 @@ class HomeViewController: UIViewController {
     //MARK:-  Header
     
     @IBOutlet weak var profileButton: UIBarButtonItem!
-    @IBOutlet weak var notificationButton: UIBarButtonItem!
     //MARK:-  myEventsView
     @IBOutlet weak var myEventsView: UIView!
     @IBOutlet weak var homeCreatedEvent: UILabel!
@@ -71,6 +70,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.comingEventsTableView.delegate = self
+        self.comingEventsTableView.dataSource = self
 
         let user:User = UserDefaults.getTheUserStored() ?? User()
         
@@ -115,6 +116,7 @@ class HomeViewController: UIViewController {
     }
  
     
+    
     func loadparticipatedEvents () {
         let me = UserDefaults.getTheUserStored()
         var i = 0
@@ -156,6 +158,7 @@ class HomeViewController: UIViewController {
             self.comingEventsTableView.reloadData()
         })
     }
+    
     
     @IBAction func briefcaseAction(_ sender: Any) {
         let vc2 = UIStoryboard(name: "Briefcase", bundle: nil).instantiateViewController(withIdentifier: "BriefcaseMenuViewController") as! BriefcaseMenuViewController
@@ -202,6 +205,24 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "PreviewEventViewController") as! PreviewEventViewController
+        if (collectionView == self.createdEventCollectionView){
+          vc.event = self.createdEvents[indexPath.row]
+        }
+        else {
+          vc.event = self.participatedEvents[indexPath.row]
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.comingEventsTableView.deselectRow(at: indexPath, animated: false)
+        let vc = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "PreviewEventViewController") as! PreviewEventViewController
+        vc.event = self.events[indexPath.row]
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if (collectionView == self.createdEventCollectionView){
@@ -224,7 +245,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             dateFormatter.dateFormat = "YYYY-MM-dd"
             let dateStr = dateFormatter.string(from: self.createdEvents[indexPath.row].date)
             let gooddate = dateStr.toString(to: 8)
+            dateFormatter.locale = Locale(identifier: "fr_FR")
+            dateFormatter.dateFormat = "MMM"
+            let month = dateFormatter.string(from: self.createdEvents[indexPath.row].date).uppercased()
+            dateFormatter.dateFormat = "HH:mm"
+            let hour = dateFormatter.string(from: self.createdEvents[indexPath.row].date)
             cell.dateTitle.text = gooddate
+            cell.monthLabel.text = month
+            cell.hourLabel.text = hour
             cell.mealTitle.text = self.createdEvents[indexPath.row].recipe
             cell.eventCreator.text = self.createdEvents[indexPath.row].user.username
              if (self.createdEvents[indexPath.row].user.username == "Elea"){
@@ -244,7 +272,14 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             dateFormatter.dateFormat = "YYYY-MM-dd"
             let dateStr = dateFormatter.string(from: self.participatedEvents[indexPath.row].date)
             let gooddate = dateStr.toString(to: 8)
+            dateFormatter.locale = Locale(identifier: "fr_FR")
+            dateFormatter.dateFormat = "MMM"
+            let month = dateFormatter.string(from: self.participatedEvents[indexPath.row].date).uppercased()
+            dateFormatter.dateFormat = "HH:mm"
+            let hour = dateFormatter.string(from: self.participatedEvents[indexPath.row].date)
             cell.dateTitle.text = gooddate
+            cell.monthLabel.text = month
+            cell.hourLabel.text = hour
             cell.mealTitle.text = self.participatedEvents[indexPath.row].recipe
             cell.eventCreator.text = self.participatedEvents[indexPath.row].user.username
             cell.inscriptionNumber.text = String(format: "%d participants", self.participatedEvents[indexPath.row].participants.count)
@@ -278,9 +313,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         cell.mealTitle.text = tmpEvent.recipe
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YYYY-MM-dd"
+        dateFormatter.locale = Locale(identifier: "fr_FR")
         let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)
         let gooddate = dateStr.toString(to: 8)
+        dateFormatter.locale = Locale(identifier: "fr_FR")
+        dateFormatter.dateFormat = "MMM"
+        let month = dateFormatter.string(from: self.events[indexPath.row].date).uppercased()
+        dateFormatter.dateFormat = "HH:mm"
+        let hour = dateFormatter.string(from: self.events[indexPath.row].date)
+        cell.hourLabel.text = hour
         cell.dateTitle.text = gooddate
+        cell.monthLabel.text = month
         if (self.events[indexPath.row].user.username == "Samy"){
             cell.profileImage.image = UIImage(named: "creator_event2")
         } else if (self.events[indexPath.row].user.username == "Elea"){

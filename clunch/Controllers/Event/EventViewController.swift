@@ -17,8 +17,10 @@ class EventViewController: UIViewController {
     @IBOutlet weak var buttonCreateNewEvent: UIButton!
     @IBOutlet weak var createNewEventLabel: UILabel!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.hideKeyboardOnTouch()
     }
     
     /*
@@ -151,24 +153,6 @@ class EventViewController: UIViewController {
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    /*
- 
-    
-}
-
-extension EventViewController: EKEventViewDelegate {
-    func eventViewController(_ controller: EKEventViewController, didCompleteWith action: EKEventViewAction) {
-        dismiss(animated: true, completion: nil)
-    }
-}
-
-extension EventViewController: EKEventEditViewDelegate, UINavigationControllerDelegate {
-    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
-        controller.dismiss(animated: true, completion: nil)
-    }
-    
-     */
 
 }
  

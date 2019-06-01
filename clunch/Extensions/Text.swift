@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 extension UIButton {
     
     
@@ -23,7 +25,6 @@ extension UIButton {
         bottomLine.backgroundColor = color.cgColor
         self.layer.addSublayer(bottomLine)
     }
-    
 }
 
 extension UITextField {
@@ -57,11 +58,16 @@ extension UITextField {
 
 extension UILabel {
     
+
     static let titleSize:CGFloat = 24
     static let subTitleSize:CGFloat = 20
     static let TextSize:CGFloat = 16
     static let LittleTextSize:CGFloat = 13
     
+    func changeFontName()
+    {
+        self.font = UIFont(name: "Muli", size: self.font.pointSize)
+    }
     
     func setClunchTitleColor() {
         self.textColor = UIColor(red: 77/255, green: 77/255, blue: 77/255, alpha: 1)

@@ -31,6 +31,10 @@
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
 	<string>Clunch a besoin de votre accord pour accéder aux données de votre calendrier</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Muli-Regular.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

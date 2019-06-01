@@ -56,8 +56,11 @@ extension CategoryViewController: UITableViewDataSource,UITableViewDelegate {
         return categories.count
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                self.tableView.deselectRow(at: indexPath, animated: false)
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: CategoryItemTableViewCell.identifier, for: indexPath) as! CategoryItemTableViewCell
         
         cell.item = categories[indexPath.row]
@@ -65,7 +68,7 @@ extension CategoryViewController: UITableViewDataSource,UITableViewDelegate {
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 111
     
     }
 }

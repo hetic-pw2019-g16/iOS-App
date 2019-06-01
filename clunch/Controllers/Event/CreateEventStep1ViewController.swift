@@ -24,6 +24,7 @@ class CreateEventStep1ViewController: UIViewController {
 
         buttonFindRecipe.buttonStyle(color: UIButton.green)
         self.buttonNextStep.layer.cornerRadius = 5
+        self.view.hideKeyboardOnTouch()
         // Do any additional setup after loading the view.
     }
     
@@ -35,12 +36,8 @@ class CreateEventStep1ViewController: UIViewController {
         self.navigationController?.pushViewController(nextStepViewController, animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    */
+    @IBAction func findRecipesButton(_ sender: Any) {
+        let vc = UIStoryboard(name: "Recipe", bundle: nil).instantiateViewController(withIdentifier: "CategoryViewController") as! CategoryViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+        }
 }

@@ -302,21 +302,11 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
             let nav = self.navigationController
             nav?.pushViewController(vc, animated: true)
         }
-        /*
-        self.viewEvent.isHidden = false
-        
-        self.viewEvent.backgroundColor = green
-        self.viewEvent.layer.cornerRadius = 5
-        self.viewEvent.layer.zPosition = -1
-        
-        cell?.addSubview(self.viewEvent)
-        */
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState, event: Event?) {
         if event == nil {
             handleCellTextColor(view: cell, cellState: cellState)
-            //self.viewEvent.isHidden = true
             cell?.backgroundColor = UIColor.white
         }
     }
@@ -369,9 +359,9 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         if (array.count != 0) {
             myCustomCell.cellDay.textColor = .white
             myCustomCell.backgroundColor = green
-            myCustomCell.layer.cornerRadius = 5
-
-            myCustomCell.bulletPointView.setBulletPoit(creator: array[0].creator, participant: array[0].participating)
+            myCustomCell.setRadius(radius: 5)
+            myCustomCell.bulletPointView.setColor(creator: array[0].creator, participant: array[0].participating)
+            myCustomCell.bulletPointView.setRadius(radius: 5)
             myCustomCell.event = array[0]
         } else {
             myCustomCell.backgroundColor = UIColor.white
@@ -401,15 +391,3 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
     }
 }
 
-
-//MARK:- AFFICHER LA PASTILLE
-
-/*func pastille(creator: Bool, participant: Bool) -> <#return type#> {
-    if participant {
-        // Pastille Jaune
-    } else if creator {
-        // Pastille Rouge
-    }
-    
-    return uIrbg uhy gjteigtyrue
-}*/

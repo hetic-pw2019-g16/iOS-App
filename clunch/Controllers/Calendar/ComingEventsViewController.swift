@@ -27,7 +27,6 @@ class ComingEventsViewController: UIViewController, UITableViewDelegate, UITable
         self.tableView.deselectRow(at: indexPath, animated: false)
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "PreviewEventViewController") as! PreviewEventViewController
         vc.event = self.events[indexPath.row]
-        vc.backview = 2
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -52,7 +51,14 @@ class ComingEventsViewController: UIViewController, UITableViewDelegate, UITable
         dateFormatter.dateFormat = "YYYY-MM-dd"
         let dateStr = dateFormatter.string(from: self.events[indexPath.row].date)
         let gooddate = dateStr.toString(to: 8)
+        dateFormatter.locale = Locale(identifier: "fr_FR")
+        dateFormatter.dateFormat = "MMM"
+        let month = dateFormatter.string(from: self.events[indexPath.row].date).uppercased()
+        dateFormatter.dateFormat = "HH:mm"
+        let hour = dateFormatter.string(from: self.events[indexPath.row].date)
         cell.dateTitle.text = gooddate
+        cell.monthLabel.text = month
+        cell.hourLabel.text = hour
         cell.inscriptionNumber.text = String(format: "%d participants", tmpEvent.participants.count)
 
         

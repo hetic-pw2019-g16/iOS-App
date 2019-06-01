@@ -17,7 +17,7 @@ class ChangePasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.hideKeyboardOnTouch()
         // Do any additional setup after loading the view.
     }
     

@@ -131,6 +131,7 @@
 		2EE8709A2201F99A006F0BA3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		8B483EE0B7F6ADE3B8A581B0 /* Pods-clunch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-clunch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-clunch/Pods-clunch.debug.xcconfig"; sourceTree = "<group>"; };
 		9E0659C9FAA84CD2B09E05A5 /* Pods_clunch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_clunch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2106EC622A2BDE900CB6A31 /* Muli-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Muli-Regular.ttf"; path = "../Downloads/Muli/Muli-Regular.ttf"; sourceTree = "<group>"; };
 		E28BC1D52237C6CC00C47937 /* CreatedEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedEventCell.swift; sourceTree = "<group>"; };
 		E28BC1D72237C6DB00C47937 /* ParticipatedEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipatedEventCell.swift; sourceTree = "<group>"; };
 		E28BC1D92237E8AC00C47937 /* ComingEventsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComingEventsTableViewCell.swift; sourceTree = "<group>"; };
@@ -183,30 +184,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E32D98B2200464200985453 /* Recipe */ = {
-			isa = PBXGroup;
-			children = (
-				2E32D98C2200468200985453 /* RecipeItemTableViewCell.swift */,
-			);
-			path = Recipe;
-			sourceTree = "<group>";
-		};
-		2E71B10D22035BF6000BD472 /* Event */ = {
-			isa = PBXGroup;
-			children = (
-				2E71B10E22035C26000BD472 /* EventItemTableViewCell.swift */,
-			);
-			path = Event;
-			sourceTree = "<group>";
-		};
-		2E8AE3E32201E1EB00C58E57 /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				2E8AE3E42201E24700C58E57 /* CalendarItemCell.swift */,
-			);
-			path = Calendar;
-			sourceTree = "<group>";
-		};
 		2EA01DA32255FB59003B77B7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -272,8 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				2EDC38F821FE52B6009227DB /* CategoryViewController.swift */,
-				2E32D98421FF527200985453 /* DetailRecipeViewController.swift */,
 				2E32D986220041D500985453 /* RecipeViewController.swift */,
+				2E32D98421FF527200985453 /* DetailRecipeViewController.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -282,9 +259,6 @@
 			isa = PBXGroup;
 			children = (
 				2EDC38F621FE52A6009227DB /* HomeViewController.swift */,
-				E28BC1D52237C6CC00C47937 /* CreatedEventCell.swift */,
-				E28BC1D72237C6DB00C47937 /* ParticipatedEventCell.swift */,
-				E28BC1D92237E8AC00C47937 /* ComingEventsTableViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -329,20 +303,15 @@
 		2EDC38FE21FEF7A4009227DB /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				2E71B10D22035BF6000BD472 /* Event */,
-				2E8AE3E32201E1EB00C58E57 /* Calendar */,
-				2E32D98B2200464200985453 /* Recipe */,
-				2EDC38FF21FEF7B8009227DB /* Category */,
+				2E71B10E22035C26000BD472 /* EventItemTableViewCell.swift */,
+				2E8AE3E42201E24700C58E57 /* CalendarItemCell.swift */,
+				2EDC390021FEF82E009227DB /* CategoryItemTableViewCell.swift */,
+				2E32D98C2200468200985453 /* RecipeItemTableViewCell.swift */,
+				E28BC1D52237C6CC00C47937 /* CreatedEventCell.swift */,
+				E28BC1D72237C6DB00C47937 /* ParticipatedEventCell.swift */,
+				E28BC1D92237E8AC00C47937 /* ComingEventsTableViewCell.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		2EDC38FF21FEF7B8009227DB /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				2EDC390021FEF82E009227DB /* CategoryItemTableViewCell.swift */,
-			);
-			path = Category;
 			sourceTree = "<group>";
 		};
 		2EE293E621ECD00F00EAE0A3 = {
@@ -353,6 +322,7 @@
 				2EE2941321ECD01000EAE0A3 /* clunchUITests */,
 				2EE293F021ECD00F00EAE0A3 /* Products */,
 				E6D329EDE7A182C9D082A535 /* Pods */,
+				E2106EC522A2BDB900CB6A31 /* Fonts */,
 				AF32C6D9DA91AC9D0EBB630D /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -407,6 +377,14 @@
 				9E0659C9FAA84CD2B09E05A5 /* Pods_clunch.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E2106EC522A2BDB900CB6A31 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E2106EC622A2BDE900CB6A31 /* Muli-Regular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		E2CFB9712254F85B0077B58D /* My Profile */ = {

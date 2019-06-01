@@ -17,10 +17,11 @@ class CategoryItemTableViewCell: UITableViewCell {
     
     static let identifier = "category_cell_identifier"
     
+    
     var item: CategoryItem! {
         didSet {
             nameLabel.text = item.name
-            imageCategoryView.af_setImage(withURL: item.image)
+            imageCategoryView?.af_setImage(withURL: item.image)
             
             
         }
@@ -28,7 +29,7 @@ class CategoryItemTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+         self.imageCategoryView.alpha = 0.6
         
     }
     
