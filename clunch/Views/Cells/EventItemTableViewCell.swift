@@ -15,14 +15,7 @@ class EventItemTableViewCell: UITableViewCell {
     
     static let identifier = "event_cell_identifier"
 
-    var item: Event! {
-        // lorsque item sera assigné
-        // alors le code du block didSet sera executé
-        didSet {
-            // Refresh UI
-            //nameLabel.text = item.recipe
-        }
-    }
+    var item: Event! 
     
     override func awakeFromNib() {
         super.awakeFromNib()

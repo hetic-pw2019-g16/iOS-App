@@ -19,8 +19,6 @@ class ComingEventsViewController: UIViewController, UITableViewDelegate, UITable
 
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

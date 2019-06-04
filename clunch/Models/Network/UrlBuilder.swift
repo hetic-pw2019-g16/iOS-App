@@ -45,9 +45,6 @@ class UrlBuilder {
         return "\(baseUrl)/company/" + id + "/events"
     }
     
-    // static func deleteEvent(eventId : String, userId: String, state: Bool) -> String {
-    //  var 
-// }
     
     static func participationToEventUrl(eventId: String, userId: String, state: Bool) -> String {
         var res: String

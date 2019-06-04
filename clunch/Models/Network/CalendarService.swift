@@ -37,8 +37,7 @@ class CalendarService {
     
     static func getEventListByCompagny(companyId: Int, callBack: @escaping CallbackEvents) {
         Alamofire.request(UrlBuilder.getEventsByCompagny(id: String(companyId)), method: .get, parameters: nil, encoding: JSONEncoding.default, headers: AuthService.getHeadersAction()).responseJSON(completionHandler: { response in
-            
-            
+
             switch response.result {
             case .success(let value):
                 var eventslist : [Event] = []

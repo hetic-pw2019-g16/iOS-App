@@ -19,7 +19,6 @@ class RegisteredEventsViewController: UIViewController, UITableViewDelegate, UIT
 
         self.registeredEventsTableView.delegate = self
         self.registeredEventsTableView.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -46,6 +45,11 @@ class RegisteredEventsViewController: UIViewController, UITableViewDelegate, UIT
         cell.monthLabel.text = month
         cell.hourLabel.text = hour
         cell.inscriptionNumber.text = String(format: "%d participants", tmpEvent.participants.count)
+        if (self.events[indexPath.row].user.username == "Samy"){
+            cell.profileImage.image = UIImage(named: "creator_event2")
+        } else if (self.events[indexPath.row].user.username == "Romane") {
+            cell.profileImage.image = UIImage(named: "creator_event3")
+        }
         
         return cell
     }

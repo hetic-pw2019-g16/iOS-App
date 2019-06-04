@@ -69,10 +69,10 @@ class PreviewEventViewController: UIViewController {
             
             let dateFormatter = DateFormatter()
             dateFormatter.locale = Locale(identifier: "fr_FR")
-            dateFormatter.dateFormat = "d MMMM"
+            dateFormatter.dateFormat = "EEEE d MMMM"
             let dateStr = dateFormatter.string(from: self.event!.date)
             self.dateEventLabel.text = dateStr.uppercased()
-            dateFormatter.dateFormat = "HH.mm"
+            dateFormatter.dateFormat = "HH:mm"
             let hour = dateFormatter.string(from: self.event!.date)
             self.hourEventLabel.text = hour
             

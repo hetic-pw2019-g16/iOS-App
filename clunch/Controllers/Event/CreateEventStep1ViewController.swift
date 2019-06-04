@@ -25,7 +25,6 @@ class CreateEventStep1ViewController: UIViewController {
         buttonFindRecipe.buttonStyle(color: UIButton.green)
         self.buttonNextStep.layer.cornerRadius = 5
         self.view.hideKeyboardOnTouch()
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func nextStepToStep2Button(_ sender: Any) {

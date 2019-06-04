@@ -30,9 +30,6 @@ class CalendarViewController: UIViewController {
     
     var lastVCToRemove: lastViewController = lastViewController.first
     
-    
-    //@IBOutlet weak var tableView: UITableView!
-    
     let green = UIColor(red:0.35, green:0.75, blue:0.69, alpha:1.0)
     let grey = UIColor(red:0.50, green:0.50, blue:0.50, alpha:1.0)
     let greyInactive = UIColor(red:0.50, green:0.50, blue:0.50, alpha:0.25)
@@ -43,8 +40,8 @@ class CalendarViewController: UIViewController {
     let formatter = DateFormatter()
     
     var events = [Event]()
-    var createdEvents: [Event] = []
-    var participatedEvents: [Event] = []
+    var createdEvents = [Event]()
+    var participatedEvents = [Event]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,13 +56,6 @@ class CalendarViewController: UIViewController {
         self.viewCalendarView.addShadow(withRadius: true, radius: 7)
         
         setupView()
-        
-        
-
-        /*
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        */
         
         self.collectionView.calendarDataSource = self
         self.collectionView.calendarDelegate = self
@@ -86,7 +76,7 @@ class CalendarViewController: UIViewController {
             if (self.events[i].participating){
                 self.participatedEvents.append(self.events[i])
             }
-            i = i+1
+            i = i + 1
         }
     }
     
@@ -97,7 +87,7 @@ class CalendarViewController: UIViewController {
             if (self.events[i].creator){
                 self.createdEvents.append(self.events[i])
             }
-            i = i+1
+            i = i + 1
         }
     }
     
@@ -120,10 +110,9 @@ class CalendarViewController: UIViewController {
     
     //MARK:- SEGMENTED CONTROL
     private func setupSegmentedControl() {
-        // Configure Segmented Control
+
         segmentedControl.addTarget(self, action: #selector(selectionDidChange(_:)), for: .valueChanged)
         
-        // Select First Segment
         segmentedControl.selectedSegmentIndex = 0
     }
     
@@ -133,13 +122,11 @@ class CalendarViewController: UIViewController {
     
     //MARK:- EVENEMNTS A VENIR
     private lazy var ComingEventsViewController: ComingEventsViewController = {
-        // Load Storyboard
+
         let storyboard = UIStoryboard(name: "Calendar", bundle: Bundle.main)
-        
-        // Instantiate View Controller
+
         var viewController = storyboard.instantiateViewController(withIdentifier: "ComingEventsViewController") as! ComingEventsViewController
-        // viewController.events = self.events
-        // Add View Controller as Child View Controller
+
         self.add(asChildViewController: viewController)
         
         return viewController
@@ -147,13 +134,12 @@ class CalendarViewController: UIViewController {
    
     //MARK:- EVENEMNTS INSCRITS
     private lazy var RegisteredEventsViewController: RegisteredEventsViewController = {
-        // Load Storyboard
+
         let storyboard = UIStoryboard(name: "Calendar", bundle: Bundle.main)
         
-        // Instantiate View Controller
+
         var viewController = storyboard.instantiateViewController(withIdentifier: "RegisteredEventsViewController") as! RegisteredEventsViewController
         
-        // Add View Controller as Child View Controller
         self.add(asChildViewController: viewController)
         
         return viewController
@@ -177,27 +163,22 @@ class CalendarViewController: UIViewController {
     private func add(asChildViewController viewController: UIViewController) {
         // Add Child View Controller
         self.addChild(viewController)
-        
-        // Add Child View as Subview
+
         segmentedView.addSubview(viewController.view)
-        
-        // Configure Child View
+
         viewController.view.frame = segmentedView.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        // Notify Child View Controller
+
         viewController.didMove(toParent: self)
     }
     
     //MARK:- SUPPRIMER L'UNE DES LISTES D'EVENEMENTS DANS LE SEGMENTED CONTROL
     private func remove(asChildViewController viewController: UIViewController) {
-        // Notify Child View Controller
+
         viewController.willMove(toParent: nil)
-        
-        // Remove Child View From Superview
+
         viewController.view.removeFromSuperview()
-        
-        // Notify Child View Controller
+
         viewController.removeFromParent()
     }
     
@@ -249,14 +230,6 @@ class CalendarViewController: UIViewController {
             }
         }
     }
-    //MARK:- MONTRER L'EVENEMENT
-   /* func showPopUp(date: Date) {
-        let popUp = UIStoryboard(name: "Calendar", bundle: nil).instantiateViewController(withIdentifier: "eventPopUp") as! CalendarEventViewController
-
-        popUp.date = date
-        let popUpNav = UINavigationController(rootViewController: popUp)
-        self.present(popUpNav, animated: true, completion: nil)
-    }*/
     
     //MARK:- TRIER LES EVENEMENTS
     func sortEventsByDate(){
@@ -265,35 +238,11 @@ class CalendarViewController: UIViewController {
 }
 
 
-/*
-extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return events.count
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let menuDayCell = self.tableView.dequeueReusableCell(withIdentifier: "menuDayCell", for: indexPath)
-        
-        let event = events[indexPath.row]
-        
-        menuDayCell.textLabel?.text = event.title
-        
-        return menuDayCell
-    }
-    
-}
-*/
-
-//MARK:- CALENDRIER
+    //MARK:- CALENDRIER
 extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarViewDataSource {
     
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        // Faire la correspondance entre la date actuelle et tous les eventes de self.events qui ont la meme date
-        // si il y a des event alors mettre le truc vert
-        // Parmi ces events voir si je suisinclu dedans et mett re pastille en consequence
         let eventCell = cell as! CalendarItemCell
         if eventCell.event != nil {
             handleCellTextColor(view: cell, cellState: cellState, date: date)
@@ -347,7 +296,6 @@ extension CalendarViewController: JTAppleCalendarViewDelegate, JTAppleCalendarVi
         
         myCustomCell.cellDay.text = cellState.text
         
-        //handleCellTextColor(view: myCustomCell, cellState: cellState, date: date)
         
         if cellState.dateBelongsTo == .thisMonth {
             myCustomCell.cellDay.textColor = grey

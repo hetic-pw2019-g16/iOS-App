@@ -283,9 +283,9 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             cell.mealTitle.text = self.participatedEvents[indexPath.row].recipe
             cell.eventCreator.text = self.participatedEvents[indexPath.row].user.username
             cell.inscriptionNumber.text = String(format: "%d participants", self.participatedEvents[indexPath.row].participants.count)
-            if (self.createdEvents[indexPath.row].user.username == "Samy"){
+            if (self.participatedEvents[indexPath.row].user.username == "Samy"){
                 cell.profileImage.image = UIImage(named: "creator_event2")
-            } else {
+            } else if (self.participatedEvents[indexPath.row].user.username == "Romane") {
                 cell.profileImage.image = UIImage(named: "creator_event3")
             }
 

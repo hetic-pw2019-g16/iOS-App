@@ -34,23 +34,6 @@ class CalendarEventViewController: UIViewController {
             self.events = res
             self.tableView.reloadData()
         })
-        /*
-        CalendarService.getEventListByDateAction(companyId: UserDefaults.getCompanyId()!, date: date) {(res, error) in
-            self.events.removeAll()
-            
-            for event in res {
-                let user: [String: Any] = event["user"] as! [String : Any]
-                self.events.append(Event(id: event["id"] as! Int, title: user["username"] as! String, commentaries: [], meal: event["recipe"] as! String))
-            }
-            
-            self.tableView.reloadData()
-            
-        }*/
-        
-//        // TODO Current Day + User related events
-//        events.append(Event(title: "Vincent", commentaries: [], meal: "Pâtes sauce orange"))
-//        events.append(Event(title: "Nicolas", commentaries: [], meal: "Pâtes Carbonara"))
-//        events.append(Event(title: "Laurette", commentaries: [], meal: "Pâtes bolognaise"))
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

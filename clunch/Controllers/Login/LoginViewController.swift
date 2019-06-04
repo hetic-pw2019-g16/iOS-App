@@ -44,17 +44,6 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(forgottenPasswordViewController, animated: true)
     }
     @IBAction func loginAction(_ sender: Any) {
-        
-        // TODO: Verifier les values des champs
-        //      Case 1: True
-        //          TODO: Faire l'appel Api avec un retour
-        //              Case 1: True
-        //                  TODO: Changement d'écran Avec Animation
-        //              Case 2: False
-        //                  Throw Error Message Bad Credidentials
-        //      Case 2: False
-        //          Throw Error Empty Fields
-        
         let params = ["email": email,"password": passwordTextField.text!]
         AuthService.loginAction(body: params) { (res, error) in
             if error {

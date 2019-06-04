@@ -2,7 +2,7 @@
 //  User.swift
 //  clunch
 //
-//  Created by Eléa on 10/04/2019.
+//  Created by Samy on 10/04/2019.
 //  Copyright © 2019 Clunch. All rights reserved.
 //
 
@@ -15,7 +15,7 @@ class User: NSObject, NSCoding {
     let token : String
     let companyId : Int
     
-    //userId : Int = -1
+
     init(userId : Int = 0, username : String = "", email : String = "", token : String = "", companyId : Int = 0) {
         self.token = token
         self.userId = userId
