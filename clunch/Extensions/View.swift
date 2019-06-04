@@ -21,13 +21,7 @@ extension UIView {
     func popUp() {
         self.layer.cornerRadius = 5
         self.layer.masksToBounds = true
-        
-//        self.layer.shadowColor = UIColor.black.cgColor
-//        self.layer.shadowOpacity = 1
-//        self.layer.shadowOffset = CGSize.zero
-//        self.layer.shadowRadius = 10
-//        self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
-//        self.layer.shouldRasterize = true
+
         
         self.layer.masksToBounds = false
         self.layer.shadowColor = UIColor.black.cgColor

@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // Only For Dev : Reset User
 //        UserDefaults.stndard.set(nil, forKey: "clunch_user")
-        // TODO -> Token Exppiration
         if (UserDefaults.getTheUserStored() != nil) {
             let storyboard:UIStoryboard = UIStoryboard(name: "Content", bundle: nil)
             let initialViewController = storyboard.instantiateViewController(withIdentifier: "navigation_home_identifier")

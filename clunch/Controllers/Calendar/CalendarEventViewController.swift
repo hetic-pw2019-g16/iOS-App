@@ -40,7 +40,7 @@ class CalendarEventViewController: UIViewController {
         if let segueIdentifier = segue.identifier {
             if segueIdentifier==detailEventIdentifier {
                 if let eventCell = sender as? EventItemTableViewCell, let destinationViewController = segue.destination as? CalendarEventItemViewController {
-                   // destinationViewController.name = eventCell.item.title
+
                 }
             }
         }

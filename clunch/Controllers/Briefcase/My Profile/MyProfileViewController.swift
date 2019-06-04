@@ -22,7 +22,6 @@ class MyProfileViewController: UIViewController {
         super.viewDidLoad()
         self.view.hideKeyboardOnTouch()
          self.validateProfileButton.layer.cornerRadius = 5
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func validateProfilAction(_ sender: Any) {

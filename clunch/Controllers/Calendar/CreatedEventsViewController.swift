@@ -21,7 +21,6 @@ class CreatedEventsViewController: UIViewController,
     self.createdEventsTableView.delegate = self
     self.createdEventsTableView.dataSource = self
 
-        // Do any additional setup after loading the view.
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.events.count

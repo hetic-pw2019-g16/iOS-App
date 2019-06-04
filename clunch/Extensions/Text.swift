@@ -57,7 +57,6 @@ extension UITextField {
 }
 
 extension UILabel {
-    
 
     static let titleSize:CGFloat = 24
     static let subTitleSize:CGFloat = 20
@@ -94,4 +93,3 @@ extension String {
         return String(self[toindex...])
     }
 }
-

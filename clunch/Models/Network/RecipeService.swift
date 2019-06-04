@@ -20,7 +20,7 @@ class RecipeService {
             switch response.result {
             case .success(let value):
                 print(value)
-                // TODO -> Work With Model to prevent errors
+              
                 callBack(value as! [[String : Any]], nil)
                 
             case .failure(let error):
@@ -36,7 +36,6 @@ class RecipeService {
             switch response.result {
             case .success(let value):
                 
-                // TODO -> Work With Model to prevent errors
                 print(value)
                 callBack(value as! [[String: Any]], nil)
                 

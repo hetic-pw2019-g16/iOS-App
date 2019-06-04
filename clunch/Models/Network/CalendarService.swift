@@ -24,8 +24,7 @@ class CalendarService {
             
             switch response.result {
             case .success(let value):
-                
-                // TODO -> Work With Model to prevent errors
+
                 callBack(value as! [[String : Any]], nil)
                 
             case .failure(let error):

@@ -240,7 +240,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CreatedEventCell",
                                                           for: indexPath) as! CreatedEventCell
             
-           // cell.event = self.createdEvents[indexPath.row] // regarder EventItemTableViewCell.item
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "YYYY-MM-dd"
             let dateStr = dateFormatter.string(from: self.createdEvents[indexPath.row].date)

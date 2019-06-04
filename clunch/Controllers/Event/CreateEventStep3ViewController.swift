@@ -27,7 +27,6 @@ class CreateEventStep3ViewController: UIViewController {
 
         self.nextStepToRecapScreenButton.layer.cornerRadius = 5
 
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func sliderValueChange(_ sender: Any) {
