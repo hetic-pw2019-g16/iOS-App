@@ -17,7 +17,7 @@ class UrlBuilder {
     }()
     
     static func userCheckUrl() -> String {
-        return "\(baseUrl)/users/checks"
+        return "\(baseUrl)/user/check"
     }
     
     static func loginUrl() -> String {
@@ -30,28 +30,32 @@ class UrlBuilder {
     
     static func categoryItemUrl(id: String) -> String {
         print("\(baseUrl)/categories/" + id + "/recipes")
-        return "\(baseUrl)/categories/" + id + "/recipes"
+        return "\(baseUrl)/category/" + id + "/recipes"
     }
     
     static func dateEventsUrl(id: String, date: String) -> String {
-        return "\(baseUrl)/events/" + id + "/companies/" + date + "/date"
+        return "\(baseUrl)/company/" +  id + "/date/" + date + "/events"
     }
     
     static func addEventsUrl(id: String) -> String {
-        return "\(baseUrl)/events/" + id + "/creates"
+        return "\(baseUrl)/user/" + id + "/event/create"
     }
     
     static func getEventsByCompagny(id: String) -> String {
-        return "\(baseUrl)/events/" + id + "/company"
+        return "\(baseUrl)/company/" + id + "/events"
     }
+    
+    // static func deleteEvent(eventId : String, userId: String, state: Bool) -> String {
+    //  var 
+// }
     
     static func participationToEventUrl(eventId: String, userId: String, state: Bool) -> String {
         var res: String
         
         if state {
-            res = "\(baseUrl)/events/" + eventId + "/users/" + userId + "/leaves"
+            res = "\(baseUrl)/user/" + userId + "/event/" + eventId + "/leave"
         } else {
-            res = "\(baseUrl)/events/" + eventId + "/users/" + userId + "/joins"
+            res = "\(baseUrl)/user/" + userId + "/event/" + eventId + "/join"
         }
         
         return res

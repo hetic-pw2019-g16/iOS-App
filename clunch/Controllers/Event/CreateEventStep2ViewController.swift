@@ -54,7 +54,8 @@ class CreateEventStep2ViewController: UIViewController {
             dateFormatter.locale = Locale(identifier: "fr_FR")
             dateFormatter.dateFormat = "EEEE d MMM, HH:mm"
             let dateStr = dateFormatter.string(from: self.finishDate)
-            self.eventLimitDateButton.setTitle(dateStr, for: .normal)  
+            self.eventLimitDateButton.setTitle(dateStr, for: .normal)
+            
         }
     }
     

@@ -281,7 +281,7 @@
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pâtes au saumon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtH-vz-Ji0">
-                                                                            <rect key="frame" x="95" y="16" width="151" height="16"/>
+                                                                            <rect key="frame" x="95" y="6" width="151" height="16"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                             <color key="textColor" red="0.65098039220000004" green="0.65098039220000004" blue="0.65098039220000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
@@ -294,7 +294,7 @@
                                                                         <constraint firstAttribute="bottom" secondItem="FZU-iF-0NC" secondAttribute="bottom" id="BHg-Bk-3PW"/>
                                                                         <constraint firstAttribute="height" constant="80" id="EV8-By-Qfd"/>
                                                                         <constraint firstAttribute="trailing" secondItem="LtH-vz-Ji0" secondAttribute="trailing" constant="4" id="FQP-5j-T4X"/>
-                                                                        <constraint firstItem="LtH-vz-Ji0" firstAttribute="top" secondItem="Ub6-sT-UeI" secondAttribute="bottom" constant="10" id="IcE-3H-oZh"/>
+                                                                        <constraint firstItem="LtH-vz-Ji0" firstAttribute="top" secondItem="Ub6-sT-UeI" secondAttribute="bottom" id="IcE-3H-oZh"/>
                                                                         <constraint firstItem="Ub6-sT-UeI" firstAttribute="leading" secondItem="LtH-vz-Ji0" secondAttribute="leading" id="L3n-Rv-chO"/>
                                                                         <constraint firstItem="FZU-iF-0NC" firstAttribute="leading" secondItem="FvC-Hh-IXu" secondAttribute="leading" id="M8d-uS-VBN"/>
                                                                         <constraint firstItem="m2P-6A-eeU" firstAttribute="leading" secondItem="FZU-iF-0NC" secondAttribute="trailing" constant="8" id="Qfg-gn-w8D"/>

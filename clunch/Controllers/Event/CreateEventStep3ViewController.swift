@@ -36,7 +36,7 @@ class CreateEventStep3ViewController: UIViewController {
     
     @IBAction func nextStepToRecapScreenButton(_ sender: Any) {
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "dd.MM.yyyy"
+        dateFormatterPrint.dateFormat = "dd.MM.yyyy HH:mm"
         
         let date = dateFormatterPrint.string(from: eventDate)
         let limitDate = dateFormatterPrint.string(from: finishDate)

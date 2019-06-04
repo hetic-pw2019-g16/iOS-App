@@ -16,7 +16,7 @@ typealias CallbackEvents = (_ res: [Event], _ error: Error?) -> Void
 class CalendarService {
     static func getEventListByDateAction(companyId: Int, date: Date, callBack: @escaping CallbackCalendar) {
         let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "dd.MM.yyyy"
+        dateFormatterPrint.dateFormat = "yyyy-MM-dd HH:mm"
 
         let dateFormat = dateFormatterPrint.string(from: date)
         
@@ -49,12 +49,10 @@ class CalendarService {
                     let id = json["id"].int ?? 0
                     let recipe = json["recipe"].string ?? ""
                     let description = json["description"].string ?? ""
-                    var dateStr: String = json["date"].string!
-                    var limitDateStr: String = json["limitDate"].string!
-                    dateStr = dateStr.subString(to: 9)
-                    limitDateStr = limitDateStr.subString(to: 9)
+                    let dateStr: String = json["date"].string!
+                    let limitDateStr: String = json["limitDate"].string!
                     let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyy-MM-dd"
+                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
                     let date:Date = dateFormatter.date(from: dateStr)!
                     let limitDate:Date = dateFormatter.date(from: limitDateStr)!
                     let quantity = json["quantity"].int ?? 0
