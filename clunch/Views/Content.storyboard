@@ -368,11 +368,11 @@
                                         <rect key="frame" x="0.0" y="430" width="375" height="400"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5je-WC-Zca">
-                                                <rect key="frame" x="40" y="47" width="220" height="6"/>
+                                                <rect key="frame" x="40" y="47" width="146" height="6"/>
                                                 <color key="backgroundColor" red="1" green="0.76078431369999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="F6c-W5-utW"/>
-                                                    <constraint firstAttribute="width" constant="220" id="LA8-Tg-uBe"/>
+                                                    <constraint firstAttribute="width" constant="146" id="LA8-Tg-uBe"/>
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNb-Bb-TKW">
@@ -512,10 +512,10 @@
                                                     </tableViewCell>
                                                 </prototypes>
                                             </tableView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les repas qui arrivent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cix-Gw-92Q">
-                                                <rect key="frame" x="40" y="11" width="230" height="60"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tous les repas " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cix-Gw-92Q">
+                                                <rect key="frame" x="40" y="11" width="150" height="60"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="230" id="Tfp-X2-LHS"/>
+                                                    <constraint firstAttribute="width" constant="150" id="Tfp-X2-LHS"/>
                                                     <constraint firstAttribute="height" constant="60" id="Yfa-Tx-aEm"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>

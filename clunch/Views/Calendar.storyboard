@@ -115,7 +115,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="29"/>
                                         <color key="backgroundColor" red="1" green="0.99215686270000003" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <segments>
-                                            <segment title="À VENIR"/>
+                                            <segment title="TOUS"/>
                                             <segment title="INSCRITS"/>
                                             <segment title="CRÉÉS"/>
                                         </segments>
@@ -769,10 +769,10 @@
             </objects>
             <point key="canvasLocation" x="-79" y="2447"/>
         </scene>
-        <!--À VENIR-->
+        <!--TOUS LES REPAS-->
         <scene sceneID="FUD-87-3LV">
             <objects>
-                <viewController storyboardIdentifier="ComingEventsViewController" title="À VENIR" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ox2-bn-ipQ" customClass="ComingEventsViewController" customModule="clunch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComingEventsViewController" title="TOUS LES REPAS" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ox2-bn-ipQ" customClass="ComingEventsViewController" customModule="clunch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gxC-hV-xZg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

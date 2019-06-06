@@ -34,11 +34,13 @@ class CreateEventStep1ViewController: UIViewController {
     }
     
     @IBAction func nextStepToStep2Button(_ sender: Any) {
-        let nextStepViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateEventStep2ViewController") as! CreateEventStep2ViewController
-        nextStepViewController.recipe = self.RecipeNameTextField.text ?? ""
-        nextStepViewController.recipeDescription = self.descriptionTextView.text ?? ""
-
-        self.navigationController?.pushViewController(nextStepViewController, animated: true)
+        if (self.RecipeNameTextField.text != "" && self.descriptionTextView.text != "") {
+            let nextStepViewController = self.storyboard?.instantiateViewController(withIdentifier: "CreateEventStep2ViewController") as! CreateEventStep2ViewController
+            nextStepViewController.recipe = self.RecipeNameTextField.text ?? ""
+            nextStepViewController.recipeDescription = self.descriptionTextView.text ?? ""
+            
+            self.navigationController?.pushViewController(nextStepViewController, animated: true)
+        }
     }
     
     @IBAction func findRecipesButton(_ sender: Any) {

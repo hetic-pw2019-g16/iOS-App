@@ -15,7 +15,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--RECETTES-->
+        <!--CATÉGORIES-->
         <scene sceneID="2oe-KV-7mF">
             <objects>
                 <viewController storyboardIdentifier="CategoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Os7-5v-gaN" customClass="CategoryViewController" customModule="clunch" customModuleProvider="target" sceneMemberID="viewController">
@@ -77,7 +77,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wkm-iv-OAQ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="RECETTES" id="BgI-e6-KCO">
+                    <navigationItem key="navigationItem" title="CATÉGORIES" id="BgI-e6-KCO">
                         <barButtonItem key="backBarButtonItem" title="Catégories" id="Mwc-eM-B9W"/>
                     </navigationItem>
                     <connections>
@@ -88,10 +88,10 @@
             </objects>
             <point key="canvasLocation" x="4421.6000000000004" y="358.4707646176912"/>
         </scene>
-        <!--Recipe View Controller-->
+        <!--RECETTES-->
         <scene sceneID="aEH-KA-rvS">
             <objects>
-                <viewController storyboardIdentifier="RecipeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VBi-3z-CSq" customClass="RecipeViewController" customModule="clunch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeViewController" title="RECETTES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VBi-3z-CSq" customClass="RecipeViewController" customModule="clunch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fPL-7U-k0r">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
