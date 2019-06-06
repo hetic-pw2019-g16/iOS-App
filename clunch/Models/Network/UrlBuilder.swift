@@ -57,6 +57,10 @@ class UrlBuilder {
         
         return res
     }
+    
+    static func deleteEventUrl(id: String) -> String {
+        return "\(baseUrl)/event/" + id
+    }
 }
 
 

@@ -82,12 +82,14 @@ class PreviewEventViewController: UIViewController {
                 self.validateActionButton.backgroundColor = UIColor(red: 246/255, green: 105/255, blue: 118/255, alpha: 1)
             }
             
-            if self.event?.participants.count ?? 0 >= self.event?.quantity ?? 0 && !self.event!.participating {
+            if self.event?.participants.count ?? 0 >= self.event?.quantity ?? 0 && !self.event!.participating && !self.event!.creator{
                 self.validateActionButton.removeFromSuperview()
             }
             
             if self.event?.creator ?? false {
-                self.validateActionButton.removeFromSuperview()
+                //self.validateActionButton.removeFromSuperview()
+                self.validateActionButton.setTitle("Supprimer", for: .normal)
+                self.validateActionButton.backgroundColor = UIColor(red: 246/255, green: 105/255, blue: 118/255, alpha: 1)
             }
             
             if Date() > event?.date ?? Date() {
@@ -106,6 +108,11 @@ class PreviewEventViewController: UIViewController {
             if (!self.event!.creator) {
                 EventService.participationToEventAction(eventId: self.event!.id, userId: UserDefaults.getTheUserStored()!.userId, state: self.event!.participating) { (res, error) in
 
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            } else {
+                EventService.deleteEventAction(eventId: self.event!.id) { (res, error) in
+                    
                     self.navigationController?.popToRootViewController(animated: true)
                 }
             }
