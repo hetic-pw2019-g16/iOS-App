@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fph-eV-CTL">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xx4-nH-EvP">
-                                <rect key="frame" x="0.0" y="64" width="375" height="1567"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="1509"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jWh-u4-p30">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="430"/>
@@ -553,13 +553,15 @@
                                                 <color key="backgroundColor" red="1" green="0.76078431369999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="6" id="BUX-ym-xFj"/>
-                                                    <constraint firstAttribute="width" constant="140" id="XaO-5R-zHn"/>
+                                                    <constraint firstAttribute="width" constant="140" id="LvD-gT-FwV"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Les dernières recettes proposées" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UGc-yb-MZX">
-                                                <rect key="frame" x="40" y="12" width="275" height="60"/>
+                                                <rect key="frame" x="40" y="12" width="200" height="60"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="60" id="Abo-Mw-nha"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="ILo-aC-cFc"/>
+                                                    <constraint firstAttribute="width" constant="200" id="pRM-I3-X5R"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                 <color key="textColor" red="0.30196078430000001" green="0.30196078430000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -723,7 +725,6 @@
                                         <constraints>
                                             <constraint firstItem="HBz-76-QMe" firstAttribute="top" secondItem="CJv-KA-I0X" secondAttribute="top" id="1qK-Kp-Kth"/>
                                             <constraint firstItem="CJv-KA-I0X" firstAttribute="top" secondItem="UGc-yb-MZX" secondAttribute="bottom" constant="24" id="2Zf-Up-i1o"/>
-                                            <constraint firstAttribute="trailing" secondItem="0rp-Aq-8aw" secondAttribute="trailing" constant="196" id="4OF-vN-9dM"/>
                                             <constraint firstItem="UGc-yb-MZX" firstAttribute="leading" secondItem="cZR-Uz-BF8" secondAttribute="leading" constant="40" id="5YX-Tz-5mE"/>
                                             <constraint firstItem="aO6-FS-mXy" firstAttribute="leading" secondItem="HBz-76-QMe" secondAttribute="leading" id="BHg-Xb-pc7"/>
                                             <constraint firstItem="HBz-76-QMe" firstAttribute="leading" secondItem="cZR-Uz-BF8" secondAttribute="centerX" constant="10" id="BrH-UN-vnx"/>
@@ -732,14 +733,13 @@
                                             <constraint firstItem="Nao-Gq-dnJ" firstAttribute="leading" secondItem="CJv-KA-I0X" secondAttribute="leading" id="D8P-yM-ZdK"/>
                                             <constraint firstAttribute="bottom" secondItem="Nao-Gq-dnJ" secondAttribute="bottom" constant="24" id="Dmo-Mg-T0c"/>
                                             <constraint firstItem="HBz-76-QMe" firstAttribute="bottom" secondItem="CJv-KA-I0X" secondAttribute="bottom" id="DrH-SI-vGi"/>
-                                            <constraint firstAttribute="trailing" secondItem="UGc-yb-MZX" secondAttribute="trailing" constant="60" id="JWK-JE-BaD"/>
+                                            <constraint firstAttribute="trailing" secondItem="UGc-yb-MZX" secondAttribute="trailing" constant="135" id="JWK-JE-BaD"/>
                                             <constraint firstItem="UGc-yb-MZX" firstAttribute="top" secondItem="cZR-Uz-BF8" secondAttribute="top" constant="12" id="V1u-Q7-DaT"/>
                                             <constraint firstItem="gan-MF-5Kc" firstAttribute="leading" secondItem="0rp-Aq-8aw" secondAttribute="leading" id="cNW-k8-93D"/>
                                             <constraint firstItem="0rp-Aq-8aw" firstAttribute="top" secondItem="cZR-Uz-BF8" secondAttribute="top" constant="34" id="eRx-rX-zXB"/>
                                             <constraint firstItem="gan-MF-5Kc" firstAttribute="top" secondItem="0rp-Aq-8aw" secondAttribute="bottom" constant="23" id="fTl-0Z-zsz"/>
                                             <constraint firstItem="0rp-Aq-8aw" firstAttribute="leading" secondItem="cZR-Uz-BF8" secondAttribute="leading" constant="39" id="jkL-og-Obp"/>
                                             <constraint firstItem="CJv-KA-I0X" firstAttribute="trailing" secondItem="cZR-Uz-BF8" secondAttribute="centerX" constant="-10" id="pWn-tN-sP2"/>
-                                            <constraint firstAttribute="trailing" secondItem="gan-MF-5Kc" secondAttribute="trailing" constant="136" id="xN4-Xl-Xg4"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zOw-bu-doc">
@@ -945,7 +945,7 @@
                     <tabBarItem key="tabBarItem" title="Accueil" image="home_logo" selectedImage="home_logo" id="BNq-4F-siz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="YVg-9A-RRV">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="1" green="0.76078431369999999" blue="0.32549019610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
